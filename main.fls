@@ -232,11 +232,11 @@ INPUT ./PIC/diagram.png
 INPUT ./PIC/diagram.png
 OUTPUT main.pdf
 INPUT ./PIC/diagram.png
-INPUT ./PIC/Mapa_CEA_conparcelas_v2.pdf
-INPUT ./PIC/Mapa_CEA_conparcelas_v2.pdf
-INPUT ./PIC/Mapa_CEA_conparcelas_v2.pdf
-INPUT ./PIC/Mapa_CEA_conparcelas_v2.pdf
-INPUT ./PIC/Mapa_CEA_conparcelas_v2.pdf
+INPUT ./PIC/Mapa_CEA_v3.pdf
+INPUT ./PIC/Mapa_CEA_v3.pdf
+INPUT ./PIC/Mapa_CEA_v3.pdf
+INPUT ./PIC/Mapa_CEA_v3.pdf
+INPUT ./PIC/Mapa_CEA_v3.pdf
 INPUT ./PIC/mosaic_v2.png
 INPUT ./PIC/mosaic_v2.png
 INPUT ./PIC/mosaic_v2.png

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  6 AUG 2026 11:17
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  6 AUG 2026 12:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -699,10 +699,10 @@ Package pdftex.def Info: PIC/diagram.png  used on input line 184.
 
 Package natbib Warning: Citation `mi-paper' on page 1 undefined on input line 193.
 
-<PIC/Mapa_CEA_conparcelas_v2.pdf, id=3, 845.1575pt x 597.23125pt>
-File: PIC/Mapa_CEA_conparcelas_v2.pdf Graphic file (type pdf)
-<use PIC/Mapa_CEA_conparcelas_v2.pdf>
-Package pdftex.def Info: PIC/Mapa_CEA_conparcelas_v2.pdf  used on input line 203.
+<PIC/Mapa_CEA_v3.pdf, id=3, 845.1575pt x 597.23125pt>
+File: PIC/Mapa_CEA_v3.pdf Graphic file (type pdf)
+<use PIC/Mapa_CEA_v3.pdf>
+Package pdftex.def Info: PIC/Mapa_CEA_v3.pdf  used on input line 203.
 (pdftex.def)             Requested size: 252.0pt x 178.0772pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
@@ -751,7 +751,7 @@ Package pdftex.def Info: PIC/scores_configurations.pdf  used on input line 332.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2 <./PIC/diagram.png> <./PIC/Mapa_CEA_conparcelas_v2.pdf>]
+[2 <./PIC/diagram.png> <./PIC/Mapa_CEA_v3.pdf>]
 <PIC/broad_bars.png, id=60, 856.3995pt x 422.7795pt>
 File: PIC/broad_bars.png Graphic file (type png)
 <use PIC/broad_bars.png>
@@ -797,14 +797,14 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  6728 strings out of 467167
- 98861 string characters out of 5413691
+ 98777 string characters out of 5413691
  674612 words of memory out of 5000000
  35856 multiletter control sequences out of 15000+600000
  687694 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,19n,79p,1042b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 16306231 bytes).
+Output written on main.pdf (6 pages, 16305817 bytes).
 PDF statistics:
  407 PDF objects out of 1000 (max. 8388607)
  148 compressed objects within 2 object streams
