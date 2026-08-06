@@ -1,10 +1,10 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  6 AUG 2026 10:49
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  6 AUG 2026 11:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**"c:/Users/juan.canada/Documents/PhD/Metodologia-evaluacion/Paper CEA/Evaluation Framework for Multimodal Language Models Applied to Geospatial Open Data in Agriculture/main.tex"
-(c:/Users/juan.canada/Documents/PhD/Metodologia-evaluacion/Paper CEA/Evaluation Framework for Multimodal Language Models Applied to Geospatial Open Data in Agriculture/main.tex
+**c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex
+(c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
 (c:/texlive/2026/texmf-dist/tex/latex/elsarticle/elsarticle.cls
@@ -743,11 +743,11 @@ Overfull \hbox (0.72015pt too wide) in paragraph at lines 298--312
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<PIC/metrics_icons_marker.png, id=17, 1683.891pt x 458.9145pt>
-File: PIC/metrics_icons_marker.png Graphic file (type png)
-<use PIC/metrics_icons_marker.png>
-Package pdftex.def Info: PIC/metrics_icons_marker.png  used on input line 332.
-(pdftex.def)             Requested size: 522.0pt x 142.26202pt.
+<PIC/scores_configurations.pdf, id=17, 1858.12737pt x 458.86801pt>
+File: PIC/scores_configurations.pdf Graphic file (type pdf)
+<use PIC/scores_configurations.pdf>
+Package pdftex.def Info: PIC/scores_configurations.pdf  used on input line 332.
+(pdftex.def)             Requested size: 522.0pt x 128.90927pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
@@ -765,11 +765,13 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 Underfull \vbox (badness 3769) has occurred while \output is active []
 
  [3 <./PIC/mosaic_v2.png> <./PIC/ablation_modules.png>]
-<PIC/shapleys.png, id=66, 1417.9374pt x 314.3745pt>
-File: PIC/shapleys.png Graphic file (type png)
-<use PIC/shapleys.png>
-Package pdftex.def Info: PIC/shapleys.png  used on input line 434.
-(pdftex.def)             Requested size: 522.0pt x 115.7363pt.
+Underfull \vbox (badness 2173) has occurred while \output is active []
+
+<PIC/shapley_boxplots_horizontales.pdf, id=66, 1271.62909pt x 311.95161pt>
+File: PIC/shapley_boxplots_horizontales.pdf Graphic file (type pdf)
+<use PIC/shapley_boxplots_horizontales.pdf>
+Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 434.
+(pdftex.def)             Requested size: 522.0pt x 128.0533pt.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <7> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 471.
  (./main.bbl
@@ -780,7 +782,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 15.
 
 Package natbib Warning: There were undefined citations.
 
-[4 <./PIC/metrics_icons_marker.png> <./PIC/broad_bars.png>] [5] [6 <./PIC/shapleys.png>] (./main.aux)
+[4 <./PIC/scores_configurations.pdf> <./PIC/broad_bars.png>] [5] [6 <./PIC/shapley_boxplots_horizontales.pdf>] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
@@ -795,17 +797,17 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  6728 strings out of 467167
- 98751 string characters out of 5413691
+ 98861 string characters out of 5413691
  674612 words of memory out of 5000000
  35856 multiletter control sequences out of 15000+600000
  687694 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,79p,1074b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,19n,79p,1042b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 16334584 bytes).
+Output written on main.pdf (6 pages, 16306231 bytes).
 PDF statistics:
- 125 PDF objects out of 1000 (max. 8388607)
- 66 compressed objects within 1 object stream
+ 407 PDF objects out of 1000 (max. 8388607)
+ 148 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
  36 words of extra memory for PDF output out of 10000 (max. 10000000)
 

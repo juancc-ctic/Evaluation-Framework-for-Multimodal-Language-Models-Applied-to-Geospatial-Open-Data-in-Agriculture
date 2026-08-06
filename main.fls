@@ -1,8 +1,8 @@
-PWD c:/Users/juan.canada/Documents/PhD/Metodologia-evaluacion/Paper CEA/Evaluation Framework for Multimodal Language Models Applied to Geospatial Open Data in Agriculture
+PWD c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture
 INPUT c:/texlive/2026/texmf.cnf
 INPUT c:/texlive/2026/texmf-dist/web2c/texmf.cnf
 INPUT c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt
-INPUT c:/Users/juan.canada/Documents/PhD/Metodologia-evaluacion/Paper CEA/Evaluation Framework for Multimodal Language Models Applied to Geospatial Open Data in Agriculture/main.tex
+INPUT c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex
 OUTPUT main.log
 INPUT c:/texlive/2026/texmf-dist/tex/latex/elsarticle/elsarticle.cls
 INPUT c:/texlive/2026/texmf-dist/tex/latex/elsarticle/elsarticle.cls
@@ -286,11 +286,11 @@ INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txb.tfm
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xr.tfm
-INPUT ./PIC/metrics_icons_marker.png
-INPUT ./PIC/metrics_icons_marker.png
-INPUT ./PIC/metrics_icons_marker.png
-INPUT ./PIC/metrics_icons_marker.png
-INPUT ./PIC/metrics_icons_marker.png
+INPUT ./PIC/scores_configurations.pdf
+INPUT ./PIC/scores_configurations.pdf
+INPUT ./PIC/scores_configurations.pdf
+INPUT ./PIC/scores_configurations.pdf
+INPUT ./PIC/scores_configurations.pdf
 INPUT c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/txr.vf
 INPUT c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/txb.vf
 INPUT ./PIC/broad_bars.png
@@ -298,11 +298,11 @@ INPUT ./PIC/broad_bars.png
 INPUT ./PIC/broad_bars.png
 INPUT ./PIC/broad_bars.png
 INPUT ./PIC/broad_bars.png
-INPUT ./PIC/shapleys.png
-INPUT ./PIC/shapleys.png
-INPUT ./PIC/shapleys.png
-INPUT ./PIC/shapleys.png
-INPUT ./PIC/shapleys.png
+INPUT ./PIC/shapley_boxplots_horizontales.pdf
+INPUT ./PIC/shapley_boxplots_horizontales.pdf
+INPUT ./PIC/shapley_boxplots_horizontales.pdf
+INPUT ./PIC/shapley_boxplots_horizontales.pdf
+INPUT ./PIC/shapley_boxplots_horizontales.pdf
 INPUT c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xb.tfm
 INPUT ./main.bbl
 INPUT ./main.bbl
