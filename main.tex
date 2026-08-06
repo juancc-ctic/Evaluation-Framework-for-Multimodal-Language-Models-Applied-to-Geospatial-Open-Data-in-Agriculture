@@ -230,7 +230,7 @@ To ensure an unbiased evaluation, parcels were selected to represent a high degr
 	\caption{Distribution of parcels by Land Use (LU) type}
 	\label{tab:land_use}
 	\begin{tabular}{p{0.5\columnwidth}
-        >{\raggedright\arraybackslash}p{0.40\columnwidth}
+        >{\centering\arraybackslash}p{0.40\columnwidth}
 		}
 		\hline
 		\textbf{Land Use} & \textbf{Number of queries} \\
@@ -342,8 +342,8 @@ Response quality is measured according to a multidimensional scale consisting of
 	\caption{Multidimensional evaluation metrics framework. Note: The \textit{Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation. The \textit{Correctness} metric does not apply to the human control evaluator.}
 	\label{tab:evaluation_metrics}
 	\begin{tabular}{
-			p{0.45\columnwidth}
-			>{\raggedright\arraybackslash}p{0.45\columnwidth}
+			>{\raggedright\arraybackslash}p{0.6\columnwidth}
+			>{\raggedright\arraybackslash}p{0.3\columnwidth}
 		}
 		\hline
 		\textbf{Metric} & \textbf{Type}   \\
@@ -409,21 +409,21 @@ Shapley Values
 
 \begin{equation}
     \begin{split}
-        \phi_1(v) = {} & \frac{1}{3}[v(C_1)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_2)]  \\
+        \phi_S(v) = {} & \frac{1}{3}[v(C_1)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_2)]  \\
                     & +\frac{1}{6}[v(C_5)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_6)]
     \end{split}
 \end{equation}
 
 \begin{equation}
     \begin{split}
-        \phi_2(v) = {} & \frac{1}{3}[v(C_2)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_1)]  \\
+        \phi_R(v) = {} & \frac{1}{3}[v(C_2)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_1)]  \\
                     & +\frac{1}{6}[v(C_6)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_5)]
     \end{split}
 \end{equation}
 
 \begin{equation}
     \begin{split}
-        \phi_3(v) = {} & \frac{1}{3}[v(C_4)-v(C_0)]+\frac{1}{6}[v(C_5)-v(C_1)]  \\
+        \phi_R(v) = {} & \frac{1}{3}[v(C_4)-v(C_0)]+\frac{1}{6}[v(C_5)-v(C_1)]  \\
                     & +\frac{1}{6}[v(C_6)-v(C_2)]+\frac{1}{3}[v(C_7)-v(C_3)]
     \end{split}
 \end{equation}
@@ -456,8 +456,8 @@ Thanks to ...
 \caption{Shapley}
 \label{tab:}
 
-\renewcommand{\arraystretch}{0.75} 
-\setlength{\tabcolsep}{3.5pt}        
+\renewcommand{\arraystretch}{0.9} 
+\setlength{\tabcolsep}{4pt}        
 \scriptsize                        
 
 \begin{tabular}{>{\centering\arraybackslash}p{0.1\textwidth}
