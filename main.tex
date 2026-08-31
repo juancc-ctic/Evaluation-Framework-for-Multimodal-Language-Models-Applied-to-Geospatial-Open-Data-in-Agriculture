@@ -137,7 +137,7 @@
 
 	\begin{abstract}
 		%% Text of abstract
-		Abstract example for the Results in Physics Journal. Here you provide a brief summary of the research and the results.
+
 	\end{abstract}
 
 	%%Graphical abstract
@@ -171,13 +171,17 @@
 
 %% main text
 
-\section{Introduction}
+\section{Introduction and related works}
 \label{introduction}
 
+The rapid development of Large Languge Models (LLMs) has enabled a \dots
+\textcolor{blue}{ha abierto un nuevo abanico de posibilidades a nuevas aplicaciones. Entre ellas destaca el de la smart agriculture, con grandes avances en agricultura de precisión... gracias a RAG [citar papers], geoembeddings [papers] y los nevos geofoundation models [papers]. Sin embargo, en la mayoría de los casos, las respuestas obtenidas de estas nuevas herramientas siguen siendo, aunque mucho más precisas y utilizando nuevas fronteras,,, genéricas. Recientemente nosotros hemos propuesto una herramienta que permite generar respuestas acerca del terreno para su aplicación a la agricultura que sean específicas al terreno AoI -> gracias a la recuperación, procesamiento y fusión de distintas fuentes de datos abiertas. El prblema (reto) entonces, que es transversal a todas las aplicaciones de IA generativa, es el de la evaluación rigurosa de estas respuestas. A diferencia del ML... aquí las respuestas correctas forman un espacio infinito... El approach utilizado en [paper] fue el de LLM-as-a-judge -> meter papers. Esta téncnica, aunque muy extendida gracias a su simplicidad y bajo coste operativo, is highly vulnerable to technical hallucinations, suffers from self-reference bias, and tends to lose consistency. }
 
-\section{Related works}
+% \section{Related works}
+% \label{related_work}
 
 \section{Materials and methods}
+\label{materials_methods}
 
 \begin{figure*}
 	\centering
@@ -188,9 +192,9 @@
 
 \subsection{Evaluation}
 
-\textcolor{red}{Comentario}
+\textcolor{blue}{El principal problema que se plantea resolver, además de obtener una evaluación sistemática, rigurosa y reproducible, es el de ser capaces de evaluar no solo si la respuesta es buena, sino también en qué medida esa calidad es gracias a los módulos de su arquitectura. }
 
-Unlike classical Machine Learning problems, such as classification or regression, evaluating generative artificial intelligence models poses a genuine challenge. This is due to the infinite space of correct \textit{outputs} (responses). The approach in \cite{mi-paper} was to use the \textit{LLM-as-a-judge} method, a very common solution in the state of the art given its simplicity: it consists of having another language model evaluate the responses. However, this type of evaluation is highly vulnerable to technical hallucinations, suffers from self-reference bias, and tends to lose consistency.
+\textcolor{red}{Internal Knowledge over-reliance → sesgo de conocimiento interno}
 
 Therefore, \textbf{an experimental evaluation methodology has been designed}, which is detailed in this section. This approach, designed to optimize the consumption of operational resources while maintaining statistical robustness, consists of two main stages: evaluation of the complete system and analysis of marginal contributions through an ablation study.
 
@@ -200,7 +204,7 @@ The main challenge of this experimental methodology, and what differentiates it 
 
 \begin{figure}[h!]
 	\centering
-	\includegraphics[width=\columnwidth]{PIC/Mapa_CEA_v3.pdf}
+	\includegraphics[width=\columnwidth]{PIC/Mapa_CEA_v4.pdf}
 	\caption{}
 	\label{fig:}
 \end{figure}
@@ -236,9 +240,9 @@ To ensure an unbiased evaluation, parcels were selected to represent a high degr
 		\textbf{Land Use} & \textbf{Number of queries} \\
 		\hline
 		Fruit Trees (FR)  & 7                          \\
-		Pasture (PA)      & 5                          \\
+		Pasture (PA)      & 4                          \\
 		Unproductive (UN) & 2                          \\
-		Forest (FO)       & 1                          \\
+		Forest (FO)       & 2                          \\
 		\hline
 	\end{tabular}
 \end{table}
@@ -380,6 +384,10 @@ Shapley Values
 	\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(|N| - |S| - 1)!}{|N|!} \big(v(S \cup \{i\}) - v(S)\big)
 \end{equation}
 
+$N$ is the set of all players: 
+$N = \{M_{S}, M_{O}, M_{R}\}$ and 
+$S$ is any subset or \textit{coalition}.
+
 \begin{equation}
     \begin{split}
         \phi_S(v) = {} & \frac{1}{3} \big[ v(\{M_S\}) - v(\varnothing) \big]              \\
@@ -416,7 +424,7 @@ Shapley Values
 
 \begin{equation}
     \begin{split}
-        \phi_R(v) = {} & \frac{1}{3}[v(C_2)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_1)]  \\
+        \phi_O(v) = {} & \frac{1}{3}[v(C_2)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_1)]  \\
                     & +\frac{1}{6}[v(C_6)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_5)]
     \end{split}
 \end{equation}
@@ -436,19 +444,15 @@ Shapley Values
 	\label{fig:shapleys}
 \end{figure*}
 
+\textcolor{red}{Meter gráficas solo con valores del promedio de los 4 jueces para no crear ruido visual}
+
 \section{Results and Discussion}
 
-\section{Conclusions}
-
-\section*{Acknowledgements}
-Thanks to ...
-
-%% The Appendices part is started with the command \appendix;
-%% appendix sections are then done as normal sections
-\appendix
-
-\section{Appendix A: Shapley values}
-%% \label{}
+\begin{figure}[t]
+	\centering{\includegraphics[width=\columnwidth]{PIC/shapleys_queries.png}}
+	\caption{}
+	\label{fig:shapleys_queries}
+\end{figure}
 
 
 \begin{table*}[htbp]
@@ -552,6 +556,24 @@ Thanks to ...
 \bottomrule
 \end{tabular}
 \end{table*}
+
+
+
+
+\textcolor{red}{Referencia a zenodo con dataset anonimizado}
+
+
+\section{Conclusions}
+
+\section*{Acknowledgements}
+Thanks to ...
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+\appendix
+
+\section{Appendix A: Shapley values}
+%% \label{}
 
 
 %% If you have bibdatabase file and want bibtex to generate the
