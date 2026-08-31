@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  31 AUG 2026 09:52
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  31 AUG 2026 11:45
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -762,26 +762,31 @@ LaTeX Warning: `!h' float specifier changed to `!ht'.
 [3 <./PIC/mosaic_v2.png> <./PIC/ablation_modules.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<PIC/shapley_boxplots_horizontales.pdf, id=70, 1271.62909pt x 311.95161pt>
+<PIC/tokens_metrics.pdf, id=70, 1442.63712pt x 354.44797pt>
+File: PIC/tokens_metrics.pdf Graphic file (type pdf)
+<use PIC/tokens_metrics.pdf>
+Package pdftex.def Info: PIC/tokens_metrics.pdf  used on input line 440.
+(pdftex.def)             Requested size: 522.0pt x 128.25018pt.
+<PIC/shapley_boxplots_horizontales.pdf, id=71, 1271.62909pt x 311.95161pt>
 File: PIC/shapley_boxplots_horizontales.pdf Graphic file (type pdf)
 <use PIC/shapley_boxplots_horizontales.pdf>
-Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 442.
+Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 447.
 (pdftex.def)             Requested size: 522.0pt x 128.0533pt.
  [4 <./PIC/scores_configurations.pdf> <./PIC/broad_bars.png>]
-<PIC/shapleys_queries.png, id=286, 870.3717pt x 326.6604pt>
+<PIC/shapleys_queries.png, id=287, 870.3717pt x 326.6604pt>
 File: PIC/shapleys_queries.png Graphic file (type png)
 <use PIC/shapleys_queries.png>
-Package pdftex.def Info: PIC/shapleys_queries.png  used on input line 452.
+Package pdftex.def Info: PIC/shapleys_queries.png  used on input line 457.
 (pdftex.def)             Requested size: 252.0pt x 94.57954pt.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <7> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 475.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 480.
  (./main.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 15.
 
 ) [5
 
- <./PIC/shapley_boxplots_horizontales.pdf> <./PIC/shapleys_queries.png>] [6] (./main.aux)
+ <./PIC/tokens_metrics.pdf> <./PIC/shapley_boxplots_horizontales.pdf> <./PIC/shapleys_queries.png>] [6] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
@@ -795,18 +800,18 @@ LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 6739 strings out of 467167
- 99066 string characters out of 5413691
- 673655 words of memory out of 5000000
- 35867 multiletter control sequences out of 15000+600000
+ 6747 strings out of 467167
+ 99312 string characters out of 5413691
+ 673677 words of memory out of 5000000
+ 35875 multiletter control sequences out of 15000+600000
  687694 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,19n,79p,1403b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 16886568 bytes).
+Output written on main.pdf (6 pages, 16980448 bytes).
 PDF statistics:
- 413 PDF objects out of 1000 (max. 8388607)
- 150 compressed objects within 2 object streams
+ 506 PDF objects out of 1000 (max. 8388607)
+ 163 compressed objects within 2 object streams
  0 named destinations out of 1000 (max. 500000)
- 41 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

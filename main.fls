@@ -298,6 +298,11 @@ INPUT ./PIC/broad_bars.png
 INPUT ./PIC/broad_bars.png
 INPUT ./PIC/broad_bars.png
 INPUT ./PIC/broad_bars.png
+INPUT ./PIC/tokens_metrics.pdf
+INPUT ./PIC/tokens_metrics.pdf
+INPUT ./PIC/tokens_metrics.pdf
+INPUT ./PIC/tokens_metrics.pdf
+INPUT ./PIC/tokens_metrics.pdf
 INPUT ./PIC/shapley_boxplots_horizontales.pdf
 INPUT ./PIC/shapley_boxplots_horizontales.pdf
 INPUT ./PIC/shapley_boxplots_horizontales.pdf
