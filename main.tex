@@ -333,7 +333,7 @@ To ensure balanced validation, mitigate individual biases, and capture a wide ra
 \end{itemize}
 
 \begin{figure*}[t!]
-	\centering{\includegraphics[width=\textwidth]{PIC/scores_configurations.pdf}}
+	\centering{\includegraphics[width=\textwidth]{PIC/scores_configurations_tick.pdf}}
 	\caption{Preliminary evaluation results from the \textit{Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}
 	\label{fig:results}
 \end{figure*}
@@ -454,7 +454,7 @@ $S$ is any subset or \textit{coalition}.
 \section{Results and Discussion}
 
 \begin{figure}[t]
-	\centering{\includegraphics[width=\columnwidth]{PIC/shapleys_queries.png}}
+	\centering{\includegraphics[width=\columnwidth]{PIC/shapleys_queries_greens.png}}
 	\caption{}
 	\label{fig:shapleys_queries}
 \end{figure}
@@ -479,85 +479,85 @@ $S$ is any subset or \textit{coalition}.
 \toprule
 \textbf{Judge} & \textbf{Metric} & \textbf{Module} & \textbf{Shapley Value} & \textbf{Relative Contribution (\%)} & \textbf{Global Delta} \\
 \midrule
-\multirow{15}{*}{H\_C} & \multirow{3}{*}{Correctness} & R & 0.1667 & 16.67\% & \multirow{3}{*}{1.000} \\
- &  & O & 0.7292 & 72.92\% &  \\
- &  & S & 0.1042 & 10.42\% &  \\
+\multirow{15}{*}{H\_C} & \multirow{3}{*}{Correctness} & R & 0.167 & 16.67\% & \multirow{3}{*}{1.000} \\
+ &  & O & 0.729 & 72.92\% &  \\
+ &  & S & 0.104 & 10.42\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & 0.3958 & 12.18\% & \multirow{3}{*}{3.250} \\
- &  & O & 2.0833 & 64.10\% &  \\
- &  & S & 0.7708 & 23.72\% &  \\
+ & \multirow{3}{*}{Completeness} & R & 0.396 & 12.18\% & \multirow{3}{*}{3.250} \\
+ &  & O & 2.083 & 64.10\% &  \\
+ &  & S & 0.771 & 23.72\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & 0.2292 & 9.65\% & \multirow{3}{*}{2.375} \\
- &  & O & 1.8542 & 78.07\% &  \\
- &  & S & 0.2917 & 12.28\% &  \\
+ & \multirow{3}{*}{Relevance} & R & 0.229 & 9.65\% & \multirow{3}{*}{2.375} \\
+ &  & O & 1.854 & 78.07\% &  \\
+ &  & S & 0.292 & 12.28\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & 0.2708 & 8.67\% & \multirow{3}{*}{3.125} \\
- &  & O & 2.2083 & 70.67\% &  \\
- &  & S & 0.6458 & 20.67\% &  \\
+ & \multirow{3}{*}{Utility} & R & 0.271 & 8.67\% & \multirow{3}{*}{3.125} \\
+ &  & O & 2.208 & 70.67\% &  \\
+ &  & S & 0.646 & 20.67\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & 0.2083 & 12.82\% & \multirow{3}{*}{1.625} \\
- &  & O & 1.2083 & 74.36\% &  \\
- &  & S & 0.2083 & 12.82\% &  \\
+ & \multirow{3}{*}{Grounding} & R & 0.208 & 12.82\% & \multirow{3}{*}{1.625} \\
+ &  & O & 1.208 & 74.36\% &  \\
+ &  & S & 0.208 & 12.82\% &  \\
 \midrule
-\multirow{15}{*}{H\_E} & \multirow{3}{*}{Correctness} & R & 0.0208 & 3.33\% & \multirow{3}{*}{0.625} \\
- &  & O & 0.5833 & 93.33\% &  \\
- &  & S & 0.0208 & 3.33\% &  \\
+\multirow{15}{*}{H\_E} & \multirow{3}{*}{Correctness} & R & 0.021 & 3.33\% & \multirow{3}{*}{0.625} \\
+ &  & O & 0.583 & 93.33\% &  \\
+ &  & S & 0.021 & 3.33\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & -0.0208 & -0.98\% & \multirow{3}{*}{2.125} \\
- &  & O & 1.5417 & 72.55\% &  \\
- &  & S & 0.6042 & 28.43\% &  \\
+ & \multirow{3}{*}{Completeness} & R & -0.021 & -0.98\% & \multirow{3}{*}{2.125} \\
+ &  & O & 1.541 & 72.55\% &  \\
+ &  & S & 0.604 & 28.43\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & -0.1458 & -7.78\% & \multirow{3}{*}{1.875} \\
- &  & O & 1.4792 & 78.89\% &  \\
- &  & S & 0.5417 & 28.89\% &  \\
+ & \multirow{3}{*}{Relevance} & R & -0.146 & -7.78\% & \multirow{3}{*}{1.875} \\
+ &  & O & 1.479 & 78.89\% &  \\
+ &  & S & 0.542 & 28.89\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & -0.1042 & -6.41\% & \multirow{3}{*}{1.625} \\
- &  & O & 1.3333 & 82.05\% &  \\
- &  & S & 0.3958 & 24.36\% &  \\
+ & \multirow{3}{*}{Utility} & R & -0.104 & -6.41\% & \multirow{3}{*}{1.625} \\
+ &  & O & 1.333 & 82.05\% &  \\
+ &  & S & 0.396 & 24.36\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & 0.0417 & 33.33\% & \multirow{3}{*}{0.125} \\
- &  & O & 0.0417 & 33.33\% &  \\
- &  & S & 0.0417 & 33.33\% &  \\
+ & \multirow{3}{*}{Grounding} & R & 0.042 & 33.33\% & \multirow{3}{*}{0.125} \\
+ &  & O & 0.042 & 33.33\% &  \\
+ &  & S & 0.042 & 33.33\% &  \\
 \midrule
-\multirow{15}{*}{LLM\_Q} & \multirow{3}{*}{Correctness} & R & -0.1458 & -14.58\% & \multirow{3}{*}{1.000} \\
- &  & O & 0.8542 & 85.42\% &  \\
- &  & S & 0.2917 & 29.17\% &  \\
+\multirow{15}{*}{LLM\_Q} & \multirow{3}{*}{Correctness} & R & -0.146 & -14.58\% & \multirow{3}{*}{1.000} \\
+ &  & O & 0.854 & 85.42\% &  \\
+ &  & S & 0.292 & 29.17\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & -0.0625 & 0.00\% & \multirow{3}{*}{0.000} \\
- &  & O & 0.0625 & 0.00\% &  \\
- &  & S & 0.0000 & 0.00\% &  \\
+ & \multirow{3}{*}{Completeness} & R & -0.062 & 0.00\% & \multirow{3}{*}{0.000} \\
+ &  & O & 0.062 & 0.00\% &  \\
+ &  & S & 0.000 & 0.00\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & -0.2500 & -50.00\% & \multirow{3}{*}{0.500} \\
- &  & O & 0.6250 & 125.00\% &  \\
- &  & S & 0.1250 & 25.00\% &  \\
+ & \multirow{3}{*}{Relevance} & R & -0.250 & -50.00\% & \multirow{3}{*}{0.500} \\
+ &  & O & 0.625 & 125.00\% &  \\
+ &  & S & 0.125 & 25.00\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & -0.0625 & -6.25\% & \multirow{3}{*}{1.000} \\
- &  & O & 0.8125 & 81.25\% &  \\
- &  & S & 0.2500 & 25.00\% &  \\
+ & \multirow{3}{*}{Utility} & R & -0.062 & -6.25\% & \multirow{3}{*}{1.000} \\
+ &  & O & 0.812 & 81.25\% &  \\
+ &  & S & 0.250 & 25.00\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & -0.4792 & -383.33\% & \multirow{3}{*}{0.125} \\
- &  & O & 0.4583 & 366.67\% &  \\
- &  & S & 0.1458 & 116.67\% &  \\
+ & \multirow{3}{*}{Grounding} & R & -0.479 & -383.33\% & \multirow{3}{*}{0.125} \\
+ &  & O & 0.458 & 366.67\% &  \\
+ &  & S & 0.146 & 116.67\% &  \\
 \midrule
-\multirow{15}{*}{LLM\_G} & \multirow{3}{*}{Correctness} & R & -0.0833 & -9.52\% & \multirow{3}{*}{0.875} \\
- &  & O & 0.6667 & 76.19\% &  \\
- &  & S & 0.2917 & 33.33\% &  \\
+\multirow{15}{*}{LLM\_G} & \multirow{3}{*}{Correctness} & R & -0.083 & -9.52\% & \multirow{3}{*}{0.875} \\
+ &  & O & 0.667 & 76.19\% &  \\
+ &  & S & 0.292 & 33.33\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & -0.0208 & -4.17\% & \multirow{3}{*}{0.500} \\
- &  & O & 0.3542 & 70.83\% &  \\
- &  & S & 0.1667 & 33.33\% &  \\
+ & \multirow{3}{*}{Completeness} & R & -0.021 & -4.17\% & \multirow{3}{*}{0.500} \\
+ &  & O & 0.354 & 70.83\% &  \\
+ &  & S & 0.167 & 33.33\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & -0.0833 & -22.22\% & \multirow{3}{*}{0.375} \\
- &  & O & 0.2917 & 77.78\% &  \\
- &  & S & 0.1667 & 44.44\% &  \\
+ & \multirow{3}{*}{Relevance} & R & -0.083 & -22.22\% & \multirow{3}{*}{0.375} \\
+ &  & O & 0.292 & 77.78\% &  \\
+ &  & S & 0.167 & 44.44\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & 0.0000 & 0.00\% & \multirow{3}{*}{0.750} \\
- &  & O & 0.5000 & 66.67\% &  \\
- &  & S & 0.2500 & 33.33\% &  \\
+ & \multirow{3}{*}{Utility} & R & 0.000 & 0.00\% & \multirow{3}{*}{0.750} \\
+ &  & O & 0.500 & 66.67\% &  \\
+ &  & S & 0.250 & 33.33\% &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & -0.2083 & -41.67\% & \multirow{3}{*}{0.500} \\
- &  & O & 0.4792 & 95.83\% &  \\
- &  & S & 0.2292 & 45.83\% &  \\
+ & \multirow{3}{*}{Grounding} & R & -0.208 & -41.67\% & \multirow{3}{*}{0.500} \\
+ &  & O & 0.479 & 95.83\% &  \\
+ &  & S & 0.229 & 45.83\% &  \\
 \bottomrule
 \end{tabular}
 \end{table*}

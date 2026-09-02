@@ -1,23 +1,23 @@
 # Fdb version 4
-["bibtex main"] 1788169516.93745 "main.aux" "main.bbl" "main" 1788169521.25092 0
+["bibtex main"] 1788169516.93745 "main.aux" "main.bbl" "main" 1788334692.86743 0
   "./elsarticle-harv.bst" 1785925942 30002 8c0c5833f37bea3ec214cf315a72975d ""
   "./example.bib" 1785925942 888 b00a8a1bdb91e34f972338ac4aed2ae1 ""
-  "main.aux" 1788169520 4980 e21ed8d3b0238768089564e4ac771a76 "pdflatex"
+  "main.aux" 1788334691 4980 e21ed8d3b0238768089564e4ac771a76 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1788169517.41777 "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" "main.pdf" "main" 1788169521.25147 0
+["pdflatex"] 1788334689.00892 "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" "main.pdf" "main" 1788334692.86793 0
   "PIC/Mapa_CEA_v4.pdf" 1787813342 5985170 cb4f11887565c1ce39dc0f7e4b4dd35c ""
   "PIC/ablation_modules.png" 1785929038 27442 9b08b113b59544bfe170a5d928ba4af9 ""
   "PIC/broad_bars.png" 1787819132 26198 86c230951fe1854489f2a6cd12ee8ac3 ""
   "PIC/diagram.png" 1785925942 257428 29668e97c95deb6a67e941de5a9a0656 ""
   "PIC/mosaic_v2.png" 1786000726 7906466 7392eda2f43ae1532605f72d320b1423 ""
-  "PIC/scores_configurations.pdf" 1786007705 104372 0636c7863587216e1b2afb17d40857c1 ""
+  "PIC/scores_configurations_tick.pdf" 1788333596 289058 2c1eccd5d236362878bf2c2cb321de94 ""
   "PIC/shapley_boxplots_horizontales.pdf" 1786007491 38396 2b5bb43c05011a4c8655fe9202d9c2bc ""
-  "PIC/shapleys_queries.png" 1787834729 285887 9007dac3342e313ee4485b62d8cc0163 ""
+  "PIC/shapleys_queries_greens.png" 1788334577 927814 5bc4bbf9d93d65b599652a302bea42ed ""
   "PIC/tokens_metrics.pdf" 1788169381 101108 11653e2e738ce2cfcccbfbf69b83e096 ""
-  "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" 1788169512 26521 f2f735e2b0377bb0b938e06c897a54fe ""
+  "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" 1788334688 26473 fe0e1e4301b10f5956a7b3920f4d4c85 ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1781686727 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1781687300 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1781686767 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
@@ -121,10 +121,10 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1781692616 5619402 ad1310ccf7f36101ef3e8f014a173c46 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1781692760 3656621 04f004d19cbb574ee5cb4608daff6ab8 ""
   "c:/texlive/2026/texmf.cnf" 1781692588 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1788169520 4980 e21ed8d3b0238768089564e4ac771a76 "pdflatex"
+  "main.aux" 1788334691 4980 e21ed8d3b0238768089564e4ac771a76 "pdflatex"
   "main.bbl" 1788169517 568 42560143a314657d2116f76ef857ae07 "bibtex main"
-  "main.spl" 1788169517 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1788169512 26521 f2f735e2b0377bb0b938e06c897a54fe ""
+  "main.spl" 1788334689 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1788334688 26473 fe0e1e4301b10f5956a7b3920f4d4c85 ""
   (generated)
   "main.aux"
   "main.log"

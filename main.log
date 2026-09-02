@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  31 AUG 2026 11:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  2 SEP 2026 09:38
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -742,10 +742,10 @@ Overfull \hbox (0.72015pt too wide) in paragraph at lines 302--316
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 [2 <./PIC/diagram.png> <./PIC/Mapa_CEA_v4.pdf>]
-<PIC/scores_configurations.pdf, id=63, 1858.12737pt x 458.86801pt>
-File: PIC/scores_configurations.pdf Graphic file (type pdf)
-<use PIC/scores_configurations.pdf>
-Package pdftex.def Info: PIC/scores_configurations.pdf  used on input line 336.
+<PIC/scores_configurations_tick.pdf, id=63, 1858.12737pt x 458.86801pt>
+File: PIC/scores_configurations_tick.pdf Graphic file (type pdf)
+<use PIC/scores_configurations_tick.pdf>
+Package pdftex.def Info: PIC/scores_configurations_tick.pdf  used on input line 336.
 (pdftex.def)             Requested size: 522.0pt x 128.90927pt.
 
 
@@ -772,12 +772,12 @@ File: PIC/shapley_boxplots_horizontales.pdf Graphic file (type pdf)
 <use PIC/shapley_boxplots_horizontales.pdf>
 Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 447.
 (pdftex.def)             Requested size: 522.0pt x 128.0533pt.
- [4 <./PIC/scores_configurations.pdf> <./PIC/broad_bars.png>]
-<PIC/shapleys_queries.png, id=287, 870.3717pt x 326.6604pt>
-File: PIC/shapleys_queries.png Graphic file (type png)
-<use PIC/shapleys_queries.png>
-Package pdftex.def Info: PIC/shapleys_queries.png  used on input line 457.
-(pdftex.def)             Requested size: 252.0pt x 94.57954pt.
+ [4 <./PIC/scores_configurations_tick.pdf> <./PIC/broad_bars.png>]
+<PIC/shapleys_queries_greens.png, id=408, 843.588pt x 288.642pt>
+File: PIC/shapleys_queries_greens.png Graphic file (type png)
+<use PIC/shapleys_queries_greens.png>
+Package pdftex.def Info: PIC/shapleys_queries_greens.png  used on input line 457.
+(pdftex.def)             Requested size: 252.0pt x 86.2233pt.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <7> not available
 (Font)              Font shape `T1/txr/bx/n' tried instead on input line 480.
  (./main.bbl
@@ -786,7 +786,7 @@ Package natbib Warning: Empty `thebibliography' environment on input line 15.
 
 ) [5
 
- <./PIC/tokens_metrics.pdf> <./PIC/shapley_boxplots_horizontales.pdf> <./PIC/shapleys_queries.png>] [6] (./main.aux)
+ <./PIC/tokens_metrics.pdf> <./PIC/shapley_boxplots_horizontales.pdf> <./PIC/shapleys_queries_greens.png>] [6] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
@@ -801,17 +801,17 @@ LaTeX Warning: There were multiply-defined labels.
  ) 
 Here is how much of TeX's memory you used:
  6747 strings out of 467167
- 99312 string characters out of 5413691
+ 99396 string characters out of 5413691
  673677 words of memory out of 5000000
  35875 multiletter control sequences out of 15000+600000
  687694 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  72i,19n,79p,1403b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 16980448 bytes).
+Output written on main.pdf (6 pages, 17744370 bytes).
 PDF statistics:
- 506 PDF objects out of 1000 (max. 8388607)
- 163 compressed objects within 2 object streams
+ 627 PDF objects out of 1000 (max. 8388607)
+ 223 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
