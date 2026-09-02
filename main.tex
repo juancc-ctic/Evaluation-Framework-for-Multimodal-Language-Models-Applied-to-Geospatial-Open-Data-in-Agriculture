@@ -171,17 +171,18 @@
 
 %% main text
 
-\section{Introduction and related works}
+\section{Introduction}
 \label{introduction}
 
-The rapid development of Large Languge Models (LLMs) has enabled a \dots
-\textcolor{blue}{ha abierto un nuevo abanico de posibilidades a nuevas aplicaciones. Entre ellas destaca el de la smart agriculture, con grandes avances en agricultura de precisión... gracias a RAG [citar papers], geoembeddings [papers] y los nevos geofoundation models [papers]. Sin embargo, en la mayoría de los casos, las respuestas obtenidas de estas nuevas herramientas siguen siendo, aunque mucho más precisas y utilizando nuevas fronteras,,, genéricas. Recientemente nosotros hemos propuesto una herramienta que permite generar respuestas acerca del terreno para su aplicación a la agricultura que sean específicas al terreno AoI -> gracias a la recuperación, procesamiento y fusión de distintas fuentes de datos abiertas. El prblema (reto) entonces, que es transversal a todas las aplicaciones de IA generativa, es el de la evaluación rigurosa de estas respuestas. A diferencia del ML... aquí las respuestas correctas forman un espacio infinito... El approach utilizado en [paper] fue el de LLM-as-a-judge -> meter papers. Esta téncnica, aunque muy extendida gracias a su simplicidad y bajo coste operativo, is highly vulnerable to technical hallucinations, suffers from self-reference bias, and tends to lose consistency. }
+The rapid development of multimodal Large Languge Models (LLMs) has enabled a \dots
+\textcolor{blue}{ha abierto un abanico de posibilidades a nuevas aplicaciones. Entre ellas destaca el de la smart agriculture, con grandes avances en agricultura de precisión... El surgimiento de los geofoundation models [papers] y los earth embeddings [papers], así como el veloz avance de los propios modelos de lenguaje, destacando especialmente los open source, son realmente prometedores en el campo de earth observation y smart agriculture. En los últimos años han surgido una gran cantidad de estudios acerca de cómo aplicar la IA generativa al campo, pasando en muchos casos por asistentes conversacionales [papers]. Estos estudios en muchos casos utilizan RAG, geoembeddings o aplicaciones más "clasicas" como segmentación semántica sobre datos, en la mayoria de los casos, satelitales. 
+Sin embargo, en la mayoría de los casos, las respuestas obtenidas de estas nuevas herramientas siguen siendo, aunque mucho más precisas y utilizando nuevas fronteras... genéricas. Recientemente nosotros hemos propuesto una herramienta que permite generar respuestas acerca del terreno para su aplicación a la agricultura que sean específicas al terreno AoI -> gracias a la recuperación, procesamiento y fusión de distintas fuentes multi-dominio de datos abiertas. Una vez esta herramienta ha sido validada técnicamente, es cuando surge el reto al que nos enfrentamos en este trabajo, el de evaluar las respuestas. La evaluación de las respuestas de IA generativa lleva siendo desde el origen de la misma, una de las principales lineas de investigación abiertas, ya que es común a toda aplicación que utilice inferencia no determinista.  A diferencia del ML... aquí las respuestas correctas forman un espacio infinito... Existen muchas alternativas, como LLM-as-a-judge [paper], que fue el approach utilizado en [paper] . Esta téncnica, aunque muy extendida gracias a su simplicidad y bajo coste operativo, is highly vulnerable to technical hallucinations, suffers from self-reference bias, and tends to lose consistency. para las aplicaciones de RAG, existen frameworks como RAGAS... tambien se ha investigado mucho las métricas que optimizan la evaluación... En nuestro caso, dado que la herramienta tiene la particularidad de que tiene contexto amplificado con fuentes externas, ninguno de los frameworks de evaluación encontrados en la literatura se ajustan a nuestras necesidades, por lo que en este trabajo proponemos una novel metodología de evaluación para LLMs multimdoales de contexto amplificado aplicados a datos de agricultura. Esta metodología es reproducible... multietapa, híbrida, mitiga sesgos etc}
 
-% \section{Related works}
-% \label{related_work}
 
 \section{Materials and methods}
 \label{materials_methods}
+
+\subsection{System architecture}
 
 \begin{figure*}
 	\centering
@@ -190,7 +191,55 @@ The rapid development of Large Languge Models (LLMs) has enabled a \dots
 	\label{}%
 \end{figure*}
 
-\subsection{Evaluation}
+\textcolor{red}{copiado y opegado del otro paper: }
+
+The proposed system is designed to combine several in
+terconnected modules, which integrate heterogeneous data
+sources. The overall architecture, included in Fig. 3, is com
+posed of two main layers: user interface and backend process
+ing, which includes the LLM reasoning. The aim of the data
+flow is to provide the final LLM with the most rich context
+regarding the area of interest (a specific parcel) in order for it
+to give the best possible answer to the user’s query.
+
+The backend consists of five different blocks, which con
+form a data stream from the user query to the final LLM, and
+then back to the user with the answer: (i) plot info retrieval,
+which is responsible for fetching, from the SIGPAC registry,
+both plot data-as slope, elevation, area, perimeter or land use
+, and the geo-referenced geometry. Once known the area of
+interest, the (ii) context retrieval block performs two parallel
+tasks, each leveraging different open-source data sources to
+enrich the context: (a) an ortophoto of the plot, obtained
+from aerial imagery, is processed through a multimodal LLM
+along with the plot data, generating a detailed description
+of the terrain. In addition, (b) satellite multispectral data,
+specifically from Sentinel-2 (Copernicus mission, European
+Spacial Agency) are retrieved. After spacial and temporal
+processing combining multiple spectral bands, an array of
+vegetation and water indices that reflect biophysical conditions
+of the land are obtained. In parallel, (iii) the system queries a
+document repository through a retrieval-augmented generation
+mechanism, which provides relevant textual knowledge such as
+agronomic guidelines, regulations, or best practices. All these
+multi-domain data are then fused through (iv) an aggregator,
+which converts all data to natural language, and prepares the
+information into an encapsulated prompt that provides the
+(v) final LLM with the overall context of the plot and the
+query. Several open-source models were evaluated, including
+Qwen3-32B, Llama-3.3-70B or Mistral-Small-3.2-24B, being
+Qwen the one chosen for the final implementation due to its
+superior performance. Regarding the LLMs framework, the
+model inference is managed with the inference engine vLLM
+[9], orchestrated through the liteLLM proxy [10], which ag
+glutinates all models in one port. Besides from the multimodal
+and final LLMs, there are also embeddings, reranker, and tool
+triage models working together. The infrasctructure runs in a
+8x80GB cluster of NVIDIA GPUs.
+
+
+
+\subsection{Evaluation framework}
 
 \textcolor{blue}{El principal problema que se plantea resolver, además de obtener una evaluación sistemática, rigurosa y reproducible, es el de ser capaces de evaluar no solo si la respuesta es buena, sino también en qué medida esa calidad es gracias a los módulos de su arquitectura. }
 
@@ -206,7 +255,7 @@ The main challenge of this experimental methodology, and what differentiates it 
 	\centering
 	\includegraphics[width=\columnwidth]{PIC/Mapa_CEA_v4.pdf}
 	\caption{}
-	\label{fig:}
+	\label{fig:map_qgis}
 \end{figure}
 
 A total of 15 parcels were selected, categorized into four different Land Use (LU) types. The distribution of evaluations is weighted according to the operational utility of the tool for each functional land use, as shown in \ref{tab:land_use}.
@@ -215,8 +264,8 @@ To ensure an unbiased evaluation, parcels were selected to represent a high degr
 
 
 \begin{figure*}[t]
-	\centering{\includegraphics[width=\textwidth]{PIC/mosaic_v2.png}}
-	\caption{Selection of parcels for tool evaluation, grouped by Land Use. The number of parcels per LU depends on their functional utility in agriculture.}
+	\centering{\includegraphics[width=\textwidth]{PIC/mosaic_2x8_white_bg_ablation.png}}
+	\caption{Selection of parcels for tool evaluation, grouped by Land Use. The number of parcels per LU depends on their functional utility in agriculture. Dashed borders correspond to parcels used in ablation study.}
 	\label{fig:parcel_mosaic}
 \end{figure*}
 
@@ -366,12 +415,38 @@ Response quality is measured according to a multidimensional scale consisting of
 
 This section presents some preliminary evaluation results. It should be noted that the graphs included here are only an initial overview that sheds light on the system evaluation; more advanced statistical analyses are reserved for a future scientific publication. First, \ref{fig:results} contains the average scores of each of the 4 evaluators across the 5 metrics, grouped by configuration. From this graph, numerous observations can be made, with the most notable being those related to evaluator correlation, and especially regarding the marginal contributions of the modules. Recalling \ref{tab:ablation_configs}, we see that configurations 2 and 3, as well as 6 and 7, include the orthophoto module; and in all metrics, a higher average score is observed in these cases, allowing us to deduce that the marginal contribution of the orthophoto module is significant.
 
-\begin{figure}[h!]
+\begin{table}[h!]
+    \caption{.}
+    \label{tab:bars}
+    \begin{tabular}{
+        >{\raggedright\arraybackslash}p{\dimexpr0.28\columnwidth-2\tabcolsep\relax}
+        *{4}{>{\centering\arraybackslash}p{\dimexpr0.18\columnwidth-2\tabcolsep\relax}}
+        }
+        \hline
+        \textbf{Metric} & \textbf{H\_C} & \textbf{H\_E} & \textbf{LLM\_Q} & \textbf{LLM\_G} \\
+        \hline
+        Correctness  & 4.690 & 4.704 & 4.817 & 4.746 \\
+        Completeness & 4.803 & 4.817 & 4.944 & 4.958 \\
+        Relevance    & 4.549 & 4.817 & 4.831 & 4.930 \\
+        Utility      & 4.704 & 4.761 & 4.859 & 4.944 \\
+        Grounding    & 4.606 & 4.901 & 4.296 & 4.549 \\
+        \hline
+    \end{tabular}
+\end{table}
+
+% \begin{figure}[h!]
+% 	\centering
+% 	\includegraphics[width=\columnwidth]{PIC/broad_bars.png}
+% 	\caption{Average values for the 4 evaluators and 5 metrics in the \textit{Broad} phase (complete system).}
+% 	\label{fig:broad}
+% \end{figure}
+
+\begin{figure*}[h!]
 	\centering
-	\includegraphics[width=\columnwidth]{PIC/broad_bars.png}
-	\caption{Average values for the 4 evaluators and 5 metrics in the \textit{Broad} phase (complete system).}
-	\label{fig:broad}
-\end{figure}
+	\includegraphics[width=\textwidth]{PIC/consensus.png}
+	\caption{}
+	\label{fig:consensus}
+\end{figure*}
 
 Similarly, the trend across all metrics is ascending along the x-axis (values are lower in left-side configurations), showing how, for example, system utility in the \textit{Zero Shot} configuration is below 1/5 for most evaluators. Since this configuration corresponds to a standard LLM model without context augmentation, and with configurations progressively ordered by active modules, it can be concluded that \textbf{responses, as expected, improve as more geospatial terrain information is added.} This result consequently verifies the initial hypothesis and validates the proposed architecture.
 
@@ -458,6 +533,12 @@ $S$ is any subset or \textit{coalition}.
 	\caption{}
 	\label{fig:shapleys_queries}
 \end{figure}
+
+% \begin{figure*}[t]
+% 	\centering{\includegraphics[width=\textwidth]{PIC/shapleys_queries_greens.png}}
+% 	\caption{}
+% 	\label{fig:shapleys_queries_2}
+% \end{figure*}
 
 
 \begin{table*}[htbp]

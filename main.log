@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  2 SEP 2026 09:38
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  2 SEP 2026 13:55
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -574,11 +574,7 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1372.
 LaTeX Font Info:    Trying to load font information for T1+txr on input line 62.
  (c:/texlive/2026/texmf-dist/tex/latex/txfonts/t1txr.fd
 File: t1txr.fd 2000/12/15 v3.1
-) (./main.aux
-
-LaTeX Warning: Label `fig:' multiply defined.
-
-)
+) (./main.aux)
 \openout1 = `main.aux'.
 
 LaTeX Font Info:    Checking defaults for OML/txmi/m/it on input line 62.
@@ -693,100 +689,123 @@ LaTeX Font Info:    Calculating math sizes for size <> on input line 166.
 <PIC/diagram.png, id=1, 819.06pt x 430.992pt>
 File: PIC/diagram.png Graphic file (type png)
 <use PIC/diagram.png>
-Package pdftex.def Info: PIC/diagram.png  used on input line 188.
+Package pdftex.def Info: PIC/diagram.png  used on input line 189.
 (pdftex.def)             Requested size: 522.0pt x 274.69621pt.
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 197.
- (c:/texlive/2026/texmf-dist/tex/latex/txfonts/ts1txr.fd
-File: ts1txr.fd 2000/12/15 v3.1
-)
-<PIC/Mapa_CEA_v4.pdf, id=3, 845.1575pt x 597.23125pt>
-File: PIC/Mapa_CEA_v4.pdf Graphic file (type pdf)
-<use PIC/Mapa_CEA_v4.pdf>
-Package pdftex.def Info: PIC/Mapa_CEA_v4.pdf  used on input line 207.
-(pdftex.def)             Requested size: 252.0pt x 178.0772pt.
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<PIC/mosaic_v2.png, id=4, 1501.7706pt x 370.7451pt>
-File: PIC/mosaic_v2.png Graphic file (type png)
-<use PIC/mosaic_v2.png>
-Package pdftex.def Info: PIC/mosaic_v2.png  used on input line 218.
-(pdftex.def)             Requested size: 522.0pt x 128.86324pt.
-<PIC/ablation_modules.png, id=5, 614.295pt x 93.34875pt>
-File: PIC/ablation_modules.png Graphic file (type png)
-<use PIC/ablation_modules.png>
-Package pdftex.def Info: PIC/ablation_modules.png  used on input line 227.
-(pdftex.def)             Requested size: 252.0pt x 38.29459pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
+Underfull \hbox (badness 1253) in paragraph at lines 196--204
+\T1/txr/m/n/10 ter-con-nected mod-ules, which in-te-grate het-ero-ge-neous data
+ []
 
 [1{c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 246.
+ (c:/texlive/2026/texmf-dist/tex/latex/txfonts/ts1txr.fd
+File: ts1txr.fd 2000/12/15 v3.1
+)
+<PIC/Mapa_CEA_v4.pdf, id=12, 845.1575pt x 597.23125pt>
+File: PIC/Mapa_CEA_v4.pdf Graphic file (type pdf)
+<use PIC/Mapa_CEA_v4.pdf>
+Package pdftex.def Info: PIC/Mapa_CEA_v4.pdf  used on input line 256.
+(pdftex.def)             Requested size: 252.0pt x 178.0772pt.
 
-LaTeX Warning: Reference `fig:arch' on page 2 undefined on input line 260.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<PIC/mosaic_2x8_white_bg_ablation.png, id=13, 1500.3252pt x 424.9476pt>
+File: PIC/mosaic_2x8_white_bg_ablation.png Graphic file (type png)
+<use PIC/mosaic_2x8_white_bg_ablation.png>
+Package pdftex.def Info: PIC/mosaic_2x8_white_bg_ablation.png  used on input line 267.
+(pdftex.def)             Requested size: 522.0pt x 147.84555pt.
+<PIC/ablation_modules.png, id=14, 614.295pt x 93.34875pt>
+File: PIC/ablation_modules.png Graphic file (type png)
+<use PIC/ablation_modules.png>
+Package pdftex.def Info: PIC/ablation_modules.png  used on input line 276.
+(pdftex.def)             Requested size: 252.0pt x 38.29459pt.
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-Overfull \hbox (0.6697pt too wide) in paragraph at lines 308--308
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+[2 <./PIC/diagram.png>]
+
+LaTeX Warning: Reference `fig:arch' on page 3 undefined on input line 309.
+
+
+Overfull \hbox (0.6697pt too wide) in paragraph at lines 357--357
 []|\T1/txr/bx/n/10 Methodology| 
  []
 
 
-Overfull \hbox (0.72015pt too wide) in paragraph at lines 302--316
+Overfull \hbox (0.72015pt too wide) in paragraph at lines 351--365
 [][] 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[2 <./PIC/diagram.png> <./PIC/Mapa_CEA_v4.pdf>]
-<PIC/scores_configurations_tick.pdf, id=63, 1858.12737pt x 458.86801pt>
+<PIC/scores_configurations_tick.pdf, id=21, 1858.12737pt x 458.86801pt>
 File: PIC/scores_configurations_tick.pdf Graphic file (type pdf)
 <use PIC/scores_configurations_tick.pdf>
-Package pdftex.def Info: PIC/scores_configurations_tick.pdf  used on input line 336.
+Package pdftex.def Info: PIC/scores_configurations_tick.pdf  used on input line 385.
 (pdftex.def)             Requested size: 522.0pt x 128.90927pt.
 
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+
+Overfull \hbox (2.20184pt too wide) in paragraph at lines 426--426
+ []|\T1/txr/bx/n/10 LLM_Q| 
+ []
+
+
+Overfull \hbox (2.20184pt too wide) in paragraph at lines 426--427
+ []|\T1/txr/bx/n/10 LLM_G| 
+ []
+
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<PIC/broad_bars.png, id=64, 856.3995pt x 422.7795pt>
-File: PIC/broad_bars.png Graphic file (type png)
-<use PIC/broad_bars.png>
-Package pdftex.def Info: PIC/broad_bars.png  used on input line 371.
-(pdftex.def)             Requested size: 252.0pt x 124.40276pt.
+<PIC/consensus.png, id=22, 1172.2194pt x 249.8133pt>
+File: PIC/consensus.png Graphic file (type png)
+<use PIC/consensus.png>
+Package pdftex.def Info: PIC/consensus.png  used on input line 446.
+(pdftex.def)             Requested size: 522.0pt x 111.24469pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3 <./PIC/mosaic_v2.png> <./PIC/ablation_modules.png>]
+
+LaTeX Warning: Reference `fig:broad' on page 3 undefined on input line 453.
+
+[3 <./PIC/Mapa_CEA_v4.pdf>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-<PIC/tokens_metrics.pdf, id=70, 1442.63712pt x 354.44797pt>
+ [4 <./PIC/mosaic_2x8_white_bg_ablation.png> <./PIC/ablation_modules.png>]
+<PIC/tokens_metrics.pdf, id=75, 1442.63712pt x 354.44797pt>
 File: PIC/tokens_metrics.pdf Graphic file (type pdf)
 <use PIC/tokens_metrics.pdf>
-Package pdftex.def Info: PIC/tokens_metrics.pdf  used on input line 440.
+Package pdftex.def Info: PIC/tokens_metrics.pdf  used on input line 515.
 (pdftex.def)             Requested size: 522.0pt x 128.25018pt.
-<PIC/shapley_boxplots_horizontales.pdf, id=71, 1271.62909pt x 311.95161pt>
+<PIC/shapley_boxplots_horizontales.pdf, id=76, 1271.62909pt x 311.95161pt>
 File: PIC/shapley_boxplots_horizontales.pdf Graphic file (type pdf)
 <use PIC/shapley_boxplots_horizontales.pdf>
-Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 447.
+Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 522.
 (pdftex.def)             Requested size: 522.0pt x 128.0533pt.
- [4 <./PIC/scores_configurations_tick.pdf> <./PIC/broad_bars.png>]
-<PIC/shapleys_queries_greens.png, id=408, 843.588pt x 288.642pt>
+<PIC/shapleys_queries_greens.png, id=77, 843.588pt x 288.642pt>
 File: PIC/shapleys_queries_greens.png Graphic file (type png)
 <use PIC/shapleys_queries_greens.png>
-Package pdftex.def Info: PIC/shapleys_queries_greens.png  used on input line 457.
+Package pdftex.def Info: PIC/shapleys_queries_greens.png  used on input line 532.
 (pdftex.def)             Requested size: 252.0pt x 86.2233pt.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <7> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 480.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 561.
  (./main.bbl
 
 Package natbib Warning: Empty `thebibliography' environment on input line 15.
 
-) [5
+) [5 <./PIC/scores_configurations_tick.pdf> <./PIC/consensus.png>] [6] [7
 
- <./PIC/tokens_metrics.pdf> <./PIC/shapley_boxplots_horizontales.pdf> <./PIC/shapleys_queries_greens.png>] [6] (./main.aux)
+ <./PIC/tokens_metrics.pdf> <./PIC/shapley_boxplots_horizontales.pdf> <./PIC/shapleys_queries_greens.png>] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
@@ -795,23 +814,20 @@ L3 programming layer <2026-05-26>
 
 LaTeX Warning: There were undefined references.
 
-
-LaTeX Warning: There were multiply-defined labels.
-
  ) 
 Here is how much of TeX's memory you used:
- 6747 strings out of 467167
- 99396 string characters out of 5413691
- 673677 words of memory out of 5000000
- 35875 multiletter control sequences out of 15000+600000
+ 6750 strings out of 467167
+ 99561 string characters out of 5413691
+ 674681 words of memory out of 5000000
+ 35878 multiletter control sequences out of 15000+600000
  687694 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,79p,1403b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,19n,79p,1996b,320s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (6 pages, 17744370 bytes).
+Output written on main.pdf (7 pages, 8919178 bytes).
 PDF statistics:
- 627 PDF objects out of 1000 (max. 8388607)
- 223 compressed objects within 3 object streams
+ 632 PDF objects out of 1000 (max. 8388607)
+ 227 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
