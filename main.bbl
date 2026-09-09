@@ -1,4 +1,4 @@
-\begin{thebibliography}{0}
+\begin{thebibliography}{8}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -11,5 +11,45 @@
 \providecommand{\Pubmed}[1]{\href{pmid:#1}{\path{#1}}}
 \providecommand{\bibinfo}[2]{#2}
 \ifx\xfnm\relax \def\xfnm[#1]{\unskip,\space#1}\fi
+%Type = Inproceedings
+\bibitem[{Cañada et~al.(2025)Cañada, Alonso, Molleda and Díez}]{juan_2025}
+\bibinfo{author}{Cañada, J.}, \bibinfo{author}{Alonso, R.}, \bibinfo{author}{Molleda, J.}, \bibinfo{author}{Díez, F.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{A multimodal conversational assistant for the characterization of agricultural plots from geospatial open data}, in: \bibinfo{booktitle}{2025 4th International Conference on Geographic Information and Remote Sensing Technology (GIRST)}, pp. \bibinfo{pages}{127--132}.
+\newblock \DOIprefix\doi{10.1109/GIRST67753.2025.11382141}.
+%Type = Misc
+\bibitem[{Corley et~al.(2026)Corley, Lehmann, Robinson, Tseng, Fuller, Alemohammad, Shelhamer, Marcus and Kerner}]{geofoundation_2026}
+\bibinfo{author}{Corley, I.}, \bibinfo{author}{Lehmann, N.}, \bibinfo{author}{Robinson, C.}, \bibinfo{author}{Tseng, G.}, \bibinfo{author}{Fuller, A.}, \bibinfo{author}{Alemohammad, H.}, \bibinfo{author}{Shelhamer, E.}, \bibinfo{author}{Marcus, J.}, \bibinfo{author}{Kerner, H.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{No one knows the state of the art in geospatial foundation models}.
+\newblock \URLprefix \url{https://arxiv.org/abs/2605.12678}, \DOIprefix\doi{10.48550/ARXIV.2605.12678}. \bibinfo{note}{version Number: 1}.
+%Type = Misc
+\bibitem[{Es et~al.(2025)Es, James, Espinosa-Anke and Schockaert}]{es_ragas_2025}
+\bibinfo{author}{Es, S.}, \bibinfo{author}{James, J.}, \bibinfo{author}{Espinosa-Anke, L.}, \bibinfo{author}{Schockaert, S.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{Ragas: {Automated} {Evaluation} of {Retrieval} {Augmented} {Generation}}.
+\newblock \URLprefix \url{http://arxiv.org/abs/2309.15217}, \DOIprefix\doi{10.48550/arXiv.2309.15217}. \bibinfo{note}{arXiv:2309.15217 [cs.CL]}.
+%Type = Misc
+\bibitem[{Jakubik et~al.(2023)Jakubik, Roy, Phillips, Fraccaro, Godwin, Zadrozny, Szwarcman, Gomes, Nyirjesy, Edwards, Kimura, Simumba, Chu, Mukkavilli, Lambhate, Das, Bangalore, Oliveira, Muszynski, Ankur, Ramasubramanian, Gurung, Khallaghi, Hanxi, Li, Cecil, Ahmadi, Kordi, Alemohammad, Maskey, Ganti, Weldemariam and Ramachandran}]{geofoundation_2023}
+\bibinfo{author}{Jakubik, J.}, \bibinfo{author}{Roy, S.}, \bibinfo{author}{Phillips, C.E.}, \bibinfo{author}{Fraccaro, P.}, \bibinfo{author}{Godwin, D.}, \bibinfo{author}{Zadrozny, B.}, \bibinfo{author}{Szwarcman, D.}, \bibinfo{author}{Gomes, C.}, \bibinfo{author}{Nyirjesy, G.}, \bibinfo{author}{Edwards, B.}, \bibinfo{author}{Kimura, D.}, \bibinfo{author}{Simumba, N.}, \bibinfo{author}{Chu, L.}, \bibinfo{author}{Mukkavilli, S.K.}, \bibinfo{author}{Lambhate, D.}, \bibinfo{author}{Das, K.}, \bibinfo{author}{Bangalore, R.}, \bibinfo{author}{Oliveira, D.}, \bibinfo{author}{Muszynski, M.}, \bibinfo{author}{Ankur, K.}, \bibinfo{author}{Ramasubramanian, M.}, \bibinfo{author}{Gurung, I.}, \bibinfo{author}{Khallaghi, S.}, \bibinfo{author}{Hanxi}, \bibinfo{author}{Li}, \bibinfo{author}{Cecil, M.}, \bibinfo{author}{Ahmadi, M.}, \bibinfo{author}{Kordi, F.}, \bibinfo{author}{Alemohammad, H.}, \bibinfo{author}{Maskey, M.}, \bibinfo{author}{Ganti, R.}, \bibinfo{author}{Weldemariam, K.}, \bibinfo{author}{Ramachandran, R.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Foundation {Models} for {Generalist} {Geospatial} {Artificial} {Intelligence}}.
+\newblock \URLprefix \url{http://arxiv.org/abs/2310.18660}, \DOIprefix\doi{10.48550/arXiv.2310.18660}. \bibinfo{note}{arXiv:2310.18660 [cs]}.
+%Type = Misc
+\bibitem[{Kuckreja et~al.(2023)Kuckreja, Danish, Naseer, Das, Khan and Khan}]{kuckreja_geochat_2023}
+\bibinfo{author}{Kuckreja, K.}, \bibinfo{author}{Danish, M.S.}, \bibinfo{author}{Naseer, M.}, \bibinfo{author}{Das, A.}, \bibinfo{author}{Khan, S.}, \bibinfo{author}{Khan, F.S.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{{GeoChat}: {Grounded} {Large} {Vision}-{Language} {Model} for {Remote} {Sensing}}.
+\newblock \URLprefix \url{http://arxiv.org/abs/2311.15826}, \DOIprefix\doi{10.48550/arXiv.2311.15826}. \bibinfo{note}{arXiv:2311.15826 [cs]}.
+%Type = Misc
+\bibitem[{Stewart et~al.(2026)Stewart, Fang, Corley and Zhu}]{earth_embeddings}
+\bibinfo{author}{Stewart, A.J.}, \bibinfo{author}{Fang, H.}, \bibinfo{author}{Corley, I.A.}, \bibinfo{author}{Zhu, X.X.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{Earth embeddings}.
+\newblock \URLprefix \url{http://arxiv.org/abs/2608.03410}, \DOIprefix\doi{10.48550/arXiv.2608.03410}.
+%Type = Misc
+\bibitem[{Yuan et~al.(2025)Yuan, Mo, Huang, Wang, Zhai, Zhu, Li, Xu and Nie}]{yuan_omnigeo_2025}
+\bibinfo{author}{Yuan, L.}, \bibinfo{author}{Mo, F.}, \bibinfo{author}{Huang, K.}, \bibinfo{author}{Wang, W.}, \bibinfo{author}{Zhai, W.}, \bibinfo{author}{Zhu, X.}, \bibinfo{author}{Li, Y.}, \bibinfo{author}{Xu, J.}, \bibinfo{author}{Nie, J.Y.}, \bibinfo{year}{2025}.
+\newblock \bibinfo{title}{{OmniGeo}: {Towards} a {Multimodal} {Large} {Language} {Models} for {Geospatial} {Artificial} {Intelligence}}.
+\newblock \URLprefix \url{http://arxiv.org/abs/2503.16326}, \DOIprefix\doi{10.48550/arXiv.2503.16326}. \bibinfo{note}{arXiv:2503.16326 [cs]}.
+%Type = Misc
+\bibitem[{Zheng et~al.(2023)Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li, Li, Xing, Zhang, Gonzalez and Stoica}]{zheng_judging_2023}
+\bibinfo{author}{Zheng, L.}, \bibinfo{author}{Chiang, W.L.}, \bibinfo{author}{Sheng, Y.}, \bibinfo{author}{Zhuang, S.}, \bibinfo{author}{Wu, Z.}, \bibinfo{author}{Zhuang, Y.}, \bibinfo{author}{Lin, Z.}, \bibinfo{author}{Li, Z.}, \bibinfo{author}{Li, D.}, \bibinfo{author}{Xing, E.P.}, \bibinfo{author}{Zhang, H.}, \bibinfo{author}{Gonzalez, J.E.}, \bibinfo{author}{Stoica, I.}, \bibinfo{year}{2023}.
+\newblock \bibinfo{title}{Judging {LLM}-as-a-{Judge} with {MT}-{Bench} and {Chatbot} {Arena}}.
+\newblock \URLprefix \url{http://arxiv.org/abs/2306.05685}, \DOIprefix\doi{10.48550/arXiv.2306.05685}. \bibinfo{note}{arXiv:2306.05685 [cs]}.
 
 \end{thebibliography}

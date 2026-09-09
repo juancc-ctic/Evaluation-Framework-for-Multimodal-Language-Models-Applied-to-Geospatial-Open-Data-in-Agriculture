@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1788350128.28168 "main.aux" "main.bbl" "main" 1788350132.19484 0
+["bibtex main"] 1788969043.71661 "main.aux" "main.bbl" "main" 1788969047.5786 0
+  "./bibliography.bib" 1788967237 14778 77a6a0790e5e961c19920d950814afad ""
   "./elsarticle-harv.bst" 1785925942 30002 8c0c5833f37bea3ec214cf315a72975d ""
-  "./example.bib" 1785925942 888 b00a8a1bdb91e34f972338ac4aed2ae1 ""
-  "main.aux" 1788350131 5203 8feb2ee0fdcb4bf0f90748e260f51d6c "pdflatex"
+  "main.aux" 1788969046 6635 95030d5a35c83d1a9c54a17e45fd5c5c "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1788350128.77383 "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" "main.pdf" "main" 1788350132.19531 0
+["pdflatex"] 1788969044.19554 "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" "main.pdf" "main" 1788969047.57913 0
   "PIC/Mapa_CEA_v4.pdf" 1787813342 5985170 cb4f11887565c1ce39dc0f7e4b4dd35c ""
   "PIC/ablation_modules.png" 1785929038 27442 9b08b113b59544bfe170a5d928ba4af9 ""
   "PIC/consensus.png" 1788349906 244029 05824a1c01ee7ae5a6d231dc37b3354f ""
@@ -15,12 +15,14 @@
   "PIC/mosaic_2x8_white_bg_ablation.png" 1788343187 1088107 12a9367b98fd7acaf1314c5c3428b490 ""
   "PIC/scores_configurations_tick.pdf" 1788333596 289058 2c1eccd5d236362878bf2c2cb321de94 ""
   "PIC/shapley_boxplots_horizontales.pdf" 1786007491 38396 2b5bb43c05011a4c8655fe9202d9c2bc ""
-  "PIC/shapleys_queries_greens.png" 1788334577 927814 5bc4bbf9d93d65b599652a302bea42ed ""
+  "PIC/shapleys_queries_greens.png" 1788431114 948425 04ed94ec9f2424da028cb1bddd12bc2d ""
   "PIC/tokens_metrics.pdf" 1788169381 101108 11653e2e738ce2cfcccbfbf69b83e096 ""
-  "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" 1788350124 31620 7d14602988f7316e143f037ea7192c8d ""
+  "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" 1788969039 36445 30647d0e389e914ad5cc96571da1902e ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1781686727 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
+  "c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1781685934 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1781687300 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ecrm1000.tfm" 1781686767 3584 adb004a0c8e7c46ee66cad73671f37b4 ""
+  "c:/texlive/2026/texmf-dist/fonts/tfm/jknappen/ec/ectt1000.tfm" 1781686767 1536 06717a2b50de47d4087ac0e6cd759455 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1781684968 916 f87d7c45f9c908e672703b83b72241a3 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam5.tfm" 1781684968 924 9904cf1d39e9767e7a3622f2a125a565 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/amsfonts/symbols/msam7.tfm" 1781684968 928 2dc8d444221b7a635bb58038579b861a ""
@@ -49,6 +51,7 @@
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txsy.tfm" 1781691923 1268 1d124f224979493f8fd017a7597ea1cd ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txsyc.tfm" 1781691923 1084 75e807e9e71f7a312e4e1187dce5e93b ""
   "c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb" 1781684968 34694 870c211f62cb72718a00e353f14f254d ""
+  "c:/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb" 1781685934 169201 651a6333c3213b38091f54d2ab2d2cd6 ""
   "c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb" 1781691923 14606 238072bd1ce11e3dff8451a5a2608194 ""
   "c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb" 1781691923 6330 bdd610a36762742dd8a518bf9f97b968 ""
   "c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb" 1781691923 13806 49b888f4605a088e66b9eb4fee320a6e ""
@@ -106,6 +109,7 @@
   "c:/texlive/2026/texmf-dist/tex/latex/natbib/natbib.sty" 1781689316 45456 1c8843383c0bd05870c45fa0ebea6cc2 ""
   "c:/texlive/2026/texmf-dist/tex/latex/sttools/cuted.sty" 1781691176 32452 41238b2d586e047f606df7dbfc1c149f ""
   "c:/texlive/2026/texmf-dist/tex/latex/tools/array.sty" 1781691809 17611 1fdd60d12fed6aebd140f4d060571642 ""
+  "c:/texlive/2026/texmf-dist/tex/latex/tools/tabularx.sty" 1781691809 7243 98a9e0737a56460d15d6b41be1ecc3b8 ""
   "c:/texlive/2026/texmf-dist/tex/latex/txfonts/omltxmi.fd" 1781691923 492 e7f8afe4428797548d4301de03a1b15f ""
   "c:/texlive/2026/texmf-dist/tex/latex/txfonts/omstxsy.fd" 1781691923 329 6ac7e19535b9f1d64e4d8e3f77dc30a3 ""
   "c:/texlive/2026/texmf-dist/tex/latex/txfonts/omxtxex.fd" 1781691923 312 11fe1916b0a13a81a05234a6fc7f8738 ""
@@ -121,10 +125,10 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1781692616 5619402 ad1310ccf7f36101ef3e8f014a173c46 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1781692760 3656621 04f004d19cbb574ee5cb4608daff6ab8 ""
   "c:/texlive/2026/texmf.cnf" 1781692588 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1788350131 5203 8feb2ee0fdcb4bf0f90748e260f51d6c "pdflatex"
-  "main.bbl" 1788350128 568 42560143a314657d2116f76ef857ae07 "bibtex main"
-  "main.spl" 1788350129 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1788350124 31620 7d14602988f7316e143f037ea7192c8d ""
+  "main.aux" 1788969046 6635 95030d5a35c83d1a9c54a17e45fd5c5c "pdflatex"
+  "main.bbl" 1788969044 6394 a3d0387229e986e81c6eab460db32b0a "bibtex main"
+  "main.spl" 1788969044 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1788969039 36445 30647d0e389e914ad5cc96571da1902e ""
   (generated)
   "main.aux"
   "main.log"
