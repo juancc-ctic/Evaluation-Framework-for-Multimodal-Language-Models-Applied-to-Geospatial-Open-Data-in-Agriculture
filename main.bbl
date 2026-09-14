@@ -1,4 +1,4 @@
-\begin{thebibliography}{8}
+\begin{thebibliography}{10}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -26,6 +26,12 @@
 \bibinfo{author}{Es, S.}, \bibinfo{author}{James, J.}, \bibinfo{author}{Espinosa-Anke, L.}, \bibinfo{author}{Schockaert, S.}, \bibinfo{year}{2025}.
 \newblock \bibinfo{title}{Ragas: {Automated} {Evaluation} of {Retrieval} {Augmented} {Generation}}.
 \newblock \URLprefix \url{http://arxiv.org/abs/2309.15217}, \DOIprefix\doi{10.48550/arXiv.2309.15217}. \bibinfo{note}{arXiv:2309.15217 [cs.CL]}.
+%Type = Article
+\bibitem[{Gu et~al.(2026)Gu, Jiang, Shi, Tan, Zhai, Xu, Li, Shen, Ma, Liu, Wang, Zhang, Lin, Zhang, Ni, Gao, Wang and Guo}]{gu_survey_2026}
+\bibinfo{author}{Gu, J.}, \bibinfo{author}{Jiang, X.}, \bibinfo{author}{Shi, Z.}, \bibinfo{author}{Tan, H.}, \bibinfo{author}{Zhai, X.}, \bibinfo{author}{Xu, C.}, \bibinfo{author}{Li, W.}, \bibinfo{author}{Shen, Y.}, \bibinfo{author}{Ma, S.}, \bibinfo{author}{Liu, H.}, \bibinfo{author}{Wang, S.}, \bibinfo{author}{Zhang, K.}, \bibinfo{author}{Lin, Z.}, \bibinfo{author}{Zhang, B.}, \bibinfo{author}{Ni, L.}, \bibinfo{author}{Gao, W.}, \bibinfo{author}{Wang, Y.}, \bibinfo{author}{Guo, J.}, \bibinfo{year}{2026}.
+\newblock \bibinfo{title}{A survey on {LLM}-as-a-judge}.
+\newblock \bibinfo{journal}{The Innovation} \bibinfo{volume}{7}, \bibinfo{pages}{101253}.
+\newblock \URLprefix \url{https://linkinghub.elsevier.com/retrieve/pii/S2666675825004564}, \DOIprefix\doi{10.1016/j.xinn.2025.101253}.
 %Type = Misc
 \bibitem[{Jakubik et~al.(2023)Jakubik, Roy, Phillips, Fraccaro, Godwin, Zadrozny, Szwarcman, Gomes, Nyirjesy, Edwards, Kimura, Simumba, Chu, Mukkavilli, Lambhate, Das, Bangalore, Oliveira, Muszynski, Ankur, Ramasubramanian, Gurung, Khallaghi, Hanxi, Li, Cecil, Ahmadi, Kordi, Alemohammad, Maskey, Ganti, Weldemariam and Ramachandran}]{geofoundation_2023}
 \bibinfo{author}{Jakubik, J.}, \bibinfo{author}{Roy, S.}, \bibinfo{author}{Phillips, C.E.}, \bibinfo{author}{Fraccaro, P.}, \bibinfo{author}{Godwin, D.}, \bibinfo{author}{Zadrozny, B.}, \bibinfo{author}{Szwarcman, D.}, \bibinfo{author}{Gomes, C.}, \bibinfo{author}{Nyirjesy, G.}, \bibinfo{author}{Edwards, B.}, \bibinfo{author}{Kimura, D.}, \bibinfo{author}{Simumba, N.}, \bibinfo{author}{Chu, L.}, \bibinfo{author}{Mukkavilli, S.K.}, \bibinfo{author}{Lambhate, D.}, \bibinfo{author}{Das, K.}, \bibinfo{author}{Bangalore, R.}, \bibinfo{author}{Oliveira, D.}, \bibinfo{author}{Muszynski, M.}, \bibinfo{author}{Ankur, K.}, \bibinfo{author}{Ramasubramanian, M.}, \bibinfo{author}{Gurung, I.}, \bibinfo{author}{Khallaghi, S.}, \bibinfo{author}{Hanxi}, \bibinfo{author}{Li}, \bibinfo{author}{Cecil, M.}, \bibinfo{author}{Ahmadi, M.}, \bibinfo{author}{Kordi, F.}, \bibinfo{author}{Alemohammad, H.}, \bibinfo{author}{Maskey, M.}, \bibinfo{author}{Ganti, R.}, \bibinfo{author}{Weldemariam, K.}, \bibinfo{author}{Ramachandran, R.}, \bibinfo{year}{2023}.
@@ -36,6 +42,10 @@
 \bibinfo{author}{Kuckreja, K.}, \bibinfo{author}{Danish, M.S.}, \bibinfo{author}{Naseer, M.}, \bibinfo{author}{Das, A.}, \bibinfo{author}{Khan, S.}, \bibinfo{author}{Khan, F.S.}, \bibinfo{year}{2023}.
 \newblock \bibinfo{title}{{GeoChat}: {Grounded} {Large} {Vision}-{Language} {Model} for {Remote} {Sensing}}.
 \newblock \URLprefix \url{http://arxiv.org/abs/2311.15826}, \DOIprefix\doi{10.48550/arXiv.2311.15826}. \bibinfo{note}{arXiv:2311.15826 [cs]}.
+%Type = Inproceedings
+\bibitem[{Meyes et~al.(2020)Meyes, Lu, Waubert~de Puiseau and Meisen}]{meyes_ablation_2020}
+\bibinfo{author}{Meyes, R.}, \bibinfo{author}{Lu, M.}, \bibinfo{author}{Waubert~de Puiseau, C.}, \bibinfo{author}{Meisen, T.}, \bibinfo{year}{2020}.
+\newblock \bibinfo{title}{Ablation {Studies} to {Uncover} {Structure} of {Learned} {Representations} in {Artificial} {Neural} {Networks}}.
 %Type = Misc
 \bibitem[{Stewart et~al.(2026)Stewart, Fang, Corley and Zhu}]{earth_embeddings}
 \bibinfo{author}{Stewart, A.J.}, \bibinfo{author}{Fang, H.}, \bibinfo{author}{Corley, I.A.}, \bibinfo{author}{Zhu, X.X.}, \bibinfo{year}{2026}.

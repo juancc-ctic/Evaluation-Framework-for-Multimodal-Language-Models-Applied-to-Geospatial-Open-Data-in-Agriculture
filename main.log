@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  9 SEP 2026 17:50
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  14 SEP 2026 12:20
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -673,151 +673,124 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 
 LaTeX Encoding Info:    Redeclaring text command \k (encoding T1) on input line 64.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <10> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 140.
-LaTeX Font Info:    Trying to load font information for OT1+txr on input line 168.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 125.
+LaTeX Font Info:    Trying to load font information for OT1+txr on input line 153.
 (c:/texlive/2026/texmf-dist/tex/latex/txfonts/ot1txr.fd
 File: ot1txr.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+txmia on input line 168.
+LaTeX Font Info:    Trying to load font information for U+txmia on input line 153.
  (c:/texlive/2026/texmf-dist/tex/latex/txfonts/utxmia.fd
 File: utxmia.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Trying to load font information for U+msa on input line 168.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 153.
  (c:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 168.
+LaTeX Font Info:    Trying to load font information for U+msb on input line 153.
  (c:/texlive/2026/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
-LaTeX Font Info:    Trying to load font information for U+txsyc on input line 168.
+LaTeX Font Info:    Trying to load font information for U+txsyc on input line 153.
  (c:/texlive/2026/texmf-dist/tex/latex/txfonts/utxsyc.fd
 File: utxsyc.fd 2000/12/15 v3.1
 )
-LaTeX Font Info:    Calculating math sizes for size <> on input line 168.
+LaTeX Font Info:    Calculating math sizes for size <> on input line 153.
 
-Underfull \hbox (badness 1946) in paragraph at lines 189--190
+Underfull \hbox (badness 1946) in paragraph at lines 175--176
 \T1/txr/m/n/10 re-pro-ducible eval-u-a-tion method-ol-ogy tai-lored for context-
  []
 
 
-Underfull \vbox (badness 6284) has occurred while \output is active []
+Underfull \vbox (badness 2027) has occurred while \output is active []
 
  [1{c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{c:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc}
 
 
 ]
-<PIC/diagram.png, id=10, 819.06pt x 430.992pt>
+<PIC/diagram.png, id=11, 819.06pt x 430.992pt>
 File: PIC/diagram.png Graphic file (type png)
 <use PIC/diagram.png>
-Package pdftex.def Info: PIC/diagram.png  used on input line 202.
+Package pdftex.def Info: PIC/diagram.png  used on input line 188.
 (pdftex.def)             Requested size: 522.0pt x 274.69621pt.
-
-Underfull \hbox (badness 1253) in paragraph at lines 209--217
-\T1/txr/m/n/10 ter-con-nected mod-ules, which in-te-grate het-ero-ge-neous data
- []
-
-LaTeX Font Info:    Trying to load font information for TS1+txr on input line 259.
-(c:/texlive/2026/texmf-dist/tex/latex/txfonts/ts1txr.fd
+LaTeX Font Info:    Trying to load font information for TS1+txr on input line 246.
+ (c:/texlive/2026/texmf-dist/tex/latex/txfonts/ts1txr.fd
 File: ts1txr.fd 2000/12/15 v3.1
 )
-<PIC/Mapa_CEA_v4.pdf, id=12, 845.1575pt x 597.23125pt>
+<PIC/Mapa_CEA_v4.pdf, id=13, 845.1575pt x 597.23125pt>
 File: PIC/Mapa_CEA_v4.pdf Graphic file (type pdf)
 <use PIC/Mapa_CEA_v4.pdf>
-Package pdftex.def Info: PIC/Mapa_CEA_v4.pdf  used on input line 269.
+Package pdftex.def Info: PIC/Mapa_CEA_v4.pdf  used on input line 250.
 (pdftex.def)             Requested size: 252.0pt x 178.0772pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `tab:land_use' on page 2 undefined on input line 274.
-
-<PIC/mosaic_2x8_white_bg_ablation.png, id=13, 1500.3252pt x 424.9476pt>
-File: PIC/mosaic_2x8_white_bg_ablation.png Graphic file (type png)
-<use PIC/mosaic_2x8_white_bg_ablation.png>
-Package pdftex.def Info: PIC/mosaic_2x8_white_bg_ablation.png  used on input line 280.
-(pdftex.def)             Requested size: 522.0pt x 147.84555pt.
-<PIC/ablation_modules.png, id=14, 614.295pt x 93.34875pt>
+ [2]
+<PIC/ablation_modules.png, id=19, 614.295pt x 93.34875pt>
 File: PIC/ablation_modules.png Graphic file (type png)
 <use PIC/ablation_modules.png>
-Package pdftex.def Info: PIC/ablation_modules.png  used on input line 289.
+Package pdftex.def Info: PIC/ablation_modules.png  used on input line 262.
 (pdftex.def)             Requested size: 252.0pt x 38.29459pt.
 
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-[2]
-
-LaTeX Warning: Reference `fig:arch' on page 3 undefined on input line 323.
-
-
-Overfull \hbox (0.6697pt too wide) in paragraph at lines 400--400
-[]|\T1/txr/bx/n/10 Methodology| 
- []
-
-
-Overfull \hbox (0.72015pt too wide) in paragraph at lines 394--408
-[][] 
- []
-
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-[3 <./PIC/diagram.png> <./PIC/Mapa_CEA_v4.pdf>]
+
+Underfull \vbox (badness 6559) has occurred while \output is active []
+
+ [3 <./PIC/diagram.png> <./PIC/Mapa_CEA_v4.pdf>]
+<PIC/mosaic_2x8_white_bg_ablation.png, id=65, 1500.3252pt x 375.0813pt>
+File: PIC/mosaic_2x8_white_bg_ablation.png Graphic file (type png)
+<use PIC/mosaic_2x8_white_bg_ablation.png>
+Package pdftex.def Info: PIC/mosaic_2x8_white_bg_ablation.png  used on input line 329.
+(pdftex.def)             Requested size: 522.0pt x 130.49632pt.
 <PIC/scores_configurations_tick.pdf, id=66, 1858.12737pt x 458.86801pt>
 File: PIC/scores_configurations_tick.pdf Graphic file (type pdf)
 <use PIC/scores_configurations_tick.pdf>
-Package pdftex.def Info: PIC/scores_configurations_tick.pdf  used on input line 428.
+Package pdftex.def Info: PIC/scores_configurations_tick.pdf  used on input line 410.
 (pdftex.def)             Requested size: 522.0pt x 128.90927pt.
-
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-Overfull \hbox (2.20184pt too wide) in paragraph at lines 471--471
+ [4 <./PIC/ablation_modules.png>]
+Overfull \hbox (2.20184pt too wide) in paragraph at lines 431--431
  []|\T1/txr/bx/n/10 LLM_Q| 
  []
 
 
-Overfull \hbox (2.20184pt too wide) in paragraph at lines 471--472
+Overfull \hbox (2.20184pt too wide) in paragraph at lines 431--432
  []|\T1/txr/bx/n/10 LLM_G| 
  []
 
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
-<PIC/consensus.png, id=67, 1172.2194pt x 249.8133pt>
+<PIC/consensus.png, id=71, 1172.2194pt x 249.8133pt>
 File: PIC/consensus.png Graphic file (type png)
 <use PIC/consensus.png>
-Package pdftex.def Info: PIC/consensus.png  used on input line 491.
+Package pdftex.def Info: PIC/consensus.png  used on input line 451.
 (pdftex.def)             Requested size: 522.0pt x 111.24469pt.
 
 LaTeX Warning: `!h' float specifier changed to `!ht'.
 
 
-LaTeX Warning: Reference `fig:broad' on page 4 undefined on input line 498.
-
-[4 <./PIC/mosaic_2x8_white_bg_ablation.png> <./PIC/ablation_modules.png>]
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
- [5 <./PIC/scores_configurations_tick.pdf> <./PIC/consensus.png>]
-<PIC/tokens_metrics.pdf, id=408, 1442.63712pt x 354.44797pt>
+
+
+LaTeX Warning: Reference `fig:broad' on page 5 undefined on input line 458.
+
+[5 <./PIC/mosaic_2x8_white_bg_ablation.png> <./PIC/scores_configurations_tick.pdf>]
+<PIC/tokens_metrics.pdf, id=406, 1442.63712pt x 354.44797pt>
 File: PIC/tokens_metrics.pdf Graphic file (type pdf)
 <use PIC/tokens_metrics.pdf>
-Package pdftex.def Info: PIC/tokens_metrics.pdf  used on input line 560.
+Package pdftex.def Info: PIC/tokens_metrics.pdf  used on input line 520.
 (pdftex.def)             Requested size: 522.0pt x 128.25018pt.
-<PIC/shapley_boxplots_horizontales.pdf, id=409, 1271.62909pt x 311.95161pt>
+<PIC/shapley_boxplots_horizontales.pdf, id=407, 1271.62909pt x 311.95161pt>
 File: PIC/shapley_boxplots_horizontales.pdf Graphic file (type pdf)
 <use PIC/shapley_boxplots_horizontales.pdf>
-Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 567.
+Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 527.
 (pdftex.def)             Requested size: 522.0pt x 128.0533pt.
-<PIC/shapleys_queries_greens.png, id=410, 843.588pt x 288.642pt>
+<PIC/shapleys_queries_greens.png, id=408, 843.588pt x 288.642pt>
 File: PIC/shapleys_queries_greens.png Graphic file (type png)
 <use PIC/shapleys_queries_greens.png>
-Package pdftex.def Info: PIC/shapleys_queries_greens.png  used on input line 583.
+Package pdftex.def Info: PIC/shapleys_queries_greens.png  used on input line 543.
 (pdftex.def)             Requested size: 522.0pt x 178.60823pt.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <7> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 606.
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 583.
  (./main.bbl
 Underfull \hbox (badness 6608) in paragraph at lines 21--25
 []\T1/txr/m/n/10 Corley, I., Lehmann, N., Robin-son, C., Tseng, G.,
@@ -848,69 +821,72 @@ Underfull \hbox (badness 1681) in paragraph at lines 26--30
 \T1/txr/m/n/10 Ra-gas: Au-to-mated Eval-u-a-tion of Re-trieval Aug-mented
  []
 
+[6{c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./PIC/consensus.png>] [7]
+Overfull \hbox (85.91809pt too wide) in paragraph at lines 31--36
+\T1/cmtt/m/n/10 https://linkinghub.elsevier.com/retrieve/pii/S2666675825004564\T1/txr/m/n/10 ,
+ []
 
-Underfull \hbox (badness 7963) in paragraph at lines 36--40
+
+Underfull \hbox (badness 7963) in paragraph at lines 42--46
 []\T1/txr/m/n/10 Kuckreja, K., Dan-ish, M.S., Naseer, M., Das, A.,
  []
 
 
-Underfull \hbox (badness 3039) in paragraph at lines 36--40
+Underfull \hbox (badness 3039) in paragraph at lines 42--46
 \T1/txr/m/n/10 Khan, S., Khan, F.S., 2023.  GeoChat: Grounded
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--40
+Underfull \hbox (badness 10000) in paragraph at lines 42--46
 \T1/txr/m/n/10 Large Vision-Language Model for Re-mote Sens-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 36--40
+Underfull \hbox (badness 10000) in paragraph at lines 42--46
 \T1/txr/m/n/10 ing.  URL: \T1/cmtt/m/n/10 http://arxiv.org/abs/2311.15826\T1/txr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--45
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
 []\T1/txr/m/n/10 Stewart, A.J., Fang, H., Cor-ley, I.A., Zhu,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--45
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
 \T1/txr/m/n/10 X.X., 2026.  Earth em-bed-dings.  URL:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 41--45
+Underfull \hbox (badness 10000) in paragraph at lines 51--55
 \T1/cmtt/m/n/10 http://arxiv.org/abs/2608.03410\T1/txr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 51--54
+Underfull \hbox (badness 2012) in paragraph at lines 61--64
 []\T1/txr/m/n/10 Zheng, L., Chi-ang, W.L., Sheng, Y., Zhuang, S., Wu,
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 51--54
+Underfull \hbox (badness 6625) in paragraph at lines 61--64
 \T1/txr/m/n/10 Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing,
  []
 
 
-Underfull \hbox (badness 5548) in paragraph at lines 51--54
+Underfull \hbox (badness 5548) in paragraph at lines 61--64
 \T1/txr/m/n/10 E.P., Zhang, H., Gon-za-lez, J.E., Sto-ica, I., 2023.
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 51--54
+Underfull \hbox (badness 2828) in paragraph at lines 61--64
 \T1/txr/m/n/10 Judg-ing LLM-as-a-Judge with MT-Bench and Chat-bot
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 51--54
+Underfull \hbox (badness 3690) in paragraph at lines 61--64
 \T1/txr/m/n/10 Arena.  URL: \T1/cmtt/m/n/10 http://arxiv.org/abs/2306.05685\T1/txr/m/n/10 ,
  []
 
-[6{c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc}] [7]) [8
-
- <./PIC/tokens_metrics.pdf> <./PIC/shapley_boxplots_horizontales.pdf>] [9 <./PIC/shapleys_queries_greens.png>] (./main.aux)
+) [8 <./PIC/tokens_metrics.pdf> <./PIC/shapley_boxplots_horizontales.pdf>] [9 <./PIC/shapleys_queries_greens.png>] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
@@ -921,18 +897,18 @@ LaTeX Warning: There were undefined references.
 
  ) 
 Here is how much of TeX's memory you used:
- 6848 strings out of 467167
- 101301 string characters out of 5413691
- 681673 words of memory out of 5000000
- 35971 multiletter control sequences out of 15000+600000
+ 6851 strings out of 467167
+ 101441 string characters out of 5413691
+ 683781 words of memory out of 5000000
+ 35974 multiletter control sequences out of 15000+600000
  688007 words of font info for 158 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,79p,1436b,346s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (9 pages, 8967219 bytes).
+ 72i,19n,79p,2858b,344s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
+Output written on main.pdf (9 pages, 8966660 bytes).
 PDF statistics:
- 644 PDF objects out of 1000 (max. 8388607)
- 235 compressed objects within 3 object streams
+ 649 PDF objects out of 1000 (max. 8388607)
+ 238 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 
