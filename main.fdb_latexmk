@@ -1,13 +1,13 @@
 # Fdb version 4
-["bibtex main"] 1789380838.94928 "main.aux" "main.bbl" "main" 1789381213.38478 0
-  "./bibliography.bib" 1789379804 16576 d084637ef05f5fa29b20356ccd75e90d ""
+["bibtex main"] 1789387239.08288 "main.aux" "main.bbl" "main" 1789387242.97188 0
+  "./bibliography.bib" 1789383483 17352 9dc9389a2746ef59f095b9db4be2b8aa ""
   "./elsarticle-harv.bst" 1785925942 30002 8c0c5833f37bea3ec214cf315a72975d ""
-  "main.aux" 1789381212 6637 4fcebdd4954ebf42f711c2834ca26593 "pdflatex"
+  "main.aux" 1789387241 7542 095ebf918a6f60f0980f4d613f9a28b3 "pdflatex"
   (generated)
   "main.bbl"
   "main.blg"
   (rewritten before read)
-["pdflatex"] 1789381210.03847 "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" "main.pdf" "main" 1789381213.38523 0
+["pdflatex"] 1789387239.56735 "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" "main.pdf" "main" 1789387242.97242 0
   "PIC/Mapa_CEA_v4.pdf" 1787813342 5985170 cb4f11887565c1ce39dc0f7e4b4dd35c ""
   "PIC/ablation_modules.png" 1785929038 27442 9b08b113b59544bfe170a5d928ba4af9 ""
   "PIC/consensus.png" 1788349906 244029 05824a1c01ee7ae5a6d231dc37b3354f ""
@@ -17,7 +17,7 @@
   "PIC/shapley_boxplots_horizontales.pdf" 1786007491 38396 2b5bb43c05011a4c8655fe9202d9c2bc ""
   "PIC/shapleys_queries_greens.png" 1788431114 948425 04ed94ec9f2424da028cb1bddd12bc2d ""
   "PIC/tokens_metrics.pdf" 1788169381 101108 11653e2e738ce2cfcccbfbf69b83e096 ""
-  "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" 1789381209 42147 18898f96242c1c30e77df01be216fed0 ""
+  "c:/Users/juan.canada/Documents/GitHub/Evaluation-Framework-for-Multimodal-Language-Models-Applied-to-Geospatial-Open-Data-in-Agriculture/main.tex" 1789387234 49970 982cc8f92c046c6e6dcc04cb1e007639 ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/base/8r.enc" 1781686727 4850 80dc9bab7f31fb78a000ccfed0e27cab ""
   "c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc" 1781685934 2971 def0b6c1f0b107b3b936def894055589 ""
   "c:/texlive/2026/texmf-dist/fonts/map/fontname/texfonts.map" 1781687300 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -41,7 +41,6 @@
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xi.tfm" 1781691923 6956 cab20301c4a0fe2075f774c8a2433c5d ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/t1xr.tfm" 1781691923 6716 6d25a377562601272906e3bfe6b2817a ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/tcxr.tfm" 1781691923 1468 26982ed5d4aefc6c98ed466c7d6869d8 ""
-  "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txb.tfm" 1781691923 2452 76194099b4f1c022cb59f4564251c4fe ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txex.tfm" 1781691923 1080 b674b4ba143004461509a754a0984b67 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txexa.tfm" 1781691923 688 f56006d6e56f46e63d9f63252958b828 ""
   "c:/texlive/2026/texmf-dist/fonts/tfm/public/txfonts/txi.tfm" 1781691923 2584 cf4a6a7c2a518d47468fe29ef0913ba0 ""
@@ -66,7 +65,6 @@
   "c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/t1xi.vf" 1781691923 2120 35084608d79b6b13dd746dfcffe98243 ""
   "c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/t1xr.vf" 1781691923 2140 99e5b3a34695df6221a167ffa8b498d6 ""
   "c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/tcxr.vf" 1781691923 988 4f41b8c123e4537adb7f2dbb638d2981 ""
-  "c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/txb.vf" 1781691923 904 6f62e1cf12eaf73424d693287a9d3dce ""
   "c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/txmi.vf" 1781691923 960 cfcc9d587b40b769f64408b3ca115941 ""
   "c:/texlive/2026/texmf-dist/fonts/vf/public/txfonts/txr.vf" 1781691923 904 e582cae2d8ae3f48a0a520440ebcdb51 ""
   "c:/texlive/2026/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1781689209 71627 94eb9990bed73c364d7f53f960cc8c5b ""
@@ -126,10 +124,10 @@
   "c:/texlive/2026/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1781692616 5619402 ad1310ccf7f36101ef3e8f014a173c46 ""
   "c:/texlive/2026/texmf-var/web2c/pdftex/pdflatex.fmt" 1781692760 3656621 04f004d19cbb574ee5cb4608daff6ab8 ""
   "c:/texlive/2026/texmf.cnf" 1781692588 713 e69b156964470283e0530f5060668171 ""
-  "main.aux" 1789381212 6637 4fcebdd4954ebf42f711c2834ca26593 "pdflatex"
-  "main.bbl" 1789380839 7748 2ab134515e4425bc40ff91ec04e7fb27 "bibtex main"
-  "main.spl" 1789381210 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "main.tex" 1789381209 42147 18898f96242c1c30e77df01be216fed0 ""
+  "main.aux" 1789387241 7542 095ebf918a6f60f0980f4d613f9a28b3 "pdflatex"
+  "main.bbl" 1789387239 8651 dc194ca1af66fa3a09645b935166d5c6 "bibtex main"
+  "main.spl" 1789387240 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "main.tex" 1789387234 49970 982cc8f92c046c6e6dcc04cb1e007639 ""
   (generated)
   "main.aux"
   "main.log"

@@ -1,4 +1,4 @@
-\begin{thebibliography}{10}
+\begin{thebibliography}{12}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \providecommand{\url}[1]{\texttt{#1}}
 \providecommand{\href}[2]{#2}
@@ -42,10 +42,19 @@
 \bibinfo{author}{Kuckreja, K.}, \bibinfo{author}{Danish, M.S.}, \bibinfo{author}{Naseer, M.}, \bibinfo{author}{Das, A.}, \bibinfo{author}{Khan, S.}, \bibinfo{author}{Khan, F.S.}, \bibinfo{year}{2023}.
 \newblock \bibinfo{title}{{GeoChat}: {Grounded} {Large} {Vision}-{Language} {Model} for {Remote} {Sensing}}.
 \newblock \URLprefix \url{http://arxiv.org/abs/2311.15826}, \DOIprefix\doi{10.48550/arXiv.2311.15826}. \bibinfo{note}{arXiv:2311.15826 [cs]}.
+%Type = Misc
+\bibitem[{Lundberg and Lee(2017)}]{lundberg_unified_2017}
+\bibinfo{author}{Lundberg, S.}, \bibinfo{author}{Lee, S.I.}, \bibinfo{year}{2017}.
+\newblock \bibinfo{title}{A {Unified} {Approach} to {Interpreting} {Model} {Predictions}}.
+\newblock \URLprefix \url{http://arxiv.org/abs/1705.07874}, \DOIprefix\doi{10.48550/arXiv.1705.07874}. \bibinfo{note}{arXiv:1705.07874 [cs.AI]}.
 %Type = Inproceedings
 \bibitem[{Meyes et~al.(2020)Meyes, Lu, Waubert~de Puiseau and Meisen}]{meyes_ablation_2020}
 \bibinfo{author}{Meyes, R.}, \bibinfo{author}{Lu, M.}, \bibinfo{author}{Waubert~de Puiseau, C.}, \bibinfo{author}{Meisen, T.}, \bibinfo{year}{2020}.
 \newblock \bibinfo{title}{Ablation {Studies} to {Uncover} {Structure} of {Learned} {Representations} in {Artificial} {Neural} {Networks}}.
+%Type = Incollection
+\bibitem[{Shapley(1953)}]{shapley1953value}
+\bibinfo{author}{Shapley, L.S.}, \bibinfo{year}{1953}.
+\newblock \bibinfo{title}{A value for n-person games}, in: \bibinfo{editor}{Kuhn, H.W.}, \bibinfo{editor}{Tucker, A.W.} (Eds.), \bibinfo{booktitle}{Contributions to the Theory of Games II}. \bibinfo{publisher}{Princeton University Press}, \bibinfo{address}{Princeton, NJ}. volume~\bibinfo{volume}{28} of \textit{\bibinfo{series}{Annals of Mathematics Studies}}, pp. \bibinfo{pages}{307--317}.
 %Type = Misc
 \bibitem[{Stewart et~al.(2026)Stewart, Fang, Corley and Zhu}]{earth_embeddings}
 \bibinfo{author}{Stewart, A.J.}, \bibinfo{author}{Fang, H.}, \bibinfo{author}{Corley, I.A.}, \bibinfo{author}{Zhu, X.X.}, \bibinfo{year}{2026}.

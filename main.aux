@@ -15,56 +15,66 @@
 \newlabel{materials_methods}{{2}{2}{}{section.2}{}}
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.1}System Architecture and Overview}{2}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.2}Evaluation Framework}{2}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Parcel Selection and Heterogeneity}{2}{}\protected@file@percent }
 \citation{meyes_ablation_2020}
 \@writefile{lof}{\contentsline {figure}{\numberline {1}{\ignorespaces System architecture.}}{3}{}\protected@file@percent }
 \newlabel{fig:architecture}{{1}{3}{}{figure.1}{}}
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.1}Parcel Selection and Heterogeneity}{3}{}\protected@file@percent }
 \@writefile{lof}{\contentsline {figure}{\numberline {2}{\ignorespaces The area of study in Gijón, Asturias. Location of the 15 selected parcels.}}{3}{}\protected@file@percent }
 \newlabel{fig:map_qgis}{{2}{3}{}{figure.2}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.2}Two-Stage Experimental Design}{3}{}\protected@file@percent }
 \citation{gu_survey_2026}
-\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Configuraciones modulares del estudio de ablación. PD means Plot Data. Active tool is always enabled because it is responsible for identifying parcel IDs as so. }}{4}{}\protected@file@percent }
-\newlabel{tab:ablation_configs}{{1}{4}{}{table.1}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Ablation modules.}}{4}{}\protected@file@percent }
-\newlabel{fig:ablation_modules}{{3}{4}{}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {3}{\ignorespaces Selection of parcels for tool evaluation, grouped by Land Use. The number of parcels per LU depends on their functional utility in agriculture. Dashed borders correspond to parcels used in ablation study.}}{4}{}\protected@file@percent }
+\newlabel{fig:parcel_mosaic}{{3}{4}{}{figure.3}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Ablation modules.}}{4}{}\protected@file@percent }
+\newlabel{fig:ablation_modules}{{4}{4}{}{figure.4}{}}
 \@writefile{toc}{\contentsline {subsubsection}{\numberline {2.2.3}Panel of judges}{4}{}\protected@file@percent }
 \@writefile{toc}{\contentsline {subsection}{\numberline {2.3}Multidimensional metrics}{4}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Multidimensional evaluation metrics framework. Note: The \textit  {Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}}{4}{}\protected@file@percent }
-\newlabel{tab:evaluation_metrics}{{2}{4}{}{table.2}{}}
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Evaluation Volume Summary}{4}{}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {2.5}Preliminary Results and Discussion}{4}{}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4}{\ignorespaces Selection of parcels for tool evaluation, grouped by Land Use. The number of parcels per LU depends on their functional utility in agriculture. Dashed borders correspond to parcels used in ablation study.}}{5}{}\protected@file@percent }
-\newlabel{fig:parcel_mosaic}{{4}{5}{}{figure.4}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Distribution of parcels, queries, and configurations across methodology stages for each land use category.}}{5}{}\protected@file@percent }
-\newlabel{tab:num_queries_parcels}{{3}{5}{}{table.3}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Preliminary evaluation results from the \textit  {Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}}{5}{}\protected@file@percent }
-\newlabel{fig:results}{{5}{5}{}{figure.5}{}}
-\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces .}}{5}{}\protected@file@percent }
-\newlabel{tab:bars}{{4}{5}{}{table.4}{}}
+\citation{shapley1953value}
+\citation{lundberg_unified_2017}
+\@writefile{lot}{\contentsline {table}{\numberline {1}{\ignorespaces Configurations construction using facorial design over architectural modules. PD means Plot Data. Active tool is always enabled because it is responsible for identifying parcel IDs as so.}}{5}{}\protected@file@percent }
+\newlabel{tab:ablation_configs}{{1}{5}{}{table.1}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {2}{\ignorespaces Distribution of parcels, queries, and configurations across methodology stages for each land use category.}}{5}{}\protected@file@percent }
+\newlabel{tab:num_queries_parcels}{{2}{5}{}{table.2}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {3}{\ignorespaces Multidimensional evaluation metrics framework. Note: The \textit  {Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}}{5}{}\protected@file@percent }
+\newlabel{tab:evaluation_metrics}{{3}{5}{}{table.3}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {2.4}Mathematical analysis of the results}{5}{}\protected@file@percent }
 \bibstyle{elsarticle-harv}
 \bibdata{bibliography}
 \bibcite{juan_2025}{{1}{2025}{{Cañada et~al.}}{{Cañada, Alonso, Molleda and Díez}}}
-\bibcite{geofoundation_2026}{{2}{2026}{{Corley et~al.}}{{Corley, Lehmann, Robinson, Tseng, Fuller, Alemohammad, Shelhamer, Marcus and Kerner}}}
-\bibcite{es_ragas_2025}{{3}{2025}{{Es et~al.}}{{Es, James, Espinosa-Anke and Schockaert}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces }}{6}{}\protected@file@percent }
-\newlabel{fig:consensus}{{6}{6}{}{figure.6}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {3}Results and Discussion}{6}{}\protected@file@percent }
+\@writefile{lot}{\contentsline {table}{\numberline {4}{\ignorespaces Average score of the 71 broad evaluation queries.}}{6}{}\protected@file@percent }
+\newlabel{tab:results_broad}{{4}{6}{}{table.4}{}}
 \@writefile{toc}{\contentsline {section}{\numberline {4}Conclusions}{6}{}\protected@file@percent }
 \@writefile{toc}{\let\numberline\tmptocnumberline}
 \@writefile{toc}{\contentsline {section}{\numberline {Appendix~A}Appendix A: Shapley values}{6}{}\protected@file@percent }
-\@writefile{lot}{\contentsline {table}{\numberline {A.5}{\ignorespaces Shapley}}{7}{}\protected@file@percent }
-\newlabel{tab:}{{A.5}{7}{}{table.5}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {Appendix~B}Appendix B: Evaluation rubric}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix~B.1}Without Context Metrics}{6}{}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {Appendix~B.2}With Context Metrics}{6}{}\protected@file@percent }
+\bibcite{geofoundation_2026}{{2}{2026}{{Corley et~al.}}{{Corley, Lehmann, Robinson, Tseng, Fuller, Alemohammad, Shelhamer, Marcus and Kerner}}}
+\bibcite{es_ragas_2025}{{3}{2025}{{Es et~al.}}{{Es, James, Espinosa-Anke and Schockaert}}}
 \bibcite{gu_survey_2026}{{4}{2026}{{Gu et~al.}}{{Gu, Jiang, Shi, Tan, Zhai, Xu, Li, Shen, Ma, Liu, Wang, Zhang, Lin, Zhang, Ni, Gao, Wang and Guo}}}
 \bibcite{geofoundation_2023}{{5}{2023}{{Jakubik et~al.}}{{Jakubik, Roy, Phillips, Fraccaro, Godwin, Zadrozny, Szwarcman, Gomes, Nyirjesy, Edwards, Kimura, Simumba, Chu, Mukkavilli, Lambhate, Das, Bangalore, Oliveira, Muszynski, Ankur, Ramasubramanian, Gurung, Khallaghi, Hanxi, Li, Cecil, Ahmadi, Kordi, Alemohammad, Maskey, Ganti, Weldemariam and Ramachandran}}}
+\@writefile{lof}{\contentsline {figure}{\numberline {5}{\ignorespaces Preliminary evaluation results from the \textit  {Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}}{7}{}\protected@file@percent }
+\newlabel{fig:results}{{5}{7}{}{figure.5}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {6}{\ignorespaces }}{7}{}\protected@file@percent }
+\newlabel{fig:consensus}{{6}{7}{}{figure.6}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces }}{7}{}\protected@file@percent }
+\newlabel{fig:tokens_metrics}{{7}{7}{}{figure.7}{}}
 \bibcite{kuckreja_geochat_2023}{{6}{2023}{{Kuckreja et~al.}}{{Kuckreja, Danish, Naseer, Das, Khan and Khan}}}
-\bibcite{meyes_ablation_2020}{{7}{2020}{{Meyes et~al.}}{{Meyes, Lu, Waubert~de Puiseau and Meisen}}}
-\bibcite{earth_embeddings}{{8}{2026}{{Stewart et~al.}}{{Stewart, Fang, Corley and Zhu}}}
-\bibcite{yuan_omnigeo_2025}{{9}{2025}{{Yuan et~al.}}{{Yuan, Mo, Huang, Wang, Zhai, Zhu, Li, Xu and Nie}}}
-\bibcite{zheng_judging_2023}{{10}{2023}{{Zheng et~al.}}{{Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li, Li, Xing, Zhang, Gonzalez and Stoica}}}
-\@writefile{lof}{\contentsline {figure}{\numberline {7}{\ignorespaces }}{8}{}\protected@file@percent }
-\newlabel{fig:tokens_metrics}{{7}{8}{}{figure.7}{}}
+\bibcite{lundberg_unified_2017}{{7}{2017}{{Lundberg and Lee}}{{}}}
+\bibcite{meyes_ablation_2020}{{8}{2020}{{Meyes et~al.}}{{Meyes, Lu, Waubert~de Puiseau and Meisen}}}
+\bibcite{shapley1953value}{{9}{1953}{{Shapley}}{{}}}
+\bibcite{earth_embeddings}{{10}{2026}{{Stewart et~al.}}{{Stewart, Fang, Corley and Zhu}}}
+\bibcite{yuan_omnigeo_2025}{{11}{2025}{{Yuan et~al.}}{{Yuan, Mo, Huang, Wang, Zhai, Zhu, Li, Xu and Nie}}}
+\bibcite{zheng_judging_2023}{{12}{2023}{{Zheng et~al.}}{{Zheng, Chiang, Sheng, Zhuang, Wu, Zhuang, Lin, Li, Li, Xing, Zhang, Gonzalez and Stoica}}}
 \@writefile{lof}{\contentsline {figure}{\numberline {8}{\ignorespaces }}{8}{}\protected@file@percent }
 \newlabel{fig:shapleys}{{8}{8}{}{figure.8}{}}
-\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces }}{9}{}\protected@file@percent }
-\newlabel{fig:shapleys_queries_2}{{9}{9}{}{figure.9}{}}
-\gdef \@abspage@last{9}
+\@writefile{lof}{\contentsline {figure}{\numberline {9}{\ignorespaces }}{8}{}\protected@file@percent }
+\newlabel{fig:shapleys_queries_2}{{9}{8}{}{figure.9}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {A.5}{\ignorespaces Shapley}}{9}{}\protected@file@percent }
+\newlabel{tab:}{{A.5}{9}{}{table.5}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.6}{\ignorespaces Assessment Metrics Without Context}}{10}{}\protected@file@percent }
+\newlabel{tab:without_context}{{B.6}{10}{}{table.6}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {B.7}{\ignorespaces Assessment Metrics With Context}}{11}{}\protected@file@percent }
+\newlabel{tab:with_context}{{B.7}{11}{}{table.7}{}}
+\gdef \@abspage@last{11}

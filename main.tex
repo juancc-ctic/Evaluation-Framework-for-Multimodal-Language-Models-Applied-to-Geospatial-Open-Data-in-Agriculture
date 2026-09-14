@@ -124,6 +124,8 @@
 
 	\begin{abstract}
 		%% Text of abstract
+		\lipsum[1]
+		\lipsum[2]
 
 	\end{abstract}
 
@@ -243,14 +245,20 @@ The architectural characteristics of the proposed system dictate the requirement
 
 \subsubsection{Parcel Selection and Heterogeneity}
 
-The study was carried out over a total of 15 target parcels, covering four distinct Land Use (LU) types: Fruit trees (FR), Pasture (PA), Unproductive (UN) and Forest (FO). The distribution of samples within Land Uses, as well as the volume of evaluation queries per parcel, is weighted according to the operational utility of the tool for each functional land use. 7 out of the 15 parcels belong to Fruit trees category, 4 are Pastures, and the remainer Unproductive and Forest land uses get 2 parcels each. Both the number of parcels per LU and the number of queries per parcel, are detailed in Table \ref{tab:num_queries_parcels}. \textcolor{red}{ Pendiente la parte de Fernando → Furthermore, the selected parcels exhibit a high degree of physical and geographical heterogeneity to stress-test the system under diverse conditions. This variance includes distinct topographies with slopes ranging from $0.5\%$ to $21.6\%$, varying altitudes, highly irregular geometric boundaries, and significant diversity in vegetative health, as captured by variable NDVI ranges. The spatial distribution and morphological characteristics of these parcels are illustrated in Fig. \ref{fig:parcel_mosaic}. Referencia a Fig. \ref{fig:map_qgis}.}
-
 \begin{figure}[h!]
 	\centering
 	\includegraphics[width=\columnwidth]{PIC/Mapa_CEA_v4.pdf}
 	\caption{The area of study in Gijón, Asturias. Location of the 15 selected parcels.}
 	\label{fig:map_qgis}
 \end{figure}
+
+The study was carried out over a total of 15 target parcels, covering four distinct Land Use (LU) types: Fruit trees (FR), Pasture (PA), Unproductive (UN) and Forest (FO). The distribution of samples within Land Uses, as well as the volume of evaluation queries per parcel, is weighted according to the operational utility of the tool for each functional land use. 7 out of the 15 parcels belong to Fruit trees category, 4 are Pastures, and the remainer Unproductive and Forest land uses get 2 parcels each. Both the number of parcels per LU and the number of queries per parcel, are detailed in Table \ref{tab:num_queries_parcels}. \textcolor{red}{ Pendiente la parte de Fernando → Furthermore, the selected parcels exhibit a high degree of physical and geographical heterogeneity to stress-test the system under diverse conditions. This variance includes distinct topographies with slopes ranging from $0.5\%$ to $21.6\%$, varying altitudes, highly irregular geometric boundaries, and significant diversity in vegetative health, as captured by variable NDVI ranges. The spatial distribution and morphological characteristics of these parcels are illustrated in Fig. \ref{fig:parcel_mosaic}. Referencia a Fig. \ref{fig:map_qgis}.}
+
+\begin{figure*}[t]
+	\centering{\includegraphics[width=\textwidth]{PIC/mosaic_2x8_white_bg_ablation.png}}
+	\caption{Selection of parcels for tool evaluation, grouped by Land Use. The number of parcels per LU depends on their functional utility in agriculture. Dashed borders correspond to parcels used in ablation study.}
+	\label{fig:parcel_mosaic}
+\end{figure*}
 
 \subsubsection{Two-Stage Experimental Design}
 The evaluation pipeline is structured into two main sequential phases to optimize operational resources while maintaining statistical robustness: an overall performance assessment and an ablation study. The first phase, named \textit{Broad Performance Assessment}, evaluates the system's holistic capability across diverse scenarios, using the full architecture. This stage does not represent a novel contribution, as it is similar to existing evaluation methods; rather, it provides an overall view of the quality of the responses in general terms, which is necessary before moving on to a more specific evaluation of the architecture modules. Table \ref{tab:num_queries_parcels} contians the number of evaluation queries, resulting in roughly 50$\%$ for each stage.
@@ -265,7 +273,7 @@ The second phase consists of an \textit{Ablation Study} intended to quantify the
 \end{figure}
 
 \begin{table*}[t!]
-	\caption{Configuraciones modulares del estudio de ablación. PD means Plot Data. Active tool is always enabled because it is responsible for identifying parcel IDs as so. }
+	\caption{Configurations construction using facorial design over architectural modules. PD means Plot Data. Active tool is always enabled because it is responsible for identifying parcel IDs as so.}
 	\label{tab:ablation_configs}
 	\begin{tabular}{p{0.28\textwidth}
 			p{0.07\textwidth}
@@ -297,74 +305,14 @@ Ultimately, the combined phases produced a comprehensive evaluation dataset of 1
 
 A simplified approach to response evaluation, as utilized in our previous work, relies exclusively on the LLM-as-a-judge framework. This paradigm offers distinct advantages in terms of execution speed and scalability, allowing for the rapid assessment of large datasets without the bottlenecks associated with human review. Conversely, assembling a panel of human evaluators requires substantial planning, timeframes, and financial resources. However, human evaluation remains indispensable, as it fundamentally reduces the leniency bias frequently exhibited by LLM evaluators (\cite{gu_survey_2026}) and provides a significantly higher degree of reliability when assessing nuanced, domain-specific reasoning. To effectively navigate this trade-off between scalability and qualitative rigor, we designed a hybrid, human-in-the-loop evaluation strategy. By merging human and machine critical judgement, this methodology not only optimizes resource allocation but also systematically mitigates the mono-dimensional biases inherent to using either approach in isolation. 
 
-Consequently, the definitive panel of judges comprises four distinct entities: two human evaluators and two LLM-based evaluators. To ensure both technical depth and practical accessibility, the human contingent is divided into two distinct roles, a domain expert (holding a PhD in Biology), regarded hereafter as "Human Expert (H$\_$E)" that provides rigorous scientific scrutiny; and a control evaluator, regarded as "Human Control (H$\_$C), representing the end-user perspective in terms of clarity and usability for non-academic audience. For the LLM side, we integrated two diverse language models with comparable computational footprints into the panel: a propietary model, Gemini 3.1 Flash Lite, and an open-source model, Qwen3.5-397B-A17B-Instruct.
-
-\subsection{Multidimensional metrics}
-
-The quality of the generated responses is quantified using a multidimensional 5-point Likert scale encompassing five distinct criteria (see Table \ref{tab:evaluation_metrics}). Four of these metrics—Correctness, Completeness, Relevance, and Utility—evaluate the intrinsic quality of the response and can be assessed without access to the retrieved context. Conversely, the \textit{Grounding} metric strictly requires contextual reference; it is specifically designed to measure the degree to which the formulated response is faithfully derived from the injected multi-domain data rather than the model's pre-existing generalized knowledge. 
-
-\begin{table}[h!]
-	\caption{Multidimensional evaluation metrics framework. Note: The \textit{Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}
-	\label{tab:evaluation_metrics}
-	\begin{tabular}{
-			>{\raggedright\arraybackslash}p{0.6\columnwidth}
-			>{\raggedright\arraybackslash}p{0.3\columnwidth}
-		}
-		\hline
-		\textbf{Metric} & \textbf{Type}   \\
-		\hline
-		Correctness     & Without Context \\
-		Completeness    & Without Context \\
-		Relevance       & Without Context \\
-		Utility         & Without Context \\
-		\hline
-		Grounding       & With Context    \\
-		\hline
-	\end{tabular}
-\end{table}
-
-\textcolor{red}{Internal Knowledge over-reliance → sesgo de conocimiento interno}
-
-\begin{figure*}[t]
-	\centering{\includegraphics[width=\textwidth]{PIC/mosaic_2x8_white_bg_ablation.png}}
-	\caption{Selection of parcels for tool evaluation, grouped by Land Use. The number of parcels per LU depends on their functional utility in agriculture. Dashed borders correspond to parcels used in ablation study.}
-	\label{fig:parcel_mosaic}
-\end{figure*}
-
-% \begin{table}[h!]
-% 	\caption{Distribution of parcels by Land Use (LU) type}
-% 	\label{tab:land_use}
-% 	\begin{tabular}{p{0.5\columnwidth}
-%         >{\raggedright\arraybackslash}p{0.40\columnwidth}
-% 		>{\raggedright\arraybackslash}p{0.40\columnwidth}
-% 		}
-% 		\hline
-% 		\textbf{Land Use} & \textbf{Num. of parcels} & \textbf{Queries per parcel} & \textbf{Total queries} \\
-% 		\hline
-% 		Fruit Trees (FR)  & 7                          \\
-% 		Pasture (PA)      & 4                          \\
-% 		Unproductive (UN) & 2                          \\
-% 		Forest (FO)       & 2                          \\
-% 		\hline
-% 	\end{tabular}
-% \end{table}
-
-\begin{itemize}
-	\item \textbf{Configurations:} 8 modular combinations + 1 Zero-Shot baseline (the LLM without parcel context) = 9 total configurations, listed in \ref{tab:ablation_configs}.
-	\item \textbf{Sample subset:} 1 representative parcel per Land Use category.
-	\item \textbf{Query volume:} 2 specific queries per parcel across the 9 configurations $= \mathbf{72 \text{queries}}$.
-\end{itemize}
-
-\subsection{Evaluation Volume Summary}
+Consequently, the definitive panel of judges comprises four distinct entities: two human evaluators and two LLM-based evaluators. To ensure both technical depth and practical accessibility, the human contingent is divided into two distinct roles, a domain expert (holding a PhD in Biology), regarded hereafter as "Human Expert" (H$\_$E) that provides rigorous scientific scrutiny; and a control evaluator, regarded as "Human Control" (H$\_$C), representing the end-user perspective in terms of clarity and usability for non-academic audience. For the LLM side, we integrated two diverse language models with comparable computational footprints into the panel: a propietary model (LLM$\_$G), \textit{Gemini 3.1 Flash Lite}, and an open-source model (LLM$\_$Q), \textit{Qwen3.5-397B-A17B-Instruct}.
 
 \begin{table*}[t]
 \centering
 \caption{Distribution of parcels, queries, and configurations across methodology stages for each land use category.}
 \label{tab:num_queries_parcels}
-% Reducimos ligeramente el padding entre columnas para 9 columnas
 \setlength{\tabcolsep}{3.5pt} 
 
-% Fijamos el ancho total a 0.8\textwidth
 \begin{tabularx}{\textwidth}{l *{8}{Y}}
 \toprule
 \multirow{2}{*}{\textbf{Land Use}} 
@@ -386,6 +334,51 @@ Unproductive (UN)  & 2 & 4 &  8 & 1 & 2 & 9 & 18 & -- \\
 \end{tabularx}
 \end{table*}
 
+\subsection{Multidimensional metrics}
+
+The quality of the generated responses is quantified using a multidimensional 5-point Likert scale encompassing five distinct criteria (see Table \ref{tab:evaluation_metrics}). Four of these metrics—\textit{Correctness, Completeness, Relevance,} and \textit{Utility}—evaluate the intrinsic quality of the response and can be assessed without access to the retrieved context. Conversely, the \textit{Grounding} metric strictly requires contextual reference; it is specifically designed to measure the degree to which the formulated response is faithfully derived from the injected multi-domain data rather than the model's pre-existing generalized knowledge. In doing so, it serves as a critical diagnostic tool to identify and penalize \textit{internal knowledge over-reliance}, a phenomenon where an LLM disregards or underutilizes dynamically retrieved evidence, defaulting instead to its internalized knowledge. This distinction carries profound practical implications for model selection and hardware feasibility in precision agriculture. The computational overhead of an LLM is directly related to the depth and scope of its internal knowledge base. Consequently, executing large foundation models locally on edge devices remains computationally prohibitive. If empirical evaluation reveals that domain-specific accuracy is primarily governed by robust contextual grounding rather than massive internal knowledge, high-performance agricultural reasoning can be achieved using significantly smaller, quantized models.
+
+Appendix B contains the evaluation rubric given to the judges for all 5 matrics.
+
+\begin{table}[h!]
+	\caption{Multidimensional evaluation metrics framework. Note: The \textit{Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}
+	\label{tab:evaluation_metrics}
+	\begin{tabular}{
+			>{\raggedright\arraybackslash}p{0.6\columnwidth}
+			>{\raggedright\arraybackslash}p{0.3\columnwidth}
+		}
+		\hline
+		\textbf{Metric} & \textbf{Type}   \\
+		\hline
+		Correctness     & Without Context \\
+		Completeness    & Without Context \\
+		Relevance       & Without Context \\
+		Utility         & Without Context \\
+		\hline
+		Grounding       & With Context    \\
+		\hline
+	\end{tabular}
+\end{table}
+
+
+
+% \begin{table}[h!]
+% 	\caption{Distribution of parcels by Land Use (LU) type}
+% 	\label{tab:land_use}
+% 	\begin{tabular}{p{0.5\columnwidth}
+%         >{\raggedright\arraybackslash}p{0.40\columnwidth}
+% 		>{\raggedright\arraybackslash}p{0.40\columnwidth}
+% 		}
+% 		\hline
+% 		\textbf{Land Use} & \textbf{Num. of parcels} & \textbf{Queries per parcel} & \textbf{Total queries} \\
+% 		\hline
+% 		Fruit Trees (FR)  & 7                          \\
+% 		Pasture (PA)      & 4                          \\
+% 		Unproductive (UN) & 2                          \\
+% 		Forest (FO)       & 2                          \\
+% 		\hline
+% 	\end{tabular}
+% \end{table}
 
 % \begin{table}[h!]
 % 	\caption{Summary of total query volume in the evaluation.}
@@ -406,23 +399,84 @@ Unproductive (UN)  & 2 & 4 &  8 & 1 & 2 & 9 & 18 & -- \\
 % 	\end{tabular}
 % \end{table}
 
+\subsection{Mathematical analysis of the results}
+
+This section describes the mathematical quantification of the ablation study results. Evaluating queries across diverse architectural configurations yields empirical data on marginal contributions; however, there is yet a need to quantify the intrinsic value added by each of the three modules to the final response quality. To provide a rigorous quantification, we model the multi-modular architecture within the mathematical framework of cooperative game theory. In this paradigm, the system's structural modules act as players collaborating to produce a unified outcome, the system's response. By applying Shapley values (\cite{shapley1953value}), a foundational concept from cooperative game theory that has been widely adapted for feature attribution in explainable AI with the SHAP values (\cite{lundberg_unified_2017}), we can fairly and precisely distribute the total system performance among its constituent components based on their true marginal contributions across all possible combinations. Formally, let $N$ be the set of all players. In our architecture, the players correspond to the three primary modules: $N = \{M_{S}, M_{O}, M_{R}\}$. Let $S$ denote any subset, or \textit{coalition}, of these modules. The general Shapley value $\phi_i(v)$ for a module $i$ given a performance value function $v$ is computed as:
+
+\begin{equation}
+	\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(|N| - |S| - 1)!}{|N|!} \big(v(S \cup \{i\}) - v(S)\big)
+\end{equation}
+
+By instantiating this general formula for our specific three-player game, we isolate the exact contribution of each module across all possible permutations:
+
+\begin{equation}
+    \begin{split}
+        \phi_S(v) = {} & \frac{1}{3} \big[ v(\{M_S\}) - v(\varnothing) \big]              \\
+                    & + \frac{1}{6} \big[ v(\{M_S, M_O\}) - v(\{M_O\}) \big]           \\
+                    & + \frac{1}{6} \big[ v(\{M_S, M_R\}) - v(\{M_R\}) \big]           \\
+                    & + \frac{1}{3} \big[ v(\{M_S, M_O, M_R\}) - v(\{M_O, M_R\}) \big]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_O(v) = {} & \frac{1}{3}[v(\{M_O\})-v(\varnothing)]           \\
+                    & +\frac{1}{6}[v(\{M_S, M_O\})-v(\{M_S\})]         \\
+                    & +\frac{1}{6}[v(\{M_O, M_R\})-v(\{M_R\})]         \\
+                    & +\frac{1}{3}[v(\{M_S, M_O,M_R\})-v(\{M_S,M_R\})]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_R(v) = {} & \frac{1}{3}[v(\{M_R\})-v(\varnothing)]           \\
+                    & +\frac{1}{6}[v(\{M_S, M_R\})-v(\{M_S\})]         \\
+                    & +\frac{1}{6}[v(\{M_O, M_R\})-v(\{M_O\})]         \\
+                    & +\frac{1}{3}[v(\{M_S, M_O,M_R\})-v(\{M_S,M_O\})]
+    \end{split}
+\end{equation}
+
+By substituting the conceptual coalitions with the empirical performance scores obtained from their corresponding configurations (Table \ref{tab:ablation_configs}), we rewrite the equation in terms of configuration performances:
+
+\begin{equation}
+    \begin{split}
+        \phi_S(v) = {} & \frac{1}{3}[v(C_1)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_2)]  \\
+                    & +\frac{1}{6}[v(C_5)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_6)]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_O(v) = {} & \frac{1}{3}[v(C_2)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_1)]  \\
+                    & +\frac{1}{6}[v(C_6)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_5)]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_R(v) = {} & \frac{1}{3}[v(C_4)-v(C_0)]+\frac{1}{6}[v(C_5)-v(C_1)]  \\
+                    & +\frac{1}{6}[v(C_6)-v(C_2)]+\frac{1}{3}[v(C_7)-v(C_3)]
+    \end{split}
+\end{equation}
+
+Through this formulation, the outputs of the ablation configurations are transformed into distinct, quantified metrics that represent the definitive analytical weight of each architectural module. Furthermore, we exploit the inherent mathematical property of additive efficiency of Shapley values by formally defining the \textit{Global Delta} as the sum of the three individual modular contributions. This metric encapsulates the total aggregate gain in the system's performance. In practical terms, it quantifies the exact quality uplift achieved strictly through the integration of the external data sources, serving as measure to compare against conventional language models.
+
+\section{Results and Discussion}
+
 \begin{figure*}[t!]
 	\centering{\includegraphics[width=\textwidth]{PIC/scores_configurations_tick.pdf}}
 	\caption{Preliminary evaluation results from the \textit{Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}
 	\label{fig:results}
 \end{figure*}
 
-
-
-\subsection{Preliminary Results and Discussion}
-
 // TODO comentar sobre suficiente y necesario
 
-This section presents some preliminary evaluation results. It should be noted that the graphs included here are only an initial overview that sheds light on the system evaluation; more advanced statistical analyses are reserved for a future scientific publication. First, \ref{fig:results} contains the average scores of each of the 4 evaluators across the 5 metrics, grouped by configuration. From this graph, numerous observations can be made, with the most notable being those related to evaluator correlation, and especially regarding the marginal contributions of the modules. Recalling \ref{tab:ablation_configs}, we see that configurations 2 and 3, as well as 6 and 7, include the orthophoto module; and in all metrics, a higher average score is observed in these cases, allowing us to deduce that the marginal contribution of the orthophoto module is significant.
+This section presents the results drawn from the evaluation of the 4 judges over the 143 queries along the 5 metrics, divided into the broad evaluation and the ablation study. Firstly, \ref{tab:resuls_broad} contains the average scores of all 71 broad evaluation queries \textcolor{red}{meter (+- std) en la tabla?}.  
+
 
 \begin{table}[h!]
-    \caption{.}
-    \label{tab:bars}
+    \caption{Average score of the 71 broad evaluation queries.}
+    \label{tab:results_broad}
     \begin{tabular}{
         >{\raggedright\arraybackslash}p{\dimexpr0.28\columnwidth-2\tabcolsep\relax}
         *{4}{>{\centering\arraybackslash}p{\dimexpr0.18\columnwidth-2\tabcolsep\relax}}
@@ -457,65 +511,6 @@ Similarly, the trend across all metrics is ascending along the x-axis (values ar
 
 More generally, \ref{fig:broad} represents the average metric values from the \textit{Broad} stage evaluations, i.e., the complete system. For all evaluators, the resulting metrics average values very close to 5/5, implying that the system has responded with a high degree of success to the evaluated queries. These preliminary results serve as evidence that the proposed system is capable of generating high-quality, complete, useful, and generally successful responses in the broad sense.
 
-
-Shapley Values
-
-\begin{equation}
-	\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(|N| - |S| - 1)!}{|N|!} \big(v(S \cup \{i\}) - v(S)\big)
-\end{equation}
-
-$N$ is the set of all players: 
-$N = \{M_{S}, M_{O}, M_{R}\}$ and 
-$S$ is any subset or \textit{coalition}.
-
-\begin{equation}
-    \begin{split}
-        \phi_S(v) = {} & \frac{1}{3} \big[ v(\{M_S\}) - v(\varnothing) \big]              \\
-                    & + \frac{1}{6} \big[ v(\{M_S, M_O\}) - v(\{M_O\}) \big]           \\
-                    & + \frac{1}{6} \big[ v(\{M_S, M_R\}) - v(\{M_R\}) \big]           \\
-                    & + \frac{1}{3} \big[ v(\{M_S, M_O, M_R\}) - v(\{M_O, M_R\}) \big]
-    \end{split}
-\end{equation}
-
-\begin{equation}
-    \begin{split}
-        \phi_O(v) = {} & \frac{1}{3}[v(\{M_O\})-v(\varnothing)]           \\
-                    & +\frac{1}{6}[v(\{M_S, M_O\})-v(\{M_S\})]         \\
-                    & +\frac{1}{6}[v(\{M_O, M_R\})-v(\{M_R\})]         \\
-                    & +\frac{1}{3}[v(\{M_S, M_O,M_R\})-v(\{M_S,M_R\})]
-    \end{split}
-\end{equation}
-
-\begin{equation}
-    \begin{split}
-        \phi_R(v) = {} & \frac{1}{3}[v(\{M_R\})-v(\varnothing)]           \\
-                    & +\frac{1}{6}[v(\{M_S, M_R\})-v(\{M_S\})]         \\
-                    & +\frac{1}{6}[v(\{M_O, M_R\})-v(\{M_O\})]         \\
-                    & +\frac{1}{3}[v(\{M_S, M_O,M_R\})-v(\{M_S,M_O\})]
-    \end{split}
-\end{equation}
-
-\begin{equation}
-    \begin{split}
-        \phi_S(v) = {} & \frac{1}{3}[v(C_1)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_2)]  \\
-                    & +\frac{1}{6}[v(C_5)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_6)]
-    \end{split}
-\end{equation}
-
-\begin{equation}
-    \begin{split}
-        \phi_O(v) = {} & \frac{1}{3}[v(C_2)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_1)]  \\
-                    & +\frac{1}{6}[v(C_6)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_5)]
-    \end{split}
-\end{equation}
-
-\begin{equation}
-    \begin{split}
-        \phi_R(v) = {} & \frac{1}{3}[v(C_4)-v(C_0)]+\frac{1}{6}[v(C_5)-v(C_1)]  \\
-                    & +\frac{1}{6}[v(C_6)-v(C_2)]+\frac{1}{3}[v(C_7)-v(C_3)]
-    \end{split}
-\end{equation}
-
 \begin{figure*}[t!]
 	\centering{\includegraphics[width=\textwidth]{PIC/tokens_metrics.pdf}}
 	\caption{}
@@ -531,8 +526,6 @@ $S$ is any subset or \textit{coalition}.
 
 \textcolor{red}{Meter gráficas solo con valores del promedio de los 4 jueces para no crear ruido visual}
 
-\section{Results and Discussion}
-
 % \begin{figure}[t]
 % 	\centering{\includegraphics[width=\columnwidth]{PIC/shapleys_queries_greens.png}}
 % 	\caption{}
@@ -544,8 +537,6 @@ $S$ is any subset or \textit{coalition}.
 	\caption{}
 	\label{fig:shapleys_queries_2}
 \end{figure*}
-
-
 
 
 
@@ -563,7 +554,7 @@ Thanks to ...
 \section{Appendix A: Shapley values}
 %% \label{}
 
-\begin{table*}[htbp]
+\begin{table*}[t]
 \centering
 \caption{Shapley}
 \label{tab:}
@@ -665,6 +656,88 @@ Thanks to ...
 \end{tabular}
 \end{table*}
 
+
+\section{Appendix B: Evaluation rubric}
+
+
+\subsection{Without Context Metrics}
+
+Table \ref{tab:without_context} outlines the metrics used to evaluate responses without relying on external context: Correctness, Completeness, Relevance, and Utility.
+
+\begin{table*}[t]
+    \centering
+    \caption{Assessment Metrics Without Context}
+    \label{tab:without_context}
+    \renewcommand{\arraystretch}{1.2}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} c l X}
+        \toprule
+        \textbf{Metric \& Definition} & \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
+        \midrule
+        
+        % Correctness
+        \multirow{5}{=}{\textbf{1. Correctness}\\ \vspace{2pt} \footnotesize Measures the accuracy and truthfulness of the biological, physical, and geospatial information provided in the response.} 
+        & 5 & Excellent & All information is factually accurate, scientifically sound, and geospatially precise. No errors or misconceptions. \\
+        & 4 & Good & Most information is accurate with minor inaccuracies that do not affect the overall validity of the response. \\
+        & 3 & Acceptable & Contains some factual errors or imprecise geospatial information, but core claims are generally correct. \\
+        & 2 & Poor & Multiple significant errors in biological, physical, or geospatial claims. Misleading or questionable accuracy. \\
+        & 1 & Unacceptable & Information is largely incorrect, fabricated, or fundamentally flawed. Critical factual errors throughout. \\
+        \midrule
+        
+        % Completeness
+        \multirow{5}{=}{\textbf{2. Completeness}\\ \vspace{2pt} \footnotesize Evaluates the extent to which the response fully addresses all components of the user's query and the specific task at hand.} 
+        & 5 & Excellent & Response comprehensively addresses all aspects of the query with thorough coverage. No missing elements. \\
+        & 4 & Good & Covers most query components adequately. Minor aspects may lack detail but overall complete. \\
+        & 3 & Acceptable & Addresses main query components but omits some secondary aspects. Partial coverage of the task. \\
+        & 2 & Poor & Missing several key components of the query. Response feels incomplete or rushed. \\
+        & 1 & Unacceptable & Fails to address the majority of the query. Critical components are missing entirely. \\
+        \midrule
+        
+        % Relevance
+        \multirow{5}{=}{\textbf{3. Relevance}\\ \vspace{2pt} \footnotesize Assesses the signal-to-noise ratio. Focuses on whether the system is concise and direct, penalizing unnecessary or irrelevant information.} 
+        & 5 & Excellent & Highly focused and concise. Every statement directly contributes to answering the query. No filler. \\
+        & 4 & Good & Mostly relevant with minimal tangential information. Stays on topic throughout. \\
+        & 3 & Acceptable & Generally relevant but includes some unnecessary details or mild digressions. \\
+        & 2 & Poor & Contains significant irrelevant content. Noticeable amount of filler or off-topic information. \\
+        & 1 & Unacceptable & Largely irrelevant response. Excessive noise, repetition, or content unrelated to the query. \\
+        \midrule
+        
+        % Utility
+        \multirow{5}{=}{\textbf{4. Utility}\\ \vspace{2pt} \footnotesize Measures the practical value of the response for a user's decision-making process.} 
+        & 5 & Excellent & Highly actionable. Provides clear, practical insights that directly support decision-making. \\
+        & 4 & Good & Useful and applicable. Offers practical value with minor limitations in actionability. \\
+        & 3 & Acceptable & Somewhat useful but lacks specific actionable recommendations. General guidance only. \\
+        & 2 & Poor & Limited practical value. Information is too abstract or lacks applicability to real decisions. \\
+        & 1 & Unacceptable & No practical utility. Response does not support any decision-making or action. \\
+        
+        \bottomrule
+    \end{tabularx}
+\end{table*}
+
+\subsection{With Context Metrics}
+
+Table \ref{tab:with_context} details the grounding metric, which evaluates the response based on the provided external context.
+
+\begin{table*}[t]
+    \centering
+    \caption{Assessment Metrics With Context}
+    \label{tab:with_context}
+    \renewcommand{\arraystretch}{.7}
+    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} c l X}
+        \toprule
+        \textbf{Metric \& Definition} & \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
+        \midrule
+        
+        % Grounding
+        \multirow{5}{=}{\textbf{5. Grounding}\\ \vspace{2pt} \footnotesize Measures the degree to which assertions are strictly derived from and supported by the context. Evaluates Evidence-to-Claim ratio.} 
+        & 5 & Excellent & All claims are explicitly supported by the context. Proper attribution. No unsupported assertions. High specificity. \\
+        & 4 & Good & Most assertions are grounded in context. Minor inferences are reasonable and context-aligned. \\
+        & 3 & Acceptable & Some claims are grounded while others are based on general knowledge. Mixed sourcing. \\
+        & 2 & Poor & Many assertions lack context support. Model frequently makes claims not supported by provided information. \\
+        & 1 & Unacceptable & Response is largely ungrounded. Contradicts context or fabricates information not present in source material. \\
+        
+        \bottomrule
+    \end{tabularx}
+\end{table*}
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
 %%
