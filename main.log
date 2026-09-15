@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  14 SEP 2026 14:00
+This is pdfTeX, Version 3.141592653-2.6-1.40.29 (TeX Live 2026) (preloaded format=pdflatex 2026.6.17)  15 SEP 2026 09:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -736,90 +736,113 @@ Underfull \vbox (badness 10000) has occurred while \output is active []
 <PIC/scores_configurations_tick.pdf, id=78, 1858.12737pt x 458.86801pt>
 File: PIC/scores_configurations_tick.pdf Graphic file (type pdf)
 <use PIC/scores_configurations_tick.pdf>
-Package pdftex.def Info: PIC/scores_configurations_tick.pdf  used on input line 467.
+Package pdftex.def Info: PIC/scores_configurations_tick.pdf  used on input line 471.
 (pdftex.def)             Requested size: 522.0pt x 128.90927pt.
+<PIC/shapley_boxplots_horizontales.pdf, id=79, 1271.62909pt x 311.95161pt>
+File: PIC/shapley_boxplots_horizontales.pdf Graphic file (type pdf)
+<use PIC/shapley_boxplots_horizontales.pdf>
+Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 477.
+(pdftex.def)             Requested size: 522.0pt x 128.0533pt.
 
-
-LaTeX Warning: Reference `tab:resuls_broad' on page 6 undefined on input line 474.
-
-
-Overfull \hbox (2.20184pt too wide) in paragraph at lines 485--485
+Overfull \hbox (2.20184pt too wide) in paragraph at lines 493--493
  []|\T1/txr/bx/n/10 LLM_Q| 
  []
 
 
-Overfull \hbox (2.20184pt too wide) in paragraph at lines 485--486
+Overfull \hbox (2.20184pt too wide) in paragraph at lines 493--494
  []|\T1/txr/bx/n/10 LLM_G| 
  []
 
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-<PIC/consensus.png, id=79, 1172.2194pt x 249.8133pt>
-File: PIC/consensus.png Graphic file (type png)
-<use PIC/consensus.png>
-Package pdftex.def Info: PIC/consensus.png  used on input line 505.
-(pdftex.def)             Requested size: 522.0pt x 111.24469pt.
-
-LaTeX Warning: `!h' float specifier changed to `!ht'.
-
-
-LaTeX Warning: Reference `fig:broad' on page 6 undefined on input line 512.
-
-<PIC/tokens_metrics.pdf, id=80, 1442.63712pt x 354.44797pt>
-File: PIC/tokens_metrics.pdf Graphic file (type pdf)
-<use PIC/tokens_metrics.pdf>
-Package pdftex.def Info: PIC/tokens_metrics.pdf  used on input line 515.
-(pdftex.def)             Requested size: 522.0pt x 128.25018pt.
-<PIC/shapley_boxplots_horizontales.pdf, id=81, 1271.62909pt x 311.95161pt>
-File: PIC/shapley_boxplots_horizontales.pdf Graphic file (type pdf)
-<use PIC/shapley_boxplots_horizontales.pdf>
-Package pdftex.def Info: PIC/shapley_boxplots_horizontales.pdf  used on input line 522.
-(pdftex.def)             Requested size: 522.0pt x 128.0533pt.
-<PIC/shapleys_queries_greens.png, id=82, 843.588pt x 288.642pt>
+[6]
+<PIC/shapleys_queries_greens.png, id=83, 843.588pt x 288.642pt>
 File: PIC/shapleys_queries_greens.png Graphic file (type png)
 <use PIC/shapleys_queries_greens.png>
-Package pdftex.def Info: PIC/shapleys_queries_greens.png  used on input line 536.
+Package pdftex.def Info: PIC/shapleys_queries_greens.png  used on input line 519.
 (pdftex.def)             Requested size: 522.0pt x 178.60823pt.
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+ [7 <./PIC/scores_configurations_tick.pdf> <./PIC/shapley_boxplots_horizontales.pdf>]
+<PIC/consensus.png, id=492, 1172.2194pt x 249.8133pt>
+File: PIC/consensus.png Graphic file (type png)
+<use PIC/consensus.png>
+Package pdftex.def Info: PIC/consensus.png  used on input line 530.
+(pdftex.def)             Requested size: 522.0pt x 111.24469pt.
+
+
+LaTeX Warning: `!h' float specifier changed to `!ht'.
+
+<PIC/tokens_metrics.pdf, id=493, 1442.63712pt x 354.44797pt>
+File: PIC/tokens_metrics.pdf Graphic file (type pdf)
+<use PIC/tokens_metrics.pdf>
+Package pdftex.def Info: PIC/tokens_metrics.pdf  used on input line 540.
+(pdftex.def)             Requested size: 522.0pt x 128.25018pt.
 LaTeX Font Info:    Font shape `T1/txr/b/n' in size <7> not available
-(Font)              Font shape `T1/txr/bx/n' tried instead on input line 574.
-
-Overfull \vbox (7.75024pt too high) detected at line 713
+(Font)              Font shape `T1/txr/bx/n' tried instead on input line 584.
+[8 <./PIC/shapleys_queries_greens.png>]
+Overfull \vbox (19.74998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (17.25024pt too high) detected at line 713
+Overfull \vbox (10.24998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (7.75024pt too high) detected at line 713
+Overfull \vbox (29.24998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (17.25024pt too high) detected at line 713
+Overfull \vbox (0.74998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (7.75024pt too high) detected at line 713
+Overfull \vbox (29.24998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (17.25024pt too high) detected at line 713
+Overfull \vbox (19.74998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (47.25024pt too high) detected at line 739
+Overfull \vbox (10.24998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (47.25024pt too high) detected at line 739
+Overfull \vbox (29.24998pt too high) detected at line 731
  []
 
 
-Overfull \vbox (47.25024pt too high) detected at line 739
+Overfull \vbox (0.74998pt too high) detected at line 731
  []
 
-(./main.bbl [6]
+
+Overfull \vbox (29.24998pt too high) detected at line 731
+ []
+
+
+Overfull \vbox (19.74998pt too high) detected at line 731
+ []
+
+
+Overfull \vbox (10.24998pt too high) detected at line 731
+ []
+
+
+Overfull \vbox (29.24998pt too high) detected at line 731
+ []
+
+
+Overfull \vbox (0.74998pt too high) detected at line 731
+ []
+
+
+Overfull \vbox (29.24998pt too high) detected at line 731
+ []
+
+(./main.bbl
 Underfull \hbox (badness 6608) in paragraph at lines 21--25
 []\T1/txr/m/n/10 Corley, I., Lehmann, N., Robin-son, C., Tseng, G.,
  []
@@ -850,11 +873,6 @@ Underfull \hbox (badness 1681) in paragraph at lines 26--30
  []
 
 
-Overfull \hbox (85.91809pt too wide) in paragraph at lines 31--36
-\T1/cmtt/m/n/10 https://linkinghub.elsevier.com/retrieve/pii/S2666675825004564\T1/txr/m/n/10 ,
- []
-
-[7{c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./PIC/scores_configurations_tick.pdf> <./PIC/consensus.png> <./PIC/tokens_metrics.pdf>]
 Underfull \hbox (badness 7963) in paragraph at lines 42--46
 []\T1/txr/m/n/10 Kuckreja, K., Dan-ish, M.S., Naseer, M., Das, A.,
  []
@@ -875,83 +893,101 @@ Underfull \hbox (badness 10000) in paragraph at lines 42--46
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--51
+Underfull \hbox (badness 2119) in paragraph at lines 47--51
+[]\T1/txr/m/n/10 Liu, N.F., Lin, K., He-witt, J., Paran-jape, A., Bevilac-
+ []
+
+
+Underfull \hbox (badness 5203) in paragraph at lines 47--51
+\T1/txr/m/n/10 qua, M., Petroni, F., Liang, P., 2023.  Lost in
+ []
+
+
+Underfull \hbox (badness 6412) in paragraph at lines 47--51
+\T1/txr/m/n/10 the mid-dle: How lan-guage mod-els use long con-
+ []
+
+
+Underfull \hbox (badness 3919) in paragraph at lines 47--51
+\T1/txr/m/n/10 texts.  URL: \T1/cmtt/m/n/10 https://arxiv.org/abs/2307.03172\T1/txr/m/n/10 ,
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 52--56
 []\T1/txr/m/n/10 Lundberg, S., Lee, S.I., 2017.  A Uni-fied Ap-
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--51
+Underfull \hbox (badness 10000) in paragraph at lines 52--56
 \T1/txr/m/n/10 proach to In-ter-pret-ing Model Pre-dic-tions.
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 47--51
+Underfull \hbox (badness 10000) in paragraph at lines 52--56
 \T1/txr/m/n/10 URL: \T1/cmtt/m/n/10 http://arxiv.org/abs/1705.07874\T1/txr/m/n/10 ,
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+[9{c:/texlive/2026/texmf-dist/fonts/enc/dvips/cm-super/cm-super-t1.enc} <./PIC/consensus.png> <./PIC/tokens_metrics.pdf>]
+Underfull \hbox (badness 10000) in paragraph at lines 65--69
 []\T1/txr/m/n/10 Stewart, A.J., Fang, H., Cor-ley, I.A., Zhu,
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+Underfull \hbox (badness 10000) in paragraph at lines 65--69
 \T1/txr/m/n/10 X.X., 2026.  Earth em-bed-dings.  URL:
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 60--64
+Underfull \hbox (badness 10000) in paragraph at lines 65--69
 \T1/cmtt/m/n/10 http://arxiv.org/abs/2608.03410\T1/txr/m/n/10 ,
  []
 
 
-Underfull \hbox (badness 2012) in paragraph at lines 70--73
+Underfull \hbox (badness 2012) in paragraph at lines 75--78
 []\T1/txr/m/n/10 Zheng, L., Chi-ang, W.L., Sheng, Y., Zhuang, S., Wu,
  []
 
 
-Underfull \hbox (badness 6625) in paragraph at lines 70--73
+Underfull \hbox (badness 6625) in paragraph at lines 75--78
 \T1/txr/m/n/10 Z., Zhuang, Y., Lin, Z., Li, Z., Li, D., Xing,
  []
 
 
-Underfull \hbox (badness 5548) in paragraph at lines 70--73
+Underfull \hbox (badness 5548) in paragraph at lines 75--78
 \T1/txr/m/n/10 E.P., Zhang, H., Gon-za-lez, J.E., Sto-ica, I., 2023.
  []
 
 
-Underfull \hbox (badness 2828) in paragraph at lines 70--73
+Underfull \hbox (badness 2828) in paragraph at lines 75--78
 \T1/txr/m/n/10 Judg-ing LLM-as-a-Judge with MT-Bench and Chat-bot
  []
 
 
-Underfull \hbox (badness 3690) in paragraph at lines 70--73
+Underfull \hbox (badness 3690) in paragraph at lines 75--78
 \T1/txr/m/n/10 Arena.  URL: \T1/cmtt/m/n/10 http://arxiv.org/abs/2306.05685\T1/txr/m/n/10 ,
  []
 
-) [8 <./PIC/shapley_boxplots_horizontales.pdf> <./PIC/shapleys_queries_greens.png>] [9] [10] [11] (./main.aux)
+) [10
+
+] [11] [12] (./main.aux)
  ***********
 LaTeX2e <2026-06-01>
 L3 programming layer <2026-05-26>
  ***********
-
-
-LaTeX Warning: There were undefined references.
-
  ) 
 Here is how much of TeX's memory you used:
- 6857 strings out of 467167
- 101617 string characters out of 5413691
- 696058 words of memory out of 5000000
+ 6859 strings out of 467167
+ 101714 string characters out of 5413691
+ 695229 words of memory out of 5000000
  35981 multiletter control sequences out of 15000+600000
- 686240 words of font info for 155 fonts, out of 8000000 for 9000
+ 686720 words of font info for 157 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,19n,79p,2858b,365s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 72i,19n,79p,3423b,367s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <c:/texlive/2026/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtcxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxb.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxmi.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/rtxr.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/cm-super/sftt1000.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txex.pfb><c:/texlive/2026/texmf-dist/fonts/type1/public/txfonts/txsy.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmb8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmr8a.pfb><c:/texlive/2026/texmf-dist/fonts/type1/urw/times/utmri8a.pfb>
-Output written on main.pdf (11 pages, 8975234 bytes).
+Output written on main.pdf (12 pages, 8981545 bytes).
 PDF statistics:
- 655 PDF objects out of 1000 (max. 8388607)
- 242 compressed objects within 3 object streams
+ 658 PDF objects out of 1000 (max. 8388607)
+ 244 compressed objects within 3 object streams
  0 named destinations out of 1000 (max. 500000)
  46 words of extra memory for PDF output out of 10000 (max. 10000000)
 

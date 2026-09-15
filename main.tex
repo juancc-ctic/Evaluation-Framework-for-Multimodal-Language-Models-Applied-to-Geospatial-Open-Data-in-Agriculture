@@ -252,7 +252,7 @@ The architectural characteristics of the proposed system dictate the requirement
 	\label{fig:map_qgis}
 \end{figure}
 
-The study was carried out over a total of 15 target parcels, covering four distinct Land Use (LU) types: Fruit trees (FR), Pasture (PA), Unproductive (UN) and Forest (FO). The distribution of samples within Land Uses, as well as the volume of evaluation queries per parcel, is weighted according to the operational utility of the tool for each functional land use. 7 out of the 15 parcels belong to Fruit trees category, 4 are Pastures, and the remainer Unproductive and Forest land uses get 2 parcels each. Both the number of parcels per LU and the number of queries per parcel, are detailed in Table \ref{tab:num_queries_parcels}. \textcolor{red}{ Pendiente la parte de Fernando → Furthermore, the selected parcels exhibit a high degree of physical and geographical heterogeneity to stress-test the system under diverse conditions. This variance includes distinct topographies with slopes ranging from $0.5\%$ to $21.6\%$, varying altitudes, highly irregular geometric boundaries, and significant diversity in vegetative health, as captured by variable NDVI ranges. The spatial distribution and morphological characteristics of these parcels are illustrated in Fig. \ref{fig:parcel_mosaic}. Referencia a Fig. \ref{fig:map_qgis}.}
+The study was carried out over a total of 15 target parcels, covering four distinct Land Use (LU) types: Fruit trees (FR), Pasture (PA), Unproductive (UN) and Forest (FO). The distribution of samples within Land Uses, as well as the volume of evaluation queries per parcel, is weighted according to the operational utility of the tool for each functional land use. 7 out of the 15 parcels belong to Fruit trees category, 4 are Pastures, and the remainer Unproductive and Forest land uses get 2 parcels each. Both the number of parcels per LU and the number of queries per parcel, are detailed in Table \ref{tab:num_queries_parcels}. \textcolor{red}{ Pendiente la parte de Fernando sobre por qué se usan parcelas de una misma zona geografica, eviar sesgos, ombroclimas, etc → Furthermore, the selected parcels exhibit a high degree of physical and geographical heterogeneity to stress-test the system under diverse conditions. This variance includes distinct topographies with slopes ranging from $0.5\%$ to $21.6\%$, varying altitudes, highly irregular geometric boundaries, and significant diversity in vegetative health, as captured by variable NDVI ranges. The spatial distribution and morphological characteristics of these parcels are illustrated in Fig. \ref{fig:parcel_mosaic}. Referencia a Fig. \ref{fig:map_qgis}.}
 
 \begin{figure*}[t]
 	\centering{\includegraphics[width=\textwidth]{PIC/mosaic_2x8_white_bg_ablation.png}}
@@ -462,17 +462,25 @@ By substituting the conceptual coalitions with the empirical performance scores 
 Through this formulation, the outputs of the ablation configurations are transformed into distinct, quantified metrics that represent the definitive analytical weight of each architectural module. Furthermore, we exploit the inherent mathematical property of additive efficiency of Shapley values by formally defining the \textit{Global Delta} as the sum of the three individual modular contributions. This metric encapsulates the total aggregate gain in the system's performance. In practical terms, it quantifies the exact quality uplift achieved strictly through the integration of the external data sources, serving as measure to compare against conventional language models.
 
 \section{Results and Discussion}
+This section presents the results drawn from the evaluation of the 4 judges over the 143 queries along the 5 metrics, divided into the broad evaluation and the ablation study.
+
+\subsection{Overall performance}
+
 
 \begin{figure*}[t!]
 	\centering{\includegraphics[width=\textwidth]{PIC/scores_configurations_tick.pdf}}
-	\caption{Preliminary evaluation results from the \textit{Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}
+	\caption{Evaluation results from the \textit{Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}
 	\label{fig:results}
 \end{figure*}
 
-// TODO comentar sobre suficiente y necesario
+\begin{figure*}[t]
+	\centering{\includegraphics[width=\textwidth]{PIC/shapley_boxplots_horizontales.pdf}}
+	\caption{Marginal contributions of each module ${R,O,S}$ quantified with the Shapley values $\phi_{i}$ across the panel of 4 judges and the 5 metrics.}
+	\label{fig:shapleys}
+\end{figure*}
 
-This section presents the results drawn from the evaluation of the 4 judges over the 143 queries along the 5 metrics, divided into the broad evaluation and the ablation study. Firstly, \ref{tab:resuls_broad} contains the average scores of all 71 broad evaluation queries \textcolor{red}{meter (+- std) en la tabla?}.  
 
+Firstly, Tab. \ref{tab:results_broad} presents the average evaluation scores across the 71 broad queries for all four judges in the panel. \textcolor{red}{meter (+- std) en la tabla?}.  
 
 \begin{table}[h!]
     \caption{Average score of the 71 broad evaluation queries.}
@@ -493,12 +501,29 @@ This section presents the results drawn from the evaluation of the 4 judges over
     \end{tabular}
 \end{table}
 
+The baseline results indicate a highly robust overall performance. Across all evaluated metrics—Correctness, Completeness, Relevance, Utility, and Grounding—both human and machine judges awarded average scores consistently above 4.2 out of 5. While these high averages confirm the general quality, usefulness, and accuracy of the generated responses, they also exhibit a characteristic ceiling effect typical of Likert-scale evaluations when testing a generally competent foundational model. Consequently, while the aggregated scores validate the system's baseline viability, they do not provide sufficient granularity to understand the internal mechanics of the context-amplified architecture. 
+
+\subsection{Marginal contributions}
+
+The true analytical depth of this methodology emerges when examining the ablation study. Fig. \ref{fig:results} illustrates the performance variations across the different architectural configurations, grouped by the active status of the individual modules (Satellite, Orthophoto, and RAG). A preliminary visual inspection of these configurations immediately suggests that certain modules possess a more dominant influence on the final response quality than others. To rigorously quantify these visual trends and map the exact marginal contribution of each module, we analyze the calculated Shapley values, computed as presented in the previous section. As depicted in the boxplots of Fig. \ref{fig:shapleys}, the distribution of these values reveals distinct behavioral profiles for the three modules. In this framework, values to the right of zero indicate a positive contribution to the response quality, zero implies a neutral impact, and negative values denote a detrimental effect, meaning the inclusion of the module actively degraded the output.The Orthophoto module ($M_O$) emerges as the most critical contributor to the system's success. As shown in the distributions, its inclusion can add up to 2 to 3 points (on a 5-point scale) to the Completeness and Utility metrics. This can be explained due to the fact that this module is responsible for giving "eyes" to the system; hence asking the LLM to resolve a query without it is akin to asking it to analyze a parcel blindfolded. The Satellite module ($M_S$) also consistently yields positive Shapley values, contributing reliably, although more moderately, to the outputs. In  contrast, the RAG module ($M_R$) exhibits the most complex and nuanced behavior. While it provides positive contributions in specific scenarios, it frequently registers negative Shapley values, indicating that its activation penalized the response quality. This phenomenon is consistent with the fundamental mechanics of Retrieval-Augmented Generation, as RAG is heavily dependent on the availability of relevant external documentation and the semantic similarity between the user's query and the knowledge base. Therefore, when a query targets a topic with scarce or irrelevant documentation, the retrieval pipeline injects noise into the prompt context, confusing the LLM and degrading its output. Furthermore, unlike the visual modules (which are deterministically invoked whenever enabled), the RAG module's operation is non-deterministic; its actual utilization relies on the LLM's internal triage capabilities and the effectiveness of the semantic rerankers, making it more volatile. The numerical values of these insights is fully detailed in Table \ref{tab:shapley_extensive} (Appendix A), which catalogues the Shapley values and introduces the previously defined \textit{Global Delta} ($\Delta_{global}$). By analyzing this aggregate metric, we can definitively quantify the overarching value of the context-amplified architecture. For instance, the data demonstrates that, on average, the generated responses are 1.625 points out of 5 (a direct 32$\%$) more useful strictly as a result of integrating the external, multi-domain context compared to relying solely on the foundational model's knowledge.
+
+
 % \begin{figure}[h!]
 % 	\centering
 % 	\includegraphics[width=\columnwidth]{PIC/broad_bars.png}
 % 	\caption{Average values for the 4 evaluators and 5 metrics in the \textit{Broad} phase (complete system).}
 % 	\label{fig:broad}
 % \end{figure}
+
+\begin{figure*}[t]
+	\centering{\includegraphics[width=\textwidth]{PIC/shapleys_queries_greens.png}}
+	\caption{Shapley values by query aggregating across judges and metrics. \textcolor{red}{Comentar colores blanco y negro del texto?}}
+	\label{fig:shapleys_queries_2}
+\end{figure*}
+
+Having established the overarching performance trends and the aggregate marginal contributions of each module, we now discuss the ablation results within query-level analysis. A fundamental mathematical property of Shapley values is their linearity, which allows for the decomposition of the global game into individual experiments (queries), making it possible to identify which types of questions draw the most value from each architectural component. Fig. \ref{fig:shapleys_queries_2} illustrates the computed Shapley values for the 8 distinct queries of the ablation study, aggregated averaging the scores across all four judges and the five evaluation metrics for the sake of clarity. The resulting heatmap provides empirical evidence of how the semantic nature of a query dictates module utilization. For instance, the Satellite module ($M_S$) registers its highest marginal contribution (0.725) in response to the query: "Describe the density of this forest." By injecting satellite-derived vegetation indices, this module provides the system with the knowledge to provide a much more accurate response to this given question. Even more striking is the behavior of the Orthophoto module ($M_O$), which dominates the marginal contributions for spatial and descriptive tasks. This is most evident in the two bottom queries: "Describe the parcel" (yielding a Shapley value of 1.558) and "What kind of activities does this terrain allow?" (yielding 2.658). Both of these queries are heavily dependent on immediate visual context and structural terrain features. Thus, the activation of the visual module triggers a massive improvement in response quality. Conversely, the heatmap further reinforces the volatile nature of the RAG module ($M_R$) reiterating the strong dependence on the contribution of this module with the nature of the question and the provided documents. Ultimately, the observed volatility and lower average contribution of the RAG module should not be interpreted as an architectural flaw, but rather as an indicator of the system's operational flexibility. Because its efficacy is fundamentally related to the specific use case and the quality of the user's provided documentation, the module's true value is to be maximized by the practitioners themselves.  
+
+\subsection{Inter-Evaluator Reliability and Judge Consensus}
 
 \begin{figure*}[h!]
 	\centering
@@ -507,9 +532,9 @@ This section presents the results drawn from the evaluation of the 4 judges over
 	\label{fig:consensus}
 \end{figure*}
 
-Similarly, the trend across all metrics is ascending along the x-axis (values are lower in left-side configurations), showing how, for example, system utility in the \textit{Zero Shot} configuration is below 1/5 for most evaluators. Since this configuration corresponds to a standard LLM model without context augmentation, and with configurations progressively ordered by active modules, it can be concluded that \textbf{responses, as expected, improve as more geospatial terrain information is added.} This result consequently verifies the initial hypothesis and validates the proposed architecture.
+Understanding the degree of alignment among our hybrid panel of judges is crucial for validating the robustness of the proposed methodology. Fig. \ref{fig:consensus} visualizes the inter-evaluator agreement across all five metrics. To quantify this consensus, we employed Kendall’s rank correlation coefficient ($\tau$). Kendall's $\tau$ is more robust than Spearman's correlation for this specific dataset, as it mathematically accounts for the high frequency of tied ranks inherently produced by discrete 5-point Likert scales. Overall, the matrices reveal a solid baseline of agreement, validating the general coherence of the hybrid Mixture of Experts panel. The correlations exhibit expected patterns in both intra-group consensus (alignment between the two human judges and between the two LLMs) and inter-group consensus (human versus machine criteria), noticeable for example in the Completeness metric for the human side, or in Correctness and Grounding for the machines. As an example of discrepancy, the Human Expert ($H_E$) and the proprietary LLM judge ($LLM_G$) present a precisely $\tau = 0.00$ in Correctness. Statistically, this indicates that the occurrences of concordant and discordant rank pairs between these two judges are perfectly balanced. The root of this divergence lies in the subjective interpretation of the evaluation rubric (Appendix B), which defines Correctness as "the accuracy and truthfulness" of the response. This discrepancy is vividly illustrated in the Zero-Shot (ZS) configurations (previously observed in Fig. \ref{fig:results}). As documented in the supplementary dataset, when no external context is available, the system frequently outputs safety-aligned responses such as: “I cannot provide a specific status update [...] To give you an accurate response, I would need [...].” The Human Expert consistently assessed these responses with a maximum score of 5, rewarding the refusal to hallucinate. Conversely, $LLM_G$ heavily penalized these responses with a minimum score of 1, interpreting the refusal to provide the requested data as a failure to answer the prompt. This example exhibits the necessity of a hybrid human-in-the-loop panel, as a way to combine both criteria. 
 
-More generally, \ref{fig:broad} represents the average metric values from the \textit{Broad} stage evaluations, i.e., the complete system. For all evaluators, the resulting metrics average values very close to 5/5, implying that the system has responded with a high degree of success to the evaluated queries. These preliminary results serve as evidence that the proposed system is capable of generating high-quality, complete, useful, and generally successful responses in the broad sense.
+\subsection{Context length}
 
 \begin{figure*}[t!]
 	\centering{\includegraphics[width=\textwidth]{PIC/tokens_metrics.pdf}}
@@ -517,30 +542,15 @@ More generally, \ref{fig:broad} represents the average metric values from the \t
 	\label{fig:tokens_metrics}
 \end{figure*}
 
+Finally, we examine how the volume of injected information impacts the model's generation capabilities. Because the modules $M_S$ and $M_O$ operate deterministically, context length is directly correlated with the ablation configurations: adding more modules linearly increases the token count of the prompt. Fig. \ref{fig:tokens_metrics} plots the scores assigned by the judges against the context length (in tokens) for all queries. This analysis is particularly critical for the Relevance and Grounding metrics. A common vulnerability in context-augmented LLMs is the "lost in the middle" phenomenon (\cite{liu2023lostmiddlelanguagemodels}), where providing excessive information overwhelms the model's attention mechanism, causing it to generate irrelevant or poorly reasoned text. The positive upward trends across the consensus lines for both Relevance and Grounding empirically prove that our system overcomes this hurdle. Together, these two metrics validate the “sufficient and necessary” paradigm of any desirable output: the Grounding metric ensures the response possesses sufficient context-specific data to be individualized to the parcel, while the Relevance metric ensures the response contains only the necessary information, lacking of unnecessary noise. Fig. \ref{fig:tokens_metrics} demonstrates that as the context expands, the model successfully discerns relevant information through the multi-domain data. It must be noted that the capabilities of the system regarding the context length is heavily reliant on the token-window capacities and attention mechanisms of each specific language model.
 
-\begin{figure*}[t]
-	\centering{\includegraphics[width=\textwidth]{PIC/shapley_boxplots_horizontales.pdf}}
-	\caption{}
-	\label{fig:shapleys}
-\end{figure*}
-
-\textcolor{red}{Meter gráficas solo con valores del promedio de los 4 jueces para no crear ruido visual}
+% \textcolor{red}{Meter gráficas solo con valores del promedio de los 4 jueces para no crear ruido visual}
 
 % \begin{figure}[t]
 % 	\centering{\includegraphics[width=\columnwidth]{PIC/shapleys_queries_greens.png}}
 % 	\caption{}
 % 	\label{fig:shapleys_queries}
 % \end{figure}
-
-\begin{figure*}[t]
-	\centering{\includegraphics[width=\textwidth]{PIC/shapleys_queries_greens.png}}
-	\caption{}
-	\label{fig:shapleys_queries_2}
-\end{figure*}
-
-
-
-\textcolor{red}{Referencia a zenodo con dataset anonimizado}
 
 \section{Conclusions}
 
@@ -557,7 +567,7 @@ Thanks to ...
 \begin{table*}[t]
 \centering
 \caption{Shapley}
-\label{tab:}
+\label{tab:shapley_extensive}
 
 \renewcommand{\arraystretch}{0.9} 
 \setlength{\tabcolsep}{4pt}        
@@ -660,20 +670,17 @@ Thanks to ...
 \section{Appendix B: Evaluation rubric}
 
 
-\subsection{Without Context Metrics}
-
-Table \ref{tab:without_context} outlines the metrics used to evaluate responses without relying on external context: Correctness, Completeness, Relevance, and Utility.
-
 \begin{table*}[t]
     \centering
-    \caption{Assessment Metrics Without Context}
+    \caption{Evaluation rubric.}
     \label{tab:without_context}
-    \renewcommand{\arraystretch}{1.2}
+    \renewcommand{\arraystretch}{1}
     \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} c l X}
         \toprule
         \textbf{Metric \& Definition} & \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
         \midrule
-        
+		\multicolumn{4}{c}{Without context} \\
+        \midrule
         % Correctness
         \multirow{5}{=}{\textbf{1. Correctness}\\ \vspace{2pt} \footnotesize Measures the accuracy and truthfulness of the biological, physical, and geospatial information provided in the response.} 
         & 5 & Excellent & All information is factually accurate, scientifically sound, and geospatially precise. No errors or misconceptions. \\
@@ -708,36 +715,22 @@ Table \ref{tab:without_context} outlines the metrics used to evaluate responses 
         & 3 & Acceptable & Somewhat useful but lacks specific actionable recommendations. General guidance only. \\
         & 2 & Poor & Limited practical value. Information is too abstract or lacks applicability to real decisions. \\
         & 1 & Unacceptable & No practical utility. Response does not support any decision-making or action. \\
-        
-        \bottomrule
-    \end{tabularx}
-\end{table*}
-
-\subsection{With Context Metrics}
-
-Table \ref{tab:with_context} details the grounding metric, which evaluates the response based on the provided external context.
-
-\begin{table*}[t]
-    \centering
-    \caption{Assessment Metrics With Context}
-    \label{tab:with_context}
-    \renewcommand{\arraystretch}{.7}
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} c l X}
-        \toprule
-        \textbf{Metric \& Definition} & \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
         \midrule
-        
-        % Grounding
-        \multirow{5}{=}{\textbf{5. Grounding}\\ \vspace{2pt} \footnotesize Measures the degree to which assertions are strictly derived from and supported by the context. Evaluates Evidence-to-Claim ratio.} 
+		% \midrule
+
+		\multicolumn{4}{c}{With context} \\
+		\midrule
+		% Grounding
+        \multirow{5}{=}{\textbf{5. Grounding} \\ \vspace{2pt} \footnotesize Measures the degree to which assertions are strictly derived from and supported by the context. Evaluates Evidence-to-Claim ratio.} 
         & 5 & Excellent & All claims are explicitly supported by the context. Proper attribution. No unsupported assertions. High specificity. \\
         & 4 & Good & Most assertions are grounded in context. Minor inferences are reasonable and context-aligned. \\
         & 3 & Acceptable & Some claims are grounded while others are based on general knowledge. Mixed sourcing. \\
         & 2 & Poor & Many assertions lack context support. Model frequently makes claims not supported by provided information. \\
         & 1 & Unacceptable & Response is largely ungrounded. Contradicts context or fabricates information not present in source material. \\
-        
         \bottomrule
     \end{tabularx}
 \end{table*}
+
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
 %%
