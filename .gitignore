@@ -1,1 +1,28 @@
 .vscode
+
+## LaTeX auxiliary / intermediate files
+*.aux
+*.bbl
+*.bcf
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.run.xml
+*.synctex.gz
+*.synctex(busy)
+*.toc
+*.lof
+*.lot
+*.loc
+*.soc
+*.spl
+*.nav
+*.snm
+*.vrb
+*.xdv
+*.dvi
+
+## latexindent backups
+*.bak[0-9]*
