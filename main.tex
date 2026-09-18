@@ -468,7 +468,6 @@ This section presents the results drawn from the evaluation of the 4 judges over
 
 \subsection{Overall performance}
 
-
 \begin{figure*}[t!]
 	\centering{\includegraphics[width=\textwidth]{PIC/scores_configurations_tick.pdf}}
 	\caption{Evaluation results from the \textit{Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}
@@ -480,9 +479,6 @@ This section presents the results drawn from the evaluation of the 4 judges over
 	\caption{Marginal contributions of each module ${R,O,S}$ quantified with the Shapley values $\phi_{i}$ across the panel of 4 judges and the 5 metrics. Each box summarises the eight ablation queries (n=8). Confidence Intervals reported in Table \ref{tab:shapley_extensive} of \ref{app:A}.}
 	\label{fig:shapleys}
 \end{figure*}
-
-
-Firstly, Table \ref{tab:results_broad} presents the average evaluation scores across the 71 broad queries for all four judges in the panel. \textcolor{red}{meter (+- std) en la tabla?}.  
 
 \begin{table}[h!]
     \caption{Average score of the 71 broad evaluation queries.}
@@ -503,7 +499,7 @@ Firstly, Table \ref{tab:results_broad} presents the average evaluation scores ac
     \end{tabular}
 \end{table}
 
-The baseline results indicate a highly robust overall performance. Across all evaluated metrics—Correctness, Completeness, Relevance, Utility, and Grounding—both human and machine judges awarded average scores consistently above 4.2 out of 5. While these high averages confirm the general quality, usefulness, and accuracy of the generated responses, they also exhibit a characteristic ceiling effect typical of Likert-scale evaluations when testing a generally competent foundational model. Consequently, while the aggregated scores validate the system's baseline viability, they do not provide sufficient granularity to understand the internal mechanics of the context-amplified architecture. 
+Firstly, Table \ref{tab:results_broad} presents the average evaluation scores across the 71 broad queries for all four judges in the panel. \textcolor{red}{meter (+- std) en la tabla?}. The baseline results indicate a highly robust overall performance. Across all evaluated metrics—Correctness, Completeness, Relevance, Utility, and Grounding—both human and machine judges awarded average scores consistently above 4.2 out of 5. While these high averages confirm the general quality, usefulness, and accuracy of the generated responses, they also exhibit a characteristic ceiling effect typical of Likert-scale evaluations when testing a generally competent foundational model. Consequently, while the aggregated scores validate the system's baseline viability, they do not provide sufficient granularity to understand the internal mechanics of the context-amplified architecture. 
 
 \subsection{Marginal contributions}
 
@@ -529,16 +525,16 @@ Having established the overarching performance trends and the aggregate marginal
 
 \subsection{Inter-Evaluator Reliability and Judge Consensus}
 
-\textcolor{red}{In progress: cambiar Kendall tau por Krippendorff's alfa (\cite{krippendorff_computing_nodate, yamauchi_empirical_2026})}
-
 \begin{figure*}[h!]
 	\centering
 	\includegraphics[width=\textwidth]{PIC/krippendorff_metrics.pdf}
-	\caption{Judges agreement computed using the Krippendorff's $\alpha$.}
+	\caption{Judges agreement computed using the Krippendorff's $\alpha$ (n=143).}
 	\label{fig:consensus}
 \end{figure*}
 
-Understanding the degree of alignment among our hybrid panel of judges is crucial for validating the robustness of the proposed methodology. Fig. \ref{fig:consensus} visualizes the inter-evaluator agreement across all five metrics. To quantify this consensus, we employed Kendall’s rank correlation coefficient ($\tau$). Kendall's $\tau$ is more robust than Spearman's correlation for this specific dataset, as it mathematically accounts for the high frequency of tied ranks inherently produced by discrete 5-point Likert scales. Overall, the matrices reveal a solid baseline of agreement, validating the general coherence of the hybrid Mixture of Experts panel. The correlations exhibit expected patterns in both intra-group consensus (alignment between the two human judges and between the two LLMs) and inter-group consensus (human versus machine criteria), noticeable for example in the Completeness metric for the human side, or in Correctness and Grounding for the machines. As an example of discrepancy, the Human Expert ($H_E$) and the proprietary LLM judge ($LLM_G$) present a precisely $\tau = 0.00$ in Correctness. Statistically, this indicates that the occurrences of concordant and discordant rank pairs between these two judges are perfectly balanced. The root of this divergence lies in the subjective interpretation of the evaluation rubric (Appendix B), which defines Correctness as "the accuracy and truthfulness" of the response. This discrepancy is vividly illustrated in the Zero-Shot (ZS) configurations (previously observed in Fig. \ref{fig:results}). As documented in the supplementary dataset, when no external context is available, the system frequently outputs safety-aligned responses such as: “I cannot provide a specific status update [...] To give you an accurate response, I would need [...].” The Human Expert consistently assessed these responses with a maximum score of 5, rewarding the refusal to hallucinate. Conversely, $LLM_G$ heavily penalized these responses with a minimum score of 1, interpreting the refusal to provide the requested data as a failure to answer the prompt. This example exhibits the necessity of a hybrid human-in-the-loop panel, as a way to combine both criteria. 
+Understanding the degree of alignment within our hybrid panel of judges is crucial for validating the robustness of the proposed methodology. Fig. \ref{fig:consensus} visualizes the inter-evaluator agreement across the metrics. To quantify this consensus, we employed Krippendorff's $\alpha$ coefficient (\cite{krippendorff_computing_nodate}). Krippendorff's $\alpha$ was explicitly chosen over other reliability measures because it accommodates the ordinal nature of the 5-point Likert scale evaluations \cite{yamauchi_empirical_2026}. The pairwise Krippendorff's $\alpha$ heatmaps (Fig. \ref{fig:consensus}) reveal significant structural variations in judges consensus. A recurring pattern across the evaluation dimensions is the presence of strong intra-group agreement (human-human, and machine-machine) along with weaker inter-group agreement (human-machine). This dichotomy is most visibly pronounced in the Completeness metric, where the heatmap displays $2\times2$ high-agreement clusters in the top-left and bottom-right corners. Human judges exhibit substantial consensus with each other ($\alpha = 0.698$), as do the two LLMs ($\alpha = 0.488$). However, the cross-boundary agreement between humans and machines drops to near-random levels (e.g., $\alpha = 0.049$ between H$\_$C and LLM$\_$Q). Conversely, Utility emerges as the dimension with the most universally shared understanding, achieving the highest global agreement ($\alpha = 0.427$, $n=143$) among all four judges. These observable disparities mathematically justify the methodological decision to employ a human-in-the-loop hybrid 4-judge evaluation panel, since relying solely in either of them would yield a skewed assessment. 
+
+% As an example of discrepancy, the Human Expert ($H_E$) and the proprietary LLM judge ($LLM_G$) present a precisely $\tau = 0.00$ in Correctness. Statistically, this indicates that the occurrences of concordant and discordant rank pairs between these two judges are perfectly balanced. The root of this divergence lies in the subjective interpretation of the evaluation rubric (Appendix B), which defines Correctness as "the accuracy and truthfulness" of the response. This discrepancy is vividly illustrated in the Zero-Shot (ZS) configurations (previously observed in Fig. \ref{fig:results}). As documented in the supplementary dataset, when no external context is available, the system frequently outputs safety-aligned responses such as: “I cannot provide a specific status update [...] To give you an accurate response, I would need [...].” The Human Expert consistently assessed these responses with a maximum score of 5, rewarding the refusal to hallucinate. Conversely, $LLM_G$ heavily penalized these responses with a minimum score of 1, interpreting the refusal to provide the requested data as a failure to answer the prompt. This example exhibits the necessity of a hybrid human-in-the-loop panel, as a way to combine both criteria. 
 
 \subsection{Context length}
 
