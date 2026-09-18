@@ -172,12 +172,14 @@ Geospatial foundation models like Cambridge's Tessera, are trained on satellite 
 
 Advances of AI in agriculture: Deep learning (\cite{kamilaris_deep_2018})
 
-AI CHATBOTS references: 
+AI CHATBOTS references
 
-Remote sensing visual question answering → \cite{soni_earthdial_2025, zhang_spatial_2023, yuan_easy_2022, kuckreja_geochat_2023}
-Reasoning on agriculture data and decision making → \cite{koopman_agask_2024, xu_multimodal_2025, silva_gpt-4_2023, zhao_chatagri_2023, kuska_ai_2024}
-Diseases detection → \cite{llava_2024}
-Maping → \cite{zhang_mapgpt_2024}
+-Remote sensing visual question answering → \cite{soni_earthdial_2025, zhang_spatial_2023, yuan_easy_2022, kuckreja_geochat_2023}
+-Reasoning on agriculture data and decision making → \cite{koopman_agask_2024, xu_multimodal_2025, silva_gpt-4_2023, zhao_chatagri_2023, kuska_ai_2024}
+-Diseases detection → \cite{llava_2024}
+-Maping → \cite{zhang_mapgpt_2024}
+
+GeoEmbeddings and Geospatial foundation models → 
 
 \noindent\rule{\columnwidth}{0.4pt}
 
@@ -623,107 +625,107 @@ CRediT roles and contributions: Juan Canada: Conceptualization, Data curation, F
 
 \section{Appendix A: Shapley values}
 
-\textcolor{red}{Pendiente posicionar bien seccion con tablas de cada appendix}
+\textcolor{red}{Pendiente posicionar bien seccion con tablas de cada appendix → ¿se puede poner el Appendix A directamente en el caption de la tabla?}
 %% \label{}
 
 \begin{table*}[t]
 \centering
-\caption{Extensive numerical cataglogue of Shapley values for all 4 judges, 5 metrics and 3 modules. Global delta is computed as the sum of the three $\phi_{i}$ for each metric and judge.}
+\caption{Extensive numerical catalogue of Shapley values ($\phi_i$) for all 4 judges, 5 metrics, and 3 modules. Values report the empirical mean with 95\% confidence intervals [$\text{CI}_{2.5\%}, \text{CI}_{97.5\%}$] derived from non-parametric percentile bootstrapping ($B = 10{,}000$ resamples with replacement) to avoid distributional assumptions given the sample size $n=8$ queries and discrete Likert ratings. Relative contribution (\%) represents $\phi_i / \Delta \times 100$, and Global Delta ($\Delta$) is computed as the sum of the three $\phi_{i}$ for each metric and judge.}
 \label{tab:shapley_extensive}
 
-\renewcommand{\arraystretch}{0.9} 
-\setlength{\tabcolsep}{4pt}        
+\renewcommand{\arraystretch}{1} 
+\setlength{\tabcolsep}{5pt}        
 \scriptsize                        
 
-\begin{tabular}{>{\centering\arraybackslash}p{0.1\textwidth}
-		>{\raggedright\arraybackslash}p{0.2\textwidth}
-		p{0.1\textwidth}
-		>{\centering\arraybackslash}p{0.1\textwidth}
-		>{\centering\arraybackslash}p{0.2\textwidth}
-		>{\centering\arraybackslash}p{0.2\textwidth}
-	}
+\begin{tabular}{>{\centering\arraybackslash}p{0.08\textwidth}
+        >{\raggedright\arraybackslash}p{0.14\textwidth}
+        >{\centering\arraybackslash}p{0.06\textwidth}
+        >{\centering\arraybackslash}p{0.28\textwidth}
+        >{\centering\arraybackslash}p{0.17\textwidth}
+        >{\centering\arraybackslash}p{0.12\textwidth}
+    }
 \toprule
-\textbf{Judge} & \textbf{Metric} & \textbf{Module} & \textbf{Shapley Value} & \textbf{Relative Contribution (\%)} & \textbf{Global Delta} \\
+\textbf{Judge} & \textbf{Metric} & \textbf{Module} & \textbf{Shapley Value [95\% CI]} & \textbf{Relative Contribution (\%)} & \textbf{Global Delta} \\
 \midrule
-\multirow{15}{*}{H\_C} & \multirow{3}{*}{Correctness} & R & 0.167 & 16.67\% & \multirow{3}{*}{1.000} \\
- &  & O & 0.729 & 72.92\% &  \\
- &  & S & 0.104 & 10.42\% &  \\
+\multirow{15}{*}{H\_C} & \multirow{3}{*}{Correctness} & R & 0.167 [0.042, 0.271]    & 16.67\%    & \multirow{3}{*}{1.000} \\
+                       &                           & O & 0.729 [0.292, 1.229]    & 72.92\%    &  \\
+                       &                           & S & 0.104 [-0.229, 0.437]   & 10.42\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & 0.396 & 12.18\% & \multirow{3}{*}{3.250} \\
- &  & O & 2.083 & 64.10\% &  \\
- &  & S & 0.771 & 23.72\% &  \\
+                       & \multirow{3}{*}{Completeness} & R & 0.396 [0.188, 0.604]    & 12.18\%    & \multirow{3}{*}{3.250} \\
+                       &                           & O & 2.083 [1.479, 2.771]    & 64.10\%    &  \\
+                       &                           & S & 0.771 [0.417, 1.146]    & 23.72\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & 0.229 & 9.65\% & \multirow{3}{*}{2.375} \\
- &  & O & 1.854 & 78.07\% &  \\
- &  & S & 0.292 & 12.28\% &  \\
+                       & \multirow{3}{*}{Relevance} & R & 0.229 [0.021, 0.438]    & 9.65\%     & \multirow{3}{*}{2.375} \\
+                       &                           & O & 1.854 [1.125, 2.625]    & 78.07\%    &  \\
+                       &                           & S & 0.292 [-0.083, 0.708]   & 12.28\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & 0.271 & 8.67\% & \multirow{3}{*}{3.125} \\
- &  & O & 2.208 & 70.67\% &  \\
- &  & S & 0.646 & 20.67\% &  \\
+                       & \multirow{3}{*}{Utility}  & R & 0.271 [0.104, 0.438]    & 8.67\%     & \multirow{3}{*}{3.125} \\
+                       &                           & O & 2.208 [1.521, 2.958]    & 70.67\%    &  \\
+                       &                           & S & 0.646 [0.312, 0.979]    & 20.67\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & 0.208 & 12.82\% & \multirow{3}{*}{1.625} \\
- &  & O & 1.208 & 74.36\% &  \\
- &  & S & 0.208 & 12.82\% &  \\
+                       & \multirow{3}{*}{Grounding} & R & 0.208 [-0.062, 0.500]   & 12.82\%    & \multirow{3}{*}{1.625} \\
+                       &                           & O & 1.208 [0.354, 2.229]    & 74.36\%    &  \\
+                       &                           & S & 0.208 [-0.271, 0.667]   & 12.82\%    &  \\
 \midrule
-\multirow{15}{*}{H\_E} & \multirow{3}{*}{Correctness} & R & 0.021 & 3.33\% & \multirow{3}{*}{0.625} \\
- &  & O & 0.583 & 93.33\% &  \\
- &  & S & 0.021 & 3.33\% &  \\
+\multirow{15}{*}{H\_E} & \multirow{3}{*}{Correctness} & R & 0.021 [-0.146, 0.208]   & 3.33\%     & \multirow{3}{*}{0.625} \\
+                       &                           & O & 0.583 [-0.062, 1.333]   & 93.33\%    &  \\
+                       &                           & S & 0.021 [-0.292, 0.333]   & 3.33\%     &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & -0.021 & -0.98\% & \multirow{3}{*}{2.125} \\
- &  & O & 1.541 & 72.55\% &  \\
- &  & S & 0.604 & 28.43\% &  \\
+                       & \multirow{3}{*}{Completeness} & R & -0.021 [-0.229, 0.146]  & -0.98\%    & \multirow{3}{*}{2.125} \\
+                       &                           & O & 1.542 [0.938, 2.042]    & 72.55\%    &  \\
+                       &                           & S & 0.604 [0.167, 1.042]    & 28.43\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & -0.146 & -7.78\% & \multirow{3}{*}{1.875} \\
- &  & O & 1.479 & 78.89\% &  \\
- &  & S & 0.542 & 28.89\% &  \\
+                       & \multirow{3}{*}{Relevance} & R & -0.146 [-0.396, 0.125]  & -7.78\%    & \multirow{3}{*}{1.875} \\
+                       &                           & O & 1.479 [0.750, 2.271]    & 78.89\%    &  \\
+                       &                           & S & 0.542 [-0.042, 1.167]   & 28.89\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & -0.104 & -6.41\% & \multirow{3}{*}{1.625} \\
- &  & O & 1.333 & 82.05\% &  \\
- &  & S & 0.396 & 24.36\% &  \\
+                       & \multirow{3}{*}{Utility}  & R & -0.104 [-0.417, 0.188]  & -6.41\%    & \multirow{3}{*}{1.625} \\
+                       &                           & O & 1.333 [0.521, 2.083]    & 82.05\%    &  \\
+                       &                           & S & 0.396 [-0.083, 0.896]   & 24.36\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & 0.042 & 33.33\% & \multirow{3}{*}{0.125} \\
- &  & O & 0.042 & 33.33\% &  \\
- &  & S & 0.042 & 33.33\% &  \\
+                       & \multirow{3}{*}{Grounding} & R & 0.042 [0.000, 0.125]    & 33.33\%    & \multirow{3}{*}{0.125} \\
+                       &                           & O & 0.042 [0.000, 0.125]    & 33.33\%    &  \\
+                       &                           & S & 0.042 [0.000, 0.125]    & 33.33\%    &  \\
 \midrule
-\multirow{15}{*}{LLM\_Q} & \multirow{3}{*}{Correctness} & R & -0.146 & -14.58\% & \multirow{3}{*}{1.000} \\
- &  & O & 0.854 & 85.42\% &  \\
- &  & S & 0.292 & 29.17\% &  \\
+\multirow{15}{*}{LLM\_Q} & \multirow{3}{*}{Correctness} & R & -0.146 [-0.625, 0.354]  & -14.58\%   & \multirow{3}{*}{1.000} \\
+                       &                           & O & 0.854 [0.042, 1.854]    & 85.42\%    &  \\
+                       &                           & S & 0.292 [-0.125, 0.708]   & 29.17\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & -0.062 & 0.00\% & \multirow{3}{*}{0.000} \\
- &  & O & 0.062 & 0.00\% &  \\
- &  & S & 0.000 & 0.00\% &  \\
+                       & \multirow{3}{*}{Completeness} & R & -0.062 [-0.250, 0.062]  & 0.00\%     & \multirow{3}{*}{0.000} \\
+                       &                           & O & 0.062 [0.000, 0.146]    & 0.00\%     &  \\
+                       &                           & S & 0.000 [-0.125, 0.125]   & 0.00\%     &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & -0.250 & -50.00\% & \multirow{3}{*}{0.500} \\
- &  & O & 0.625 & 125.00\% &  \\
- &  & S & 0.125 & 25.00\% &  \\
+                       & \multirow{3}{*}{Relevance} & R & -0.250 [-0.562, 0.021]  & -50.00\%   & \multirow{3}{*}{0.500} \\
+                       &                           & O & 0.625 [0.125, 1.354]    & 125.00\%   &  \\
+                       &                           & S & 0.125 [-0.042, 0.292]   & 25.00\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & -0.062 & -6.25\% & \multirow{3}{*}{1.000} \\
- &  & O & 0.812 & 81.25\% &  \\
- &  & S & 0.250 & 25.00\% &  \\
+                       & \multirow{3}{*}{Utility}  & R & -0.063 [-0.354, 0.208]  & -6.25\%    & \multirow{3}{*}{1.000} \\
+                       &                           & O & 0.812 [0.021, 1.729]    & 81.25\%    &  \\
+                       &                           & S & 0.250 [-0.229, 0.750]   & 25.00\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & -0.479 & -383.33\% & \multirow{3}{*}{0.125} \\
- &  & O & 0.458 & 366.67\% &  \\
- &  & S & 0.146 & 116.67\% &  \\
+                       & \multirow{3}{*}{Grounding} & R & -0.479 [-0.812, -0.188] & -383.33\%  & \multirow{3}{*}{0.125} \\
+                       &                           & O & 0.458 [0.000, 1.125]    & 366.67\%   &  \\
+                       &                           & S & 0.146 [-0.083, 0.396]   & 116.67\%   &  \\
 \midrule
-\multirow{15}{*}{LLM\_G} & \multirow{3}{*}{Correctness} & R & -0.083 & -9.52\% & \multirow{3}{*}{0.875} \\
- &  & O & 0.667 & 76.19\% &  \\
- &  & S & 0.292 & 33.33\% &  \\
+\multirow{15}{*}{LLM\_G} & \multirow{3}{*}{Correctness} & R & -0.083 [-0.208, 0.000]  & -9.52\%    & \multirow{3}{*}{0.875} \\
+                       &                           & O & 0.667 [0.062, 1.479]    & 76.19\%    &  \\
+                       &                           & S & 0.292 [0.000, 0.667]    & 33.33\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Completeness} & R & -0.021 & -4.17\% & \multirow{3}{*}{0.500} \\
- &  & O & 0.354 & 70.83\% &  \\
- &  & S & 0.167 & 33.33\% &  \\
+                       & \multirow{3}{*}{Completeness} & R & -0.021 [-0.188, 0.125]  & -4.17\%    & \multirow{3}{*}{0.500} \\
+                       &                           & O & 0.354 [0.000, 0.729]    & 70.83\%    &  \\
+                       &                           & S & 0.167 [0.000, 0.333]    & 33.33\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Relevance} & R & -0.083 & -22.22\% & \multirow{3}{*}{0.375} \\
- &  & O & 0.292 & 77.78\% &  \\
- &  & S & 0.167 & 44.44\% &  \\
+                       & \multirow{3}{*}{Relevance} & R & -0.083 [-0.208, 0.000]  & -22.22\%   & \multirow{3}{*}{0.375} \\
+                       &                           & O & 0.292 [0.042, 0.667]    & 77.78\%    &  \\
+                       &                           & S & 0.167 [0.042, 0.312]    & 44.44\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Utility} & R & 0.000 & 0.00\% & \multirow{3}{*}{0.750} \\
- &  & O & 0.500 & 66.67\% &  \\
- &  & S & 0.250 & 33.33\% &  \\
+                       & \multirow{3}{*}{Utility}  & R & 0.000 [-0.062, 0.062]   & 0.00\%     & \multirow{3}{*}{0.750} \\
+                       &                           & O & 0.500 [0.000, 1.167]    & 66.67\%    &  \\
+                       &                           & S & 0.250 [0.000, 0.542]    & 33.33\%    &  \\
 \cmidrule(lr){2-6}
- & \multirow{3}{*}{Grounding} & R & -0.208 & -41.67\% & \multirow{3}{*}{0.500} \\
- &  & O & 0.479 & 95.83\% &  \\
- &  & S & 0.229 & 45.83\% &  \\
+                       & \multirow{3}{*}{Grounding} & R & -0.208 [-0.458, -0.042] & -41.67\%   & \multirow{3}{*}{0.500} \\
+                       &                           & O & 0.479 [-0.021, 1.250]   & 95.83\%    &  \\
+                       &                           & S & 0.229 [0.062, 0.417]    & 45.83\%    &  \\
 \bottomrule
 \end{tabular}
 \end{table*}
