@@ -41,6 +41,7 @@
 \usepackage{amsmath}
 %% The amsthm package provides extended theorem environments
 \usepackage{amsthm}
+\usepackage{xurl}
 \usepackage{cuted}
 \usepackage{array}
 \usepackage{multirow} 
@@ -168,6 +169,15 @@
 \label{sec:Introduction}
 
 Geospatial foundation models like Cambridge's Tessera, are trained on satellite images to support a wide range of environmental monitoring tasks. However, most are too difficult to use or understand by their intended users, according to \cite{young_how_2026}.
+
+Advances of AI in agriculture: Deep learning (\cite{kamilaris_deep_2018})
+
+AI CHATBOTS references: 
+
+Remote sensing visual question answering → \cite{soni_earthdial_2025, zhang_spatial_2023, yuan_easy_2022, kuckreja_geochat_2023}
+Reasoning on agriculture data and decision making → \cite{koopman_agask_2024, xu_multimodal_2025, silva_gpt-4_2023, zhao_chatagri_2023, kuska_ai_2024}
+Diseases detection → \cite{llava_2024}
+Maping → \cite{zhang_mapgpt_2024}
 
 \noindent\rule{\columnwidth}{0.4pt}
 
@@ -483,7 +493,7 @@ This section presents the results drawn from the evaluation of the 4 judges over
 
 \begin{figure*}[t]
 	\centering{\includegraphics[width=\textwidth]{PIC/shapley_boxplots_horizontales.pdf}}
-	\caption{Marginal contributions of each module ${R,O,S}$ quantified with the Shapley values $\phi_{i}$ across the panel of 4 judges and the 5 metrics.}
+	\caption{Marginal contributions of each module ${R,O,S}$ quantified with the Shapley values $\phi_{i}$ across the panel of 4 judges and the 5 metrics. Each box summarises the eight ablation queries (n = 8).}
 	\label{fig:shapleys}
 \end{figure*}
 
@@ -533,7 +543,7 @@ Having established the overarching performance trends and the aggregate marginal
 
 \subsection{Inter-Evaluator Reliability and Judge Consensus}
 
-\textcolor{red}{In progress: cambiar Kendall tau por Krippendorff's alfa \cite{yamauchi_empirical_2026}}
+\textcolor{red}{In progress: cambiar Kendall tau por Krippendorff's alfa (\cite{krippendorff_computing_nodate, yamauchi_empirical_2026})}
 
 \begin{figure*}[h!]
 	\centering
@@ -583,6 +593,29 @@ This research was partially funded by the Spanish Plan for Scientific and Techni
 \section*{CRediT Author Statement}
 
 CRediT roles and contributions: Juan Canada: Conceptualization, Data curation, Formal Analysis, Investigation, Methodology, Software, Validation, Visualization, and Writing – original draft. Fernando Hurtado: Resources and Writing – review $\&$ editing. Julio Molleda: Writing – review $\&$ editing and Supervision. Fidel Díez: Funding acquisition, Project administration and Writing – review $\&$ editing.
+
+\section*{Data availability}
+\textcolor{red}{meter aqui lo de zenodo y cambiar referencias en el texto}
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+\bibliographystyle{elsarticle-harv}
+\bibliography{bibliography}
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+%%\begin{thebibliography}{00}
+
+%% \bibitem[Author(year)]{label}
+%% For example:
+
+%% \bibitem[Aladro et al.(2015)]{Aladro15} Aladro, R., Martín, S., Riquelme, D., et al. 2015, \aas, 579, A101
+
+
+%%\end{thebibliography}
+
 
 %% The Appendices part is started with the command \appendix;
 %% appendix sections are then done as normal sections
@@ -759,25 +792,6 @@ CRediT roles and contributions: Juan Canada: Conceptualization, Data curation, F
         \bottomrule
     \end{tabularx}
 \end{table*}
-
-%% If you have bibdatabase file and want bibtex to generate the
-%% bibitems, please use
-%%
-\bibliographystyle{elsarticle-harv}
-\bibliography{bibliography}
-
-%% else use the following coding to input the bibitems directly in the
-%% TeX file.
-
-%%\begin{thebibliography}{00}
-
-%% \bibitem[Author(year)]{label}
-%% For example:
-
-%% \bibitem[Aladro et al.(2015)]{Aladro15} Aladro, R., Martín, S., Riquelme, D., et al. 2015, \aas, 579, A101
-
-
-%%\end{thebibliography}
 
 
 \end{document}
