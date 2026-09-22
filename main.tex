@@ -320,8 +320,7 @@ A simplified approach to response evaluation, as utilized in \cite{juan_2025}, r
 \subsubsection{Multidimensional metrics}
 
 The quality of the generated responses is quantified using a multidimensional 5-point Likert scale encompassing five distinct criteria (see Table \ref{tab:evaluation_metrics}). Four of these metrics—\textit{Correctness, Completeness, Relevance,} and \textit{Utility}—evaluate the intrinsic quality of the response and can be assessed without access to the retrieved context. Conversely, the \textit{Grounding} metric strictly requires contextual reference; it is specifically designed to measure the degree to which the formulated response is faithfully derived from the injected multi-domain data rather than the model's pre-existing generalized knowledge. In doing so, it serves as a critical diagnostic tool to identify and penalize \textit{internal knowledge over-reliance}, a phenomenon where an LLM disregards or underutilizes dynamically retrieved evidence, defaulting instead to its internalized knowledge. This distinction carries profound practical implications for model selection and hardware feasibility in precision agriculture. The computational overhead of an LLM is directly related to the depth and scope of its internal knowledge base. Consequently, executing large foundation models locally on edge devices remains computationally prohibitive. If empirical evaluation reveals that domain-specific accuracy is primarily governed by robust contextual grounding rather than massive internal knowledge, high-performance agricultural reasoning can be achieved using significantly smaller, quantized models.
-
-Appendix B \textcolor{orange}{comprobar referencia (no me deja hacer ref app:B)} contains the evaluation rubric given to the judges for all 5 matrics.
+\ref{app:B} contains the evaluation rubric given to the judges for all 5 matrics.
 
 \begin{table}[h!]
 	\caption{Multidimensional evaluation metrics framework. Note: The \textit{Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}
@@ -694,7 +693,7 @@ CRediT roles and contributions: Juan Canada: Conceptualization, Data curation, F
 \end{table*}
 
 \section{Evaluation rubric} 
-% \label(app:B)
+\label{app:B}
 
 
 \begin{table*}[t]
