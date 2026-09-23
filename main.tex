@@ -324,8 +324,7 @@ A simplified approach to response evaluation, as utilized in \citet{juan_2025}, 
 
 \subsubsection{Multidimensional metrics}
 
-The quality of the generated responses is quantified using a multidimensional 5-point Likert scale encompassing five distinct criteria (see Table~\ref{tab:evaluation_metrics}). Four of these metrics—\textit{Correctness, Completeness, Relevance,} and \textit{Utility}—evaluate the intrinsic quality of the response and can be assessed without access to the retrieved context. Conversely, the \textit{Grounding} metric strictly requires contextual reference; it is specifically designed to measure the degree to which the formulated response is faithfully derived from the injected multi-domain data rather than the model's pre-existing generalized knowledge. In doing so, it serves as a critical diagnostic tool to identify and penalize \textit{internal knowledge over-reliance}, a phenomenon where an LLM disregards or underutilizes dynamically retrieved evidence, defaulting instead to its internalized knowledge. This distinction carries profound practical implications for model selection and hardware feasibility in precision agriculture. The computational overhead of an LLM is directly related to the depth and scope of its internal knowledge base. Consequently, executing large foundation models locally on edge devices remains computationally prohibitive. If empirical evaluation reveals that domain-specific accuracy is primarily governed by robust contextual grounding rather than massive internal knowledge, high-performance agricultural reasoning can be achieved using significantly smaller, quantized models.
-\ref{app:B} contains the evaluation rubric given to the judges for all 5 metrics.
+The quality of the generated responses is quantified using a multidimensional 5-point Likert scale encompassing five distinct criteria (see Table~\ref{tab:evaluation_metrics}). Four of these metrics—\textit{Correctness, Completeness, Relevance,} and \textit{Utility}—evaluate the intrinsic quality of the response and can be assessed without access to the retrieved context. Conversely, the \textit{Grounding} metric strictly requires contextual reference; it is specifically designed to measure the degree to which the formulated response is faithfully derived from the injected multi-domain data rather than the model's pre-existing generalized knowledge. In doing so, it serves as a critical diagnostic tool to identify and penalize \textit{internal knowledge over-reliance}, a phenomenon where an LLM disregards or underutilizes dynamically retrieved evidence, defaulting instead to its internalized knowledge. This distinction carries profound practical implications for model selection and hardware feasibility in precision agriculture. The computational overhead of an LLM is directly related to the depth and scope of its internal knowledge base. Consequently, executing large foundation models locally on edge devices remains computationally prohibitive. If empirical evaluation reveals that domain-specific accuracy is primarily governed by robust contextual grounding rather than massive internal knowledge, high-performance agricultural reasoning can be achieved using significantly smaller, quantized models. Table~\ref{tab:rubric} in \ref{app:B} contains the evaluation rubric given to the judges for all 5 metrics.
 
 \begin{table}[h!]
 	\caption{Multidimensional evaluation metrics framework. Note: The \textit{Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}
@@ -593,7 +592,7 @@ CRediT roles and contributions: Juan Canada: Conceptualization, Data curation, F
 
 \section{Shapley values} \label{app:A}
 
-\textcolor{red}{Pendiente posicionar bien seccion con tablas de cada appendix → ¿se puede poner el Appendix A directamente en el caption de la tabla?}
+Table~\ref{tab:shapley_absolute} contains the extensive numerical catalogue of Shapley values for all 4 judges, 5 metrics, and 3 modules.
 %% \label{}
 
 % \begin{table*}[t]
@@ -803,11 +802,12 @@ CRediT roles and contributions: Juan Canada: Conceptualization, Data curation, F
 \section{Evaluation rubric} 
 \label{app:B}
 
+Table~\ref{tab:rubric} comprises the evaluation rubric given to the judges as instructions.
 
 \begin{table*}[t]
     \centering
     \caption{Evaluation rubric.}
-    \label{tab:without_context}
+    \label{tab:rubric}
     \renewcommand{\arraystretch}{1}
     \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} c l X}
         \toprule
@@ -867,6 +867,8 @@ CRediT roles and contributions: Juan Canada: Conceptualization, Data curation, F
 
 \section{Examples of concordance and discordance} 
 \label{app:C}
+
+Table~\ref{tab:evaluated_examples} includes 8 query examples with their evaluation scores in all 5 metrics for the 4 judges, divided into ``Concordance'' and ``Discordance''.
 
 % \begin{table*}[t]
 %     \centering
