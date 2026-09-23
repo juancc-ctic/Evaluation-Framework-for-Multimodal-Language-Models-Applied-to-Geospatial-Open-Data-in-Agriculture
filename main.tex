@@ -322,8 +322,6 @@ The implementation of the proposed evaluation methodology for the system require
 
 A simplified approach to response evaluation, as utilized in \citet{juan_2025}, relies exclusively on the LLM-as-a-judge framework. This paradigm offers distinct advantages in terms of execution speed and scalability, allowing for the rapid assessment of large datasets without the bottlenecks associated with human review. Conversely, assembling a panel of human evaluators requires substantial planning, timeframes, and financial resources. However, human evaluation remains indispensable, as it fundamentally reduces the leniency bias frequently exhibited by LLM evaluators \citep{gu_survey_2026} and provides a significantly higher degree of reliability when assessing nuanced, domain-specific reasoning. To effectively navigate this trade-off between scalability and qualitative rigor, we designed a hybrid, human-in-the-loop evaluation strategy. By merging human and machine critical judgement, this methodology not only optimizes resource allocation but also systematically mitigates the mono-dimensional biases inherent to using either approach in isolation. Consequently, the definitive panel of judges comprises four distinct entities: two human evaluators and two LLM-based evaluators. To combine both technical depth and practical accessibility, the human contingent is divided into two distinct roles, a domain expert (holding a PhD in Biology), regarded hereafter as ``Human Expert'' (H$\_$E) that provides rigorous scientific scrutiny; and a control evaluator, regarded as ``Human Control'' (H$\_$C), representing the end-user perspective in terms of clarity and usability for non-academic audience. All human assessments were executed independently in a blind setting, ensuring that evaluators could not influence one another. For the LLM side, we integrated two diverse language models with comparable computational footprints into the panel: a proprietary model (LLM$\_$G), \textit{Gemini 3.1 Flash Lite}, and an open-source model (LLM$\_$Q), \textit{Qwen3.5-397B-A17B-Instruct}.
 
-
-
 \subsubsection{Multidimensional metrics}
 
 The quality of the generated responses is quantified using a multidimensional 5-point Likert scale encompassing five distinct criteria (see Table~\ref{tab:evaluation_metrics}). Four of these metrics—\textit{Correctness, Completeness, Relevance,} and \textit{Utility}—evaluate the intrinsic quality of the response and can be assessed without access to the retrieved context. Conversely, the \textit{Grounding} metric strictly requires contextual reference; it is specifically designed to measure the degree to which the formulated response is faithfully derived from the injected multi-domain data rather than the model's pre-existing generalized knowledge. In doing so, it serves as a critical diagnostic tool to identify and penalize \textit{internal knowledge over-reliance}, a phenomenon where an LLM disregards or underutilizes dynamically retrieved evidence, defaulting instead to its internalized knowledge. This distinction carries profound practical implications for model selection and hardware feasibility in precision agriculture. The computational overhead of an LLM is directly related to the depth and scope of its internal knowledge base. Consequently, executing large foundation models locally on edge devices remains computationally prohibitive. If empirical evaluation reveals that domain-specific accuracy is primarily governed by robust contextual grounding rather than massive internal knowledge, high-performance agricultural reasoning can be achieved using significantly smaller, quantized models.
@@ -457,6 +455,26 @@ This section presents the results drawn from the evaluation of the 4 judges over
 
 \subsection{Overall performance}
 
+\begin{table*}[h]
+    \centering
+    \caption{Evaluation results across 71 broad evaluation queries. Values are reported as mean (standard deviation). Scores range from 1 to 5.}
+    \label{tab:results_broad}
+    \begin{tabular}{
+        >{\raggedright\arraybackslash}p{\dimexpr0.24\textwidth-2\tabcolsep\relax}
+        *{4}{>{\centering\arraybackslash}p{\dimexpr0.19\textwidth-2\tabcolsep\relax}}
+        }
+        \toprule
+        \textbf{Metric} & \textbf{H\_C} & \textbf{H\_E} & \textbf{LLM\_Q} & \textbf{LLM\_G} \\
+        \midrule
+        Correctness  & 4.690 (0.495) & 4.704 (0.684) & 4.817 (0.487) & 4.746 (0.579) \\
+        Completeness & 4.803 (0.401) & 4.817 (0.390) & 4.944 (0.287) & 4.958 (0.203) \\
+        Relevance    & 4.549 (0.580) & 4.817 (0.568) & 4.831 (0.414) & 4.930 (0.258) \\
+        Utility      & 4.704 (0.490) & 4.761 (0.726) & 4.859 (0.389) & 4.944 (0.287) \\
+        Grounding    & 4.606 (0.597) & 4.901 (0.300) & 4.296 (0.852) & 4.549 (0.923) \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
 \begin{figure*}[t!]
 	\centering{\includegraphics[width=\textwidth]{PIC/scores_configurations_tick.pdf}}
 	\caption{Evaluation results from the \textit{Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}
@@ -469,26 +487,7 @@ This section presents the results drawn from the evaluation of the 4 judges over
 	\label{fig:shapleys}
 \end{figure*}
 
-\begin{table}[h!]
-    \caption{Average score of the 71 broad evaluation queries.}
-    \label{tab:results_broad}
-    \begin{tabular}{
-        >{\raggedright\arraybackslash}p{\dimexpr0.28\columnwidth-2\tabcolsep\relax}
-        *{4}{>{\centering\arraybackslash}p{\dimexpr0.18\columnwidth-2\tabcolsep\relax}}
-        }
-        \hline
-        \textbf{Metric} & \textbf{H\_C} & \textbf{H\_E} & \textbf{LLM\_Q} & \textbf{LLM\_G} \\
-        \hline
-        Correctness  & 4.690 & 4.704 & 4.817 & 4.746 \\
-        Completeness & 4.803 & 4.817 & 4.944 & 4.958 \\
-        Relevance    & 4.549 & 4.817 & 4.831 & 4.930 \\
-        Utility      & 4.704 & 4.761 & 4.859 & 4.944 \\
-        Grounding    & 4.606 & 4.901 & 4.296 & 4.549 \\
-        \hline
-    \end{tabular}
-\end{table}
-
-Firstly, Table~\ref{tab:results_broad} presents the average evaluation scores across the 71 broad queries for all four judges in the panel. \textcolor{red}{meter (+- std) en la tabla?}. The baseline results indicate a highly robust overall performance. Across all evaluated metrics—Correctness, Completeness, Relevance, Utility, and Grounding—both human and machine judges awarded average scores consistently above 4.2 out of 5. While these high averages confirm the general quality, usefulness, and accuracy of the generated responses, they also exhibit a characteristic ceiling effect typical of Likert-scale evaluations when testing a generally competent foundational model. Consequently, while the aggregated scores validate the system's baseline viability, they do not provide sufficient granularity to understand the internal mechanics of the context-amplified architecture. 
+Firstly, Table~\ref{tab:results_broad} presents the average evaluation scores across the 71 broad queries for all four judges in the panel. The baseline results indicate a highly robust overall performance. Across all evaluated metrics—Correctness, Completeness, Relevance, Utility, and Grounding—both human and machine judges awarded average scores consistently above 4.2 out of 5. While these high averages confirm the general quality, usefulness, and accuracy of the generated responses, they also exhibit a characteristic ceiling effect typical of Likert-scale evaluations when testing a generally competent foundational model. Consequently, while the aggregated scores validate the system's baseline viability, they do not provide sufficient granularity to understand the internal mechanics of the context-amplified architecture. 
 
 \subsection{Marginal contributions}
 
