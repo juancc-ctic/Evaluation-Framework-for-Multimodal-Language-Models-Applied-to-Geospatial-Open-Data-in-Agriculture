@@ -29,7 +29,7 @@
 %% \documentclass[final,3p,times,authoryear]{elsarticle}
 %% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
 %% \documentclass[final,5p,times,authoryear]{elsarticle}
-\documentclass[final,5p,times,twocolumn,authoryear]{elsarticle}
+\documentclass[preprint,review,12pt,authoryear]{elsarticle}
 
 %% For including PIC, graphicx.sty has been loaded in
 %% elsarticle.cls. If you prefer to use the old commands
@@ -57,7 +57,12 @@
 %% The lineno packages adds line numbers. Start line numbering with
 %% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
 %% for the whole article with \linenumbers.
-%% \usepackage{lineno}
+\usepackage{lineno}
+%% xltabular = tabularx columns that may break across pages (used by the rubric)
+\usepackage{xltabular}
+%% Single switch for the size of every table body in the single-column review
+%% layout. Set to \normalsize when reverting to the two-column journal layout.
+\newcommand{\tabfont}{\scriptsize}
 
 %% You might want to define your own abbreviated commands for common used terms, e.g.:
 \newcommand{\kms}{km\,s$^{-1}$}
@@ -163,7 +168,7 @@
 
 %\tableofcontents
 
-%% \linenumbers
+\linenumbers
 
 %% main text
 
@@ -232,8 +237,9 @@ The second phase consists of an \textit{Ablation Study} intended to quantify the
 \centering
 \caption{Distribution of parcels, queries, and configurations across methodology stages for each land use category.}
 \label{tab:num_queries_parcels}
-\setlength{\tabcolsep}{3.5pt} 
+\setlength{\tabcolsep}{2pt}
 
+\tabfont
 \begin{tabularx}{\textwidth}{l *{8}{Y}}
 \toprule
 \multirow{2}{*}{\textbf{Land Use}} 
@@ -258,13 +264,15 @@ Unproductive (UN)  & 2 & 4 &  8 & 1 & 2 & 9 & 18 & -- \\
 \begin{table*}[t!]
 	\caption{Configurations construction using factorial design over architectural modules. PD means Plot Data. Active tool is always enabled because it is responsible for identifying parcel IDs as so.}
 	\label{tab:ablation_configs}
-	\begin{tabular}{p{0.28\textwidth}
+	\tabfont
+	\setlength{\tabcolsep}{3pt}
+	\begin{tabular}{p{0.24\textwidth}
 			p{0.07\textwidth}
-			p{0.07\textwidth}
-			p{0.07\textwidth}
-			p{0.08\textwidth}
-			p{0.17\textwidth}
 			p{0.09\textwidth}
+			p{0.07\textwidth}
+			p{0.06\textwidth}
+			p{0.13\textwidth}
+			p{0.07\textwidth}
 		}
 		\hline
 		\textbf{Modules} & \textbf{RAG} & \textbf{ORTHO} & \textbf{SAT} & \textbf{PD} & \textbf{Active Tool} & \textbf{Code} \\
@@ -298,6 +306,7 @@ The quality of the generated responses is quantified using a multidimensional 5-
 \begin{table}[h!]
 	\caption{Multidimensional evaluation metrics framework. Note: The \textit{Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}
 	\label{tab:evaluation_metrics}
+	\tabfont
 	\begin{tabular}{
 			>{\raggedright\arraybackslash}p{0.6\columnwidth}
 			>{\raggedright\arraybackslash}p{0.3\columnwidth}
@@ -388,6 +397,7 @@ This section presents the results drawn from the evaluation of the 4 judges over
     \centering
     \caption{Evaluation results across 71 broad evaluation queries. Values are reported as mean (standard deviation). Scores range from 1 to 5.}
     \label{tab:results_broad}
+    \tabfont
     \begin{tabular}{
         >{\raggedright\arraybackslash}p{\dimexpr0.24\textwidth-2\tabcolsep\relax}
         *{4}{>{\centering\arraybackslash}p{\dimexpr0.19\textwidth-2\tabcolsep\relax}}
@@ -480,8 +490,13 @@ The complete evaluation dataset supporting this study is publicly available at \
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
 %%
+%% The reference list is set single-spaced; the review option's 1.5 spacing
+%% applies to the body text only.
+\begingroup
+\def\baselinestretch{1}\normalsize
 \bibliographystyle{elsarticle-harv}
 \bibliography{bibliography}
+\endgroup
 
 %% else use the following coding to input the bibitems directly in the
 %% TeX file.
@@ -505,18 +520,24 @@ The complete evaluation dataset supporting this study is publicly available at \
 
 Table~\ref{tab:queries_catalogue} provides the catalogue of queries by land use and stage.
 
-\begin{table*}[t]
-\centering
-\caption{Catalogue of evaluation queries categorized by land use and experimental stage.}
-\label{tab:queries_catalogue}
-
+\begingroup
 \renewcommand{\arraystretch}{1.2}
-\setlength{\tabcolsep}{8pt}
-
-\begin{tabularx}{\textwidth}{p{0.14\textwidth} p{0.10\textwidth} >{\raggedright\arraybackslash}X}
+\setlength{\tabcolsep}{6pt}
+\tabfont
+\begin{xltabular}{\textwidth}{p{0.14\textwidth} p{0.10\textwidth} >{\raggedright\arraybackslash}X}
+\caption{Catalogue of evaluation queries categorized by land use and experimental stage.}
+\label{tab:queries_catalogue} \\
 \toprule
 \textbf{Land Use} & \textbf{Stage} & \textbf{Query} \\
 \midrule
+\endfirsthead
+\multicolumn{3}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+\toprule
+\textbf{Land Use} & \textbf{Stage} & \textbf{Query} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
     \multirow{7}{*}{Fruit trees} & \multirow{5}{*}{Broad}    & How can I improve the overall sustainability of this orchard? \\
                                 &                           & If a plague were to hit my plot, how should I face it? \\
                                 &                           & Assess the irrigation of parcel [plot\_ID] \\
@@ -550,196 +571,214 @@ Table~\ref{tab:queries_catalogue} provides the catalogue of queries by land use 
     \cmidrule(lr){2-3}
                                 & \multirow{2}{*}{Ablation} & Describe the parcel \\
                                 &                           & What kind of activities does this terrain allow? \\
-\bottomrule
-\end{tabularx}
-\end{table*}
+\end{xltabular}
+\endgroup
 
 \section{Evaluation rubric} 
 \label{app:rubric}
 
 Table~\ref{tab:rubric} comprises the evaluation rubric given to the judges as instructions.
 
-\begin{table*}[t]
-    \centering
-    \caption{Evaluation rubric.}
-    \label{tab:rubric}
+\begingroup
     \renewcommand{\arraystretch}{1}
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.5cm} c l X}
+    \tabfont
+    \setlength{\tabcolsep}{4pt}
+    \begin{xltabular}{\textwidth}{c l >{\raggedright\arraybackslash}X}
+        \caption{Evaluation rubric.}
+        \label{tab:rubric} \\
         \toprule
-        \textbf{Metric \& Definition} & \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
+        \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
         \midrule
-		\multicolumn{4}{c}{Without context} \\
+        \endfirsthead
+        \multicolumn{3}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+        \toprule
+        \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
+        \midrule
+        \endhead
+        \bottomrule
+        \endlastfoot
+		\multicolumn{3}{c}{Without context} \\
         \midrule
         % Correctness
-        \multirow{5}{=}{\textbf{1. Correctness}\\ \vspace{2pt} \footnotesize Measures the accuracy and truthfulness of the biological, physical, and geospatial information provided in the response.} 
-        & 5 & Excellent & All information is factually accurate, scientifically sound, and geospatially precise. No errors or misconceptions. \\
-        & 4 & Good & Most information is accurate with minor inaccuracies that do not affect the overall validity of the response. \\
-        & 3 & Acceptable & Contains some factual errors or imprecise geospatial information, but core claims are generally correct. \\
-        & 2 & Poor & Multiple significant errors in biological, physical, or geospatial claims. Misleading or questionable accuracy. \\
-        & 1 & Unacceptable & Information is largely incorrect, fabricated, or fundamentally flawed. Critical factual errors throughout. \\
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{1. Correctness} — Measures the accuracy and truthfulness of the biological, physical, and geospatial information provided in the response.} \\
+        5 & Excellent & All information is factually accurate, scientifically sound, and geospatially precise. No errors or misconceptions. \\
+        4 & Good & Most information is accurate with minor inaccuracies that do not affect the overall validity of the response. \\
+        3 & Acceptable & Contains some factual errors or imprecise geospatial information, but core claims are generally correct. \\
+        2 & Poor & Multiple significant errors in biological, physical, or geospatial claims. Misleading or questionable accuracy. \\
+        1 & Unacceptable & Information is largely incorrect, fabricated, or fundamentally flawed. Critical factual errors throughout. \\
         \midrule
         
         % Completeness
-        \multirow{5}{=}{\textbf{2. Completeness}\\ \vspace{2pt} \footnotesize Evaluates the extent to which the response fully addresses all components of the user's query and the specific task at hand.} 
-        & 5 & Excellent & Response comprehensively addresses all aspects of the query with thorough coverage. No missing elements. \\
-        & 4 & Good & Covers most query components adequately. Minor aspects may lack detail but overall complete. \\
-        & 3 & Acceptable & Addresses main query components but omits some secondary aspects. Partial coverage of the task. \\
-        & 2 & Poor & Missing several key components of the query. Response feels incomplete or rushed. \\
-        & 1 & Unacceptable & Fails to address the majority of the query. Critical components are missing entirely. \\
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{2. Completeness} — Evaluates the extent to which the response fully addresses all components of the user's query and the specific task at hand.} \\
+        5 & Excellent & Response comprehensively addresses all aspects of the query with thorough coverage. No missing elements. \\
+        4 & Good & Covers most query components adequately. Minor aspects may lack detail but overall complete. \\
+        3 & Acceptable & Addresses main query components but omits some secondary aspects. Partial coverage of the task. \\
+        2 & Poor & Missing several key components of the query. Response feels incomplete or rushed. \\
+        1 & Unacceptable & Fails to address the majority of the query. Critical components are missing entirely. \\
         \midrule
         
         % Relevance
-        \multirow{5}{=}{\textbf{3. Relevance}\\ \vspace{2pt} \footnotesize Assesses the signal-to-noise ratio. Focuses on whether the system is concise and direct, penalizing unnecessary or irrelevant information.} 
-        & 5 & Excellent & Highly focused and concise. Every statement directly contributes to answering the query. No filler. \\
-        & 4 & Good & Mostly relevant with minimal tangential information. Stays on topic throughout. \\
-        & 3 & Acceptable & Generally relevant but includes some unnecessary details or mild digressions. \\
-        & 2 & Poor & Contains significant irrelevant content. Noticeable amount of filler or off-topic information. \\
-        & 1 & Unacceptable & Largely irrelevant response. Excessive noise, repetition, or content unrelated to the query. \\
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{3. Relevance} — Assesses the signal-to-noise ratio. Focuses on whether the system is concise and direct, penalizing unnecessary or irrelevant information.} \\
+        5 & Excellent & Highly focused and concise. Every statement directly contributes to answering the query. No filler. \\
+        4 & Good & Mostly relevant with minimal tangential information. Stays on topic throughout. \\
+        3 & Acceptable & Generally relevant but includes some unnecessary details or mild digressions. \\
+        2 & Poor & Contains significant irrelevant content. Noticeable amount of filler or off-topic information. \\
+        1 & Unacceptable & Largely irrelevant response. Excessive noise, repetition, or content unrelated to the query. \\
         \midrule
         
         % Utility
-        \multirow{5}{=}{\textbf{4. Utility}\\ \vspace{2pt} \footnotesize Measures the practical value of the response for a user's decision-making process.} 
-        & 5 & Excellent & Highly actionable. Provides clear, practical insights that directly support decision-making. \\
-        & 4 & Good & Useful and applicable. Offers practical value with minor limitations in actionability. \\
-        & 3 & Acceptable & Somewhat useful but lacks specific actionable recommendations. General guidance only. \\
-        & 2 & Poor & Limited practical value. Information is too abstract or lacks applicability to real decisions. \\
-        & 1 & Unacceptable & No practical utility. Response does not support any decision-making or action. \\
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{4. Utility} — Measures the practical value of the response for a user's decision-making process.} \\
+        5 & Excellent & Highly actionable. Provides clear, practical insights that directly support decision-making. \\
+        4 & Good & Useful and applicable. Offers practical value with minor limitations in actionability. \\
+        3 & Acceptable & Somewhat useful but lacks specific actionable recommendations. General guidance only. \\
+        2 & Poor & Limited practical value. Information is too abstract or lacks applicability to real decisions. \\
+        1 & Unacceptable & No practical utility. Response does not support any decision-making or action. \\
         \midrule
 		% \midrule
 
-		\multicolumn{4}{c}{With context} \\
+		\multicolumn{3}{c}{With context} \\
 		\midrule
 		% Grounding
-        \multirow{5}{=}{\textbf{5. Grounding} \\ \vspace{2pt} \footnotesize Measures the degree to which assertions are strictly derived from and supported by the context. Evaluates Evidence-to-Claim ratio.} 
-        & 5 & Excellent & All claims are explicitly supported by the context. Proper attribution. No unsupported assertions. High specificity. \\
-        & 4 & Good & Most assertions are grounded in context. Minor inferences are reasonable and context-aligned. \\
-        & 3 & Acceptable & Some claims are grounded while others are based on general knowledge. Mixed sourcing. \\
-        & 2 & Poor & Many assertions lack context support. Model frequently makes claims not supported by provided information. \\
-        & 1 & Unacceptable & Response is largely ungrounded. Contradicts context or fabricates information not present in source material. \\
-        \bottomrule
-    \end{tabularx}
-\end{table*}
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{5. Grounding} — Measures the degree to which assertions are strictly derived from and supported by the context. Evaluates Evidence-to-Claim ratio.} \\
+        5 & Excellent & All claims are explicitly supported by the context. Proper attribution. No unsupported assertions. High specificity. \\
+        4 & Good & Most assertions are grounded in context. Minor inferences are reasonable and context-aligned. \\
+        3 & Acceptable & Some claims are grounded while others are based on general knowledge. Mixed sourcing. \\
+        2 & Poor & Many assertions lack context support. Model frequently makes claims not supported by provided information. \\
+        1 & Unacceptable & Response is largely ungrounded. Contradicts context or fabricates information not present in source material. \\
+    \end{xltabular}
+\endgroup
 
 \section{Shapley values} \label{app:shapley}
 
 Table~\ref{tab:shapley_absolute} contains the extensive numerical catalogue of Shapley values for all 4 judges, 5 metrics, and 3 modules.
 
-\begin{table*}[t]
-\centering
+\begingroup
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{3pt}
+\tabfont
+\begin{xltabular}{\textwidth}{>{\raggedright\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}p{0.09\textwidth} >{\centering\arraybackslash}X >{\centering\arraybackslash}p{0.19\textwidth} >{\centering\arraybackslash}p{0.12\textwidth}}
 \caption{Extensive numerical catalogue of Shapley values ($\phi_i$) for all 4 judges, 5 metrics, and 3 modules. Values report the empirical mean with 95\% confidence intervals [$\text{CI}_{2.5\%}, \text{CI}_{97.5\%}$] derived from non-parametric percentile bootstrapping ($B = 10{,}000$ resamples with replacement) to avoid distributional assumptions given the sample size $n=8$ queries and discrete Likert ratings. Share of total influence (\%) represents $|\phi_i| / \sum_{j} |\phi_j| \times 100$, and Global Delta ($\Delta$) is computed as the sum of the three $\phi_{i}$ for each metric and judge.}
-\label{tab:shapley_absolute}
-
-\renewcommand{\arraystretch}{1} 
-\setlength{\tabcolsep}{5pt}        
-\scriptsize                        
-
-\begin{tabular}{>{\centering\arraybackslash}p{0.08\textwidth}
-        >{\raggedright\arraybackslash}p{0.14\textwidth}
-        >{\centering\arraybackslash}p{0.06\textwidth}
-        >{\centering\arraybackslash}p{0.28\textwidth}
-        >{\centering\arraybackslash}p{0.17\textwidth}
-        >{\centering\arraybackslash}p{0.12\textwidth}
-    }
+\label{tab:shapley_absolute} \\
 \toprule
-\textbf{Judge} & \textbf{Metric} & \textbf{Module} & \textbf{Shapley Value [95\% CI]} & \textbf{Share of Total Influence (\%)} & \textbf{Global Delta} \\
+\textbf{Metric} & \textbf{Module} & \textbf{Shapley Value [95\% CI]} & \textbf{Share of Total Influence (\%)} & \textbf{Global Delta} \\
 \midrule
-\multirow{15}{*}{H\_C} & \multirow{3}{*}{Correctness} & R & 0.167 [0.042, 0.271]           & 16.67\%    & \multirow{3}{*}{1.000} \\
-                        &                             & O & 0.729 [0.292, 1.229]           & 72.92\%    &  \\
-                        &                             & S & 0.104 [-0.229, 0.437]          & 10.42\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Completeness} & R & 0.396 [0.188, 0.604]           & 12.18\%    & \multirow{3}{*}{3.250} \\
-                        &                             & O & 2.083 [1.479, 2.771]           & 64.10\%    &  \\
-                        &                             & S & 0.771 [0.417, 1.146]           & 23.72\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Relevance} & R & 0.229 [0.021, 0.438]           & 9.65\%     & \multirow{3}{*}{2.375} \\
-                        &                             & O & 1.854 [1.125, 2.625]           & 78.07\%    &  \\
-                        &                             & S & 0.292 [-0.083, 0.708]          & 12.28\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Utility} & R & 0.271 [0.104, 0.438]           & 8.67\%     & \multirow{3}{*}{3.125} \\
-                        &                             & O & 2.208 [1.521, 2.958]           & 70.67\%    &  \\
-                        &                             & S & 0.646 [0.312, 0.979]           & 20.67\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Grounding} & R & 0.208 [-0.062, 0.500]          & 12.82\%    & \multirow{3}{*}{1.625} \\
-                        &                             & O & 1.208 [0.354, 2.229]           & 74.36\%    &  \\
-                        &                             & S & 0.208 [-0.271, 0.667]          & 12.82\%    &  \\
+\endfirsthead
+\multicolumn{5}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+\toprule
+\textbf{Metric} & \textbf{Module} & \textbf{Shapley Value [95\% CI]} & \textbf{Share of Total Influence (\%)} & \textbf{Global Delta} \\
 \midrule
-\multirow{15}{*}{H\_E} & \multirow{3}{*}{Correctness} & R & 0.021 [-0.146, 0.208]          & 3.33\%     & \multirow{3}{*}{0.625} \\
-                        &                             & O & 0.583 [-0.062, 1.333]          & 93.33\%    &  \\
-                        &                             & S & 0.021 [-0.292, 0.333]          & 3.33\%     &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Completeness} & R & -0.021 [-0.229, 0.146]          & 0.96\%     & \multirow{3}{*}{2.125} \\
-                        &                             & O & 1.542 [0.938, 2.042]           & 71.15\%    &  \\
-                        &                             & S & 0.604 [0.167, 1.042]           & 27.88\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Relevance} & R & -0.146 [-0.396, 0.125]          & 6.73\%     & \multirow{3}{*}{1.875} \\
-                        &                             & O & 1.479 [0.750, 2.271]           & 68.27\%    &  \\
-                        &                             & S & 0.542 [-0.042, 1.167]          & 25.00\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Utility} & R & -0.104 [-0.417, 0.188]          & 5.68\%     & \multirow{3}{*}{1.625} \\
-                        &                             & O & 1.333 [0.521, 2.083]           & 72.73\%    &  \\
-                        &                             & S & 0.396 [-0.083, 0.896]          & 21.59\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Grounding} & R & 0.042 [0.000, 0.125]           & 33.33\%    & \multirow{3}{*}{0.125} \\
-                        &                             & O & 0.042 [0.000, 0.125]           & 33.33\%    &  \\
-                        &                             & S & 0.042 [0.000, 0.125]           & 33.33\%    &  \\
-\midrule
-\multirow{15}{*}{LLM\_Q} & \multirow{3}{*}{Correctness} & R & -0.146 [-0.625, 0.354]          & 11.29\%    & \multirow{3}{*}{1.000} \\
-                        &                             & O & 0.854 [0.042, 1.854]           & 66.13\%    &  \\
-                        &                             & S & 0.292 [-0.125, 0.708]          & 22.58\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Completeness} & R & -0.062 [-0.250, 0.062]          & 50.00\%    & \multirow{3}{*}{0.000} \\
-                        &                             & O & 0.062 [0.000, 0.146]           & 50.00\%    &  \\
-                        &                             & S & 0.000 [-0.125, 0.125]          & 0.00\%     &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Relevance} & R & -0.250 [-0.562, 0.021]          & 25.00\%    & \multirow{3}{*}{0.500} \\
-                        &                             & O & 0.625 [0.125, 1.354]           & 62.50\%    &  \\
-                        &                             & S & 0.125 [-0.042, 0.292]          & 12.50\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Utility} & R & -0.063 [-0.354, 0.208]          & 5.56\%     & \multirow{3}{*}{1.000} \\
-                        &                             & O & 0.812 [0.021, 1.729]           & 72.22\%    &  \\
-                        &                             & S & 0.250 [-0.229, 0.750]          & 22.22\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Grounding} & R & -0.479 [-0.812, -0.188]         & 44.23\%    & \multirow{3}{*}{0.125} \\
-                        &                             & O & 0.458 [0.000, 1.125]           & 42.31\%    &  \\
-                        &                             & S & 0.146 [-0.083, 0.396]          & 13.46\%    &  \\
-\midrule
-\multirow{15}{*}{LLM\_G} & \multirow{3}{*}{Correctness} & R & -0.083 [-0.208, 0.000]          & 8.00\%     & \multirow{3}{*}{0.875} \\
-                        &                             & O & 0.667 [0.062, 1.479]           & 64.00\%    &  \\
-                        &                             & S & 0.292 [0.000, 0.667]           & 28.00\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Completeness} & R & -0.021 [-0.188, 0.125]          & 3.85\%     & \multirow{3}{*}{0.500} \\
-                        &                             & O & 0.354 [0.000, 0.729]           & 65.38\%    &  \\
-                        &                             & S & 0.167 [0.000, 0.333]           & 30.77\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Relevance} & R & -0.083 [-0.208, 0.000]          & 15.38\%    & \multirow{3}{*}{0.375} \\
-                        &                             & O & 0.292 [0.042, 0.667]           & 53.85\%    &  \\
-                        &                             & S & 0.167 [0.042, 0.312]           & 30.77\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Utility} & R & 0.000 [-0.062, 0.062]          & 0.00\%     & \multirow{3}{*}{0.750} \\
-                        &                             & O & 0.500 [0.000, 1.167]           & 66.67\%    &  \\
-                        &                             & S & 0.250 [0.000, 0.542]           & 33.33\%    &  \\
-\cmidrule(lr){2-6}
-                        & \multirow{3}{*}{Grounding} & R & -0.208 [-0.458, -0.042]         & 22.73\%    & \multirow{3}{*}{0.500} \\
-                        &                             & O & 0.479 [-0.021, 1.250]          & 52.27\%    &  \\
-                        &                             & S & 0.229 [0.062, 0.417]           & 25.00\%    &  \\
+\endhead
 \bottomrule
-\end{tabular}
-\end{table*}
+\endlastfoot
+\multicolumn{5}{@{}l}{\textbf{Judge: H\_C}} \\
+    \multirow{3}{*}{Correctness} & R & 0.167 [0.042, 0.271]           & 16.67\%    & \multirow{3}{*}{1.000} \\
+    & O & 0.729 [0.292, 1.229]           & 72.92\%    &  \\
+    & S & 0.104 [-0.229, 0.437]          & 10.42\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & 0.396 [0.188, 0.604]           & 12.18\%    & \multirow{3}{*}{3.250} \\
+    & O & 2.083 [1.479, 2.771]           & 64.10\%    &  \\
+    & S & 0.771 [0.417, 1.146]           & 23.72\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & 0.229 [0.021, 0.438]           & 9.65\%     & \multirow{3}{*}{2.375} \\
+    & O & 1.854 [1.125, 2.625]           & 78.07\%    &  \\
+    & S & 0.292 [-0.083, 0.708]          & 12.28\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & 0.271 [0.104, 0.438]           & 8.67\%     & \multirow{3}{*}{3.125} \\
+    & O & 2.208 [1.521, 2.958]           & 70.67\%    &  \\
+    & S & 0.646 [0.312, 0.979]           & 20.67\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & 0.208 [-0.062, 0.500]          & 12.82\%    & \multirow{3}{*}{1.625} \\
+    & O & 1.208 [0.354, 2.229]           & 74.36\%    &  \\
+    & S & 0.208 [-0.271, 0.667]          & 12.82\%    &  \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Judge: H\_E}} \\
+    \multirow{3}{*}{Correctness} & R & 0.021 [-0.146, 0.208]          & 3.33\%     & \multirow{3}{*}{0.625} \\
+    & O & 0.583 [-0.062, 1.333]          & 93.33\%    &  \\
+    & S & 0.021 [-0.292, 0.333]          & 3.33\%     &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & -0.021 [-0.229, 0.146]          & 0.96\%     & \multirow{3}{*}{2.125} \\
+    & O & 1.542 [0.938, 2.042]           & 71.15\%    &  \\
+    & S & 0.604 [0.167, 1.042]           & 27.88\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & -0.146 [-0.396, 0.125]          & 6.73\%     & \multirow{3}{*}{1.875} \\
+    & O & 1.479 [0.750, 2.271]           & 68.27\%    &  \\
+    & S & 0.542 [-0.042, 1.167]          & 25.00\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & -0.104 [-0.417, 0.188]          & 5.68\%     & \multirow{3}{*}{1.625} \\
+    & O & 1.333 [0.521, 2.083]           & 72.73\%    &  \\
+    & S & 0.396 [-0.083, 0.896]          & 21.59\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & 0.042 [0.000, 0.125]           & 33.33\%    & \multirow{3}{*}{0.125} \\
+    & O & 0.042 [0.000, 0.125]           & 33.33\%    &  \\
+    & S & 0.042 [0.000, 0.125]           & 33.33\%    &  \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Judge: LLM\_Q}} \\
+    \multirow{3}{*}{Correctness} & R & -0.146 [-0.625, 0.354]          & 11.29\%    & \multirow{3}{*}{1.000} \\
+    & O & 0.854 [0.042, 1.854]           & 66.13\%    &  \\
+    & S & 0.292 [-0.125, 0.708]          & 22.58\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & -0.062 [-0.250, 0.062]          & 50.00\%    & \multirow{3}{*}{0.000} \\
+    & O & 0.062 [0.000, 0.146]           & 50.00\%    &  \\
+    & S & 0.000 [-0.125, 0.125]          & 0.00\%     &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & -0.250 [-0.562, 0.021]          & 25.00\%    & \multirow{3}{*}{0.500} \\
+    & O & 0.625 [0.125, 1.354]           & 62.50\%    &  \\
+    & S & 0.125 [-0.042, 0.292]          & 12.50\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & -0.063 [-0.354, 0.208]          & 5.56\%     & \multirow{3}{*}{1.000} \\
+    & O & 0.812 [0.021, 1.729]           & 72.22\%    &  \\
+    & S & 0.250 [-0.229, 0.750]          & 22.22\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & -0.479 [-0.812, -0.188]         & 44.23\%    & \multirow{3}{*}{0.125} \\
+    & O & 0.458 [0.000, 1.125]           & 42.31\%    &  \\
+    & S & 0.146 [-0.083, 0.396]          & 13.46\%    &  \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Judge: LLM\_G}} \\
+    \multirow{3}{*}{Correctness} & R & -0.083 [-0.208, 0.000]          & 8.00\%     & \multirow{3}{*}{0.875} \\
+    & O & 0.667 [0.062, 1.479]           & 64.00\%    &  \\
+    & S & 0.292 [0.000, 0.667]           & 28.00\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & -0.021 [-0.188, 0.125]          & 3.85\%     & \multirow{3}{*}{0.500} \\
+    & O & 0.354 [0.000, 0.729]           & 65.38\%    &  \\
+    & S & 0.167 [0.000, 0.333]           & 30.77\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & -0.083 [-0.208, 0.000]          & 15.38\%    & \multirow{3}{*}{0.375} \\
+    & O & 0.292 [0.042, 0.667]           & 53.85\%    &  \\
+    & S & 0.167 [0.042, 0.312]           & 30.77\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & 0.000 [-0.062, 0.062]          & 0.00\%     & \multirow{3}{*}{0.750} \\
+    & O & 0.500 [0.000, 1.167]           & 66.67\%    &  \\
+    & S & 0.250 [0.000, 0.542]           & 33.33\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & -0.208 [-0.458, -0.042]         & 22.73\%    & \multirow{3}{*}{0.500} \\
+    & O & 0.479 [-0.021, 1.250]          & 52.27\%    &  \\
+    & S & 0.229 [0.062, 0.417]           & 25.00\%    &  \\
+\end{xltabular}
+\endgroup
 
 \section{Examples of concordance and discordance} 
 \label{app:concordance}
 
 Table~\ref{tab:evaluated_examples} includes 8 query examples with their evaluation scores in all 5 metrics for the 4 judges, divided into ``Concordance'' and ``Discordance''.
 
-\begin{table*}[t]
-    \centering
-    \caption{Set of evaluated query examples divided by ``Concordance'' and ``Discordance''. Standard Deviation (SD) is reported at the query level rather than Krippendorff's $\alpha$, as $\alpha$ is mathematically unstable for small samples with low score variance. The five evaluated metrics are \textbf{Corr}ectness, \textbf{Comp}leteness, \textbf{Rel}evance, \textbf{Util}ity and  \textbf{Grou}nding. AB- query codes indicate belonging to Ablation study, along with its C-x configuration code; the remaining queries are from Broad stage.}
-    \label{tab:evaluated_examples}
-    \renewcommand{\arraystretch}{1.1}
-    \begin{tabularx}{\textwidth}{>{\raggedright\arraybackslash}p{2.8cm} X c c c c c c c}
-        \toprule
-        \textbf{Query Code} & \textbf{Query} & \textbf{Judge} & \textbf{Corr.} & \textbf{Comp.} & \textbf{Rel.} & \textbf{Util.} & \textbf{Grou.} & \textbf{SD} \\
-        \midrule
+\begingroup
+\renewcommand{\arraystretch}{1.1}
+\tabfont
+\setlength{\tabcolsep}{3pt}
+\begin{xltabular}{\textwidth}{>{\raggedright\arraybackslash}p{2.6cm} X c c c c c c c}
+\caption{Set of evaluated query examples divided by ``Concordance'' and ``Discordance''. Standard Deviation (SD) is reported at the query level rather than Krippendorff's $\alpha$, as $\alpha$ is mathematically unstable for small samples with low score variance. The five evaluated metrics are \textbf{Corr}ectness, \textbf{Comp}leteness, \textbf{Rel}evance, \textbf{Util}ity and  \textbf{Grou}nding. AB- query codes indicate belonging to Ablation study, along with its C-x configuration code; the remaining queries are from Broad stage.}
+\label{tab:evaluated_examples} \\
+\toprule
+\textbf{Query Code} & \textbf{Query} & \textbf{Judge} & \textbf{Corr.} & \textbf{Comp.} & \textbf{Rel.} & \textbf{Util.} & \textbf{Grou.} & \textbf{SD} \\
+\midrule
+\endfirsthead
+\multicolumn{9}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+\toprule
+\textbf{Query Code} & \textbf{Query} & \textbf{Judge} & \textbf{Corr.} & \textbf{Comp.} & \textbf{Rel.} & \textbf{Util.} & \textbf{Grou.} & \textbf{SD} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
         \multicolumn{9}{c}{\textbf{Concordance}} \\
         \midrule
         
@@ -816,9 +855,8 @@ Table~\ref{tab:evaluated_examples} includes 8 query examples with their evaluati
         & & $H_E$ & 3 & 3 & 2 & 2 & 5 & \\
         & & $LLM_Q$ & 5 & 4 & 5 & 3 & 5 & \\
         & & $LLM_G$ & 5 & 5 & 5 & 5 & 5 & \\
-        \bottomrule
-    \end{tabularx}
-\end{table*}
+\end{xltabular}
+\endgroup
 
 \
 \end{document}
