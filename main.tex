@@ -483,14 +483,11 @@ Ultimately, this work successfully validates not only the architecture of the co
 
 \section*{Data availability} \label{sec:Data_av}
 
-%% ANONYMIZED VERSION. The public identifier (https://www.doi.org/10.57967/hf/10594)
-%% resolves to an account that names the authors, so during review the dataset is
-%% served through a restricted Zenodo deposit reachable only via the share link
-%% below. TODO before submission: replace ZENODO-RECORD-ID and REVIEWER-TOKEN with
-%% the real values, and check that the Zenodo record's creator metadata and the
-%% files themselves carry no author, institution or account names.
-%% TODO on acceptance: restore the permanent DOI in place of the share link.
-The complete evaluation dataset supporting this study \citep{dataset_evaluation} is released under the Apache~2.0 license and is available to reviewers through the following anonymous access link: \url{https://zenodo.org/records/ZENODO-RECORD-ID?token=REVIEWER-TOKEN}. The permanent repository identifier is omitted from this anonymized version because it discloses author identity, and will be stated in full in the published article. The dataset contains the 143 evaluation samples summarized in Table~\ref{tab:num_queries_parcels}, comprising the 71 samples of the \textit{Broad Performance Assessment} phase and the 72 samples of the \textit{Ablation Study} phase across the nine architectural configurations. Each sample provides a unique query identifier, the land use category of the target parcel, the natural-language query, the orthophoto of the parcel, the external multi-domain context retrieved by the system, and the response generated from that query and context. Parcel orthophotos are additionally distributed as individual PNG files. The release therefore contains the complete set of materials presented to the panel of judges, so that the evaluation reported in Section~\ref{sec:Results} can be independently reproduced, audited, or extended to additional judges, metrics, or conversational systems.
+%% ANONYMIZED VERSION. The permanent identifier (https://www.doi.org/10.57967/hf/10594)
+%% resolves to a Hugging Face account that names the authors, so for review the
+%% dataset is served through an anonymizing proxy that strips repository ownership.
+%% TODO on acceptance: restore the permanent DOI in place of the proxy link.
+The complete evaluation dataset supporting this study \citep{dataset_evaluation} is released under the Apache~2.0 license and is available to reviewers through the following anonymous access link: \url{https://anonymous-hf.com/a/0paqs66vdpic/}. The permanent repository identifier is omitted from this anonymized version because it discloses author identity, and will be stated in full in the published article. The dataset contains the 143 evaluation samples summarized in Table~\ref{tab:num_queries_parcels}, comprising the 71 samples of the \textit{Broad Performance Assessment} phase and the 72 samples of the \textit{Ablation Study} phase across the nine architectural configurations. Each sample provides a unique query identifier, the land use category of the target parcel, the natural-language query, the orthophoto of the parcel, the external multi-domain context retrieved by the system, and the response generated from that query and context. Parcel orthophotos are additionally distributed as individual PNG files. The release therefore contains the complete set of materials presented to the panel of judges, so that the evaluation reported in Section~\ref{sec:Results} can be independently reproduced, audited, or extended to additional judges, metrics, or conversational systems.
 
 %% If you have bibdatabase file and want bibtex to generate the
 %% bibitems, please use
