@@ -1,0 +1,868 @@
+%% 
+%% Copyright 2007-2020 Elsevier Ltd
+%% 
+%% This file is part of the 'Elsarticle Bundle'.
+%% ---------------------------------------------
+%% 
+%% It may be distributed under the conditions of the LaTeX Project Public
+%% License, either version 1.2 of this license or (at your option) any
+%% later version.  The latest version of this license is in
+%%    http://www.latex-project.org/lppl.txt
+%% and version 1.2 or later is part of all distributions of LaTeX
+%% version 1999/12/01 or later.
+%% 
+%% The list of all files belonging to the 'Elsarticle Bundle' is
+%% given in the file `manifest.txt'.
+%% 
+%% Template article for Elsevier's document class `elsarticle'
+%% with harvard style bibliographic references
+
+%\documentclass[preprint,12pt,authoryear]{elsarticle}
+
+%% Use the option review to obtain double line spacing
+%% \documentclass[authoryear,preprint,review,12pt]{elsarticle}
+
+%% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+%% for a journal layout:
+%% \documentclass[final,1p,times,authoryear]{elsarticle}
+%% \documentclass[final,1p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,authoryear]{elsarticle}
+%% \documentclass[final,3p,times,twocolumn,authoryear]{elsarticle}
+%% \documentclass[final,5p,times,authoryear]{elsarticle}
+\documentclass[preprint,review,12pt,authoryear]{elsarticle}
+
+%% For including PIC, graphicx.sty has been loaded in
+%% elsarticle.cls. If you prefer to use the old commands
+%% please give \usepackage{epsfig}
+
+%% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+\usepackage{lipsum}
+\usepackage{amsmath}
+%% The amsthm package provides extended theorem environments
+\usepackage{amsthm}
+\usepackage{cuted}
+\usepackage{array}
+\usepackage{multirow} 
+\usepackage{booktabs} 
+\usepackage{xcolor}
+\usepackage{tabularx}
+\usepackage{array}
+%% hyperref makes URLs, citations and cross-references clickable;
+%% hidelinks keeps them clickable without colored boxes in print.
+%% Load hyperref last, and xurl after it so long URLs still break across lines.
+\usepackage[hidelinks]{hyperref}
+\usepackage{xurl}
+\newcolumntype{Y}{>{\centering\arraybackslash}X} % Columna proporcional y centrada
+%% The lineno packages adds line numbers. Start line numbering with
+%% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+%% for the whole article with \linenumbers.
+\usepackage{lineno}
+%% xltabular = tabularx columns that may break across pages (used by the rubric)
+\usepackage{xltabular}
+%% Single switch for the size of every table body in the single-column review
+%% layout. Set to \normalsize when reverting to the two-column journal layout.
+\newcommand{\tabfont}{\scriptsize}
+
+%% You might want to define your own abbreviated commands for common used terms, e.g.:
+\newcommand{\kms}{km\,s$^{-1}$}
+\newcommand{\msun}{$M_\odot}
+
+\journal{}
+
+%% Review
+\colorlet{reviewcolor}{magenta}
+
+\begin{document}
+
+\begin{frontmatter}
+
+	%% Title, authors and addresses
+
+	%% use the tnoteref command within \title for footnotes;
+	%% use the tnotetext command for theassociated footnote;
+	%% use the fnref command within \author or \affiliation for footnotes;
+	%% use the fntext command for theassociated footnote;
+	%% use the corref command within \author for corresponding author footnotes;
+	%% use the cortext command for theassociated footnote;
+	%% use the ead command for the email address,
+	%% and the form \ead[url] for the home page:
+	%% \title{Title\tnoteref{label1}}
+	%% \tnotetext[label1]{}
+	%% \author{Name\corref{cor1}\fnref{label2}}
+	%% \ead{email address}
+	%% \ead[url]{home page}
+	%% \fntext[label2]{}
+	%% \cortext[cor1]{}
+	%% \affiliation{organization={},
+	%%            addressline={}, 
+	%%            city={},
+	%%            postcode={}, 
+	%%            state={},
+	%%            country={}}
+	%% \fntext[label3]{}
+
+	\title{A Shapley-value framework for quantifying module contributions in context-augmented decision support: application to parcel-level land management}
+
+	%% use optional labels to link authors explicitly to addresses:
+	%% \author[label1,label2]{}
+	%% \affiliation[label1]{organization={},
+	%%             addressline={},
+	%%             city={},
+	%%             postcode={},
+	%%             state={},
+	%%             country={}}
+	%%
+	%% \affiliation[label2]{organization={},
+	%%             addressline={},
+	%%             city={},
+	%%             postcode={},
+	%%             state={},
+	%%             country={}}
+
+	%% ---------------------------------------------------------------------
+	%% ANONYMIZED MANUSCRIPT (double anonymized peer review).
+	%% Author names, affiliations and contact details are deliberately absent;
+	%% they are supplied in the separate title page (title-page.tex).
+	%% Restore this block only for the camera-ready version.
+	%%
+	%% \author[first]{Juan Cañada}
+	%% \affiliation[first]{organization={CTIC Technology Center, Dept. AI \& Data Analytics},
+	%% 	city={Gijón}, country={Spain}}
+	%% \author[first]{Fernando Hurtado}
+	%% \author[third]{Julio Molleda\corref{cor}}
+	%%    \ead{jmolleda@uniovi.es}
+	%% \affiliation[third]{organization={University of Oviedo, Dept. Comp. Sci. and Eng.},
+	%% 	city={Gijón}, country={Spain}}
+	%% \author[fourth]{Fidel Díez}
+	%% \affiliation[fourth]{organization={CTIC Technology Center, Dept. R\&D},
+	%% 	city={Gijón}, country={Spain}}
+	%% \cortext[cor]{Corresponding author.}
+	%% ---------------------------------------------------------------------
+
+	\begin{abstract}
+    Although Multimodal Large Language Models (LLMs) augmented with external context are increasingly being proposed as decision support systems, there is no established method for determining the contribution of each information source to the quality of their output. This work contributes to the field of artificial intelligence by providing a framework that models a modular, context-augmented architecture as a cooperative game. This framework applies Shapley values to attribute response quality to individual data modules. The framework combines full factorial ablations over module coalitions, a hybrid human-in-the-loop panel consisting of two human and two LLM judges who score five metrics, and non-parametric bootstrap confidence intervals. In engineering, the application is a geospatial decision support system for parcel-level land management that fuses cadastral records, satellite multispectral indices, aerial orthophotos, and retrieval-augmented document search to answer natural-language queries about agricultural plots. Across 143 queries over 15 parcels, the orthophoto module emerges as the dominant contributor, adding 0.9 out of 5 points (18$\%$) to the mean score. Together, the external context modules raise response utility by 32$\%$. The retrieval module exhibits high query-dependent volatility and frequently makes negative contributions. This indicates that retrieval should be invoked selectively rather than by default. Complementary analyses of context length and inter-judge agreement demonstrate the system's resilience to information overload and quantify the divergence between human and machine judges. The complete evaluation dataset is publicly available, ensuring reproducibility of the results and transferability of the attribution framework to other modular, context-augmented systems.
+	\end{abstract}
+
+	%%Graphical abstract
+	%\begin{graphicalabstract}
+	%\includegraphics{grabs}
+	%\end{graphicalabstract}
+
+	%%Research highlights
+	%\begin{highlights}
+	%\item Research highlight 1
+	%\item Research highlight 2
+	%\end{highlights}
+
+	\begin{keyword}
+		%% keywords here, in the form: keyword \sep keyword, up to a maximum of 6 keywords
+		Shapley values \sep Large language models \sep Cooperative game theory \sep Multimodal context \sep Precision agriculture \sep Land management
+
+		%% PACS codes here, in the form: \PACS code \sep code
+
+		%% MSC codes here, in the form: \MSC code \sep code
+		%% or \MSC[2008] code \sep code (2000 is the default)
+
+	\end{keyword}
+
+
+\end{frontmatter}
+
+%\tableofcontents
+
+\linenumbers
+
+%% main text
+
+\section{Introduction}
+\label{sec:Introduction}
+
+The rapid development of multimodal Large Language Models (LLMs) has unlocked a huge span of unprecedented applications across diverse scientific and industrial domains. Among these, smart agriculture and precision farming have been undergoing a technological revolution \citep{Sapkota202522510, Shaikh2025117}. The recent emergence of geofoundation models \citep{Huang2025, young_how_2026} and Earth embeddings \citep{earth_embeddings}, coupled with the swift evolution of generative language models, holds immense promise for remote sensing and agricultural management \citep{li_foundation_2024, lu_agi_2023,tan_promises_2023,Yang2025,yang_survey_2025,geofoundation_2023, geofoundation_2026}. In recent years, a growing body of literature has explored the integration of generative AI into agricultural workflows. Many of these works have materialized as conversational assistants tailored for Earth observation \citep{yuan_omnigeo_2025, kuckreja_geochat_2023, soni_earthdial_2025, zhang_spatial_2023, yuan_easy_2022, kuckreja_geochat_2023,hu_rsgpt_2023}, reasoning on agriculture data and decision making \citep{eldem_development_2026, gu_plantexpert_2026, koopman_agask_2024, xu_multimodal_2025, silva_gpt4_2023, zhao_chatagri_2023, kuska_ai_2024, yang_pllama_2024}, pest and disease detection \citep{llava_2024,cao_cucumber_2023}, real time monitoring \citep{liu_agrosense_2026}, climate adaptation \citep{nguyen_my_2024} or mapping \citep{zhang_mapgpt_2024}. These studies frequently leverage Retrieval-Augmented Generation (RAG) \citep{wang_llm-rag_2026,balaguer_rag_2024}, geo-embeddings, or hybrid approaches combining UAV and satellite data for computer vision tasks \citep{lacerda_christian_agroview_2024,alvarez-vanhard_uav_2021,sona_uav_2016}. However, despite these technical advances, existing approaches remain largely fragmented. While the outputs generated by these state-of-the-art tools are increasingly accurate and explore new frontiers in data accessibility, they fundamentally remain generic, failing to provide the highly localized, actionable insights required for precise, parcel-level terrain management. Besides, hallucinations remain a challenge in visual reasoning for GeoAI \citep{ghose_hallucination_2026,jiang_active_2023}.
+
+To bridge this gap, a multimodal LLM system was recently proposed, capable of generating highly specific, localized responses regarding designated land regions for agricultural applications \citep{juan_2025}. This system achieves its specificity through the retrieval, processing, and fusion of diverse, multi-domain open data sources, functioning as a context-amplified tool for land management. Following the technical validation of this architecture, a critical challenge arises: the robust and methodical evaluation of its generated outputs. Since the inception of generative AI, evaluation has remained a primary and open line of research, inherent to any application relying on non-deterministic inference \citep{huang_survey_2024}. Unlike traditional machine learning paradigms, where evaluation metrics rely on a finite set of ground-truth labels, the space of correct responses in generative modeling is virtually infinite. Numerous evaluation frameworks have been proposed to navigate this complexity. For instance, the LLM-as-a-judge paradigm \citep{zheng_judging_2023} is widely adopted due to its simplicity and low operational cost. Nevertheless, relying exclusively on this technique presents certain limitations, as automated judges remain vulnerable to technical hallucinations and can lose consistency over complex reasoning chains \citep{yamauchi_empirical_2026}. Frameworks like RAGAS \citep{es_ragas_2025} have been developed specifically to evaluate RAG pipelines. Furthermore, \citet{liu_g-eval_2023} proposed a framework for assessing language models with chain-of-thoughts (CoT) in natural language generation (NLG). \citet{ouyang_training_nodate} perform a fine-tuning process with human feedback in order for the generated responses to better align with the user intent. \citet{zhong_towards_2022} and \citet{mehri_usr_2020} explore the metrics used for automatic evaluation of NLG, proposing a unified multi-dimensional evaluator and a reference-free metric, respectively. Similarly, \citet{wang_learning_2025} design and evaluate a multi-agent debate framework structured around debater-judge-summarizer roles.
+
+Despite this rich landscape of evaluation tools, none of the existing frameworks align with the requirements of our context-amplified architecture. Specifically, evaluating our system demands not only assessing the factual correctness of the final output, but breaking down how the response was generated according to the available external context. A rigorous evaluation must distinguish between a response that is ``good but generic'' and one that is ``specific and context-aware.'' Furthermore, it must discern whether a high-quality response stems merely from the model's robust foundational pre-training, or if it is the result of successful reasoning over the dynamically retrieved multi-domain data. To address these unmet needs, this paper proposes a novel, reproducible evaluation methodology tailored for context-amplified multimodal LLMs in agricultural data applications. Our approach introduces a multi-stage, human-in-the-loop (hybrid human-machine) framework designed to mitigate automated biases. The most challenging aspect of this framework lies in quantifying the marginal contributions of individual architectural modules. The methodology allows to understand not only the final quality of a generated response, but exactly how and to what extent each specific module of the architecture influenced that quality. To achieve this, we design a comprehensive ablation study based on a factorial design, systematically evaluating different configurations by isolating, adding, and removing system modules; subsequently analyzed through collaborative game theory. 
+
+The remainder of this article is structured as follows: Section~\ref{sec:Methods} details the architecture of the conversational system, provides a functional overview, and extensively outlines the evaluation methodology, including parcel selection, dataset details, human-in-the-loop judge guidelines, evaluation stages, utilized metrics, and the design of the ablation study. Section~\ref{sec:Results} presents and discusses the results derived from the evaluation experiment and the game theory analysis, and closes with a discussion of the transferability and limitations of the approach. Finally, Section~\ref{sec:Conclusions} summarizes the main conclusions drawn from this work.
+
+
+\section{Materials and methods}
+\label{sec:Methods}
+
+\begin{figure*}[t!]
+	\centering
+	\includegraphics[width=\textwidth]{Figure_1.png}
+	\caption{System architecture.}
+	\label{fig:architecture}%
+\end{figure*}
+
+\subsection{System Architecture and Overview}
+The system to be evaluated integrates heterogeneous geospatial, remote sensing, and agronomic domain knowledge into a unified data processing pipeline to ground the reasoning of a LLM. As illustrated in Fig.~\ref{fig:architecture}, the architecture is structured into two primary layers: the \textit{User Interface} and the \textit{Backend Processing} pipeline. The core objective is to enrich the user's inquiry regarding a specific agricultural plot with multi-modal and biophysical context. The execution pipeline proceeds through five coordinated stages: (I) Plot Info Retrieval: The user provides a target plot identifier along with a natural language query. The system queries the geographic information system registry (SIGPAC; \citealp{rd1047_2022}) to retrieve plot-level attributes—including slope, elevation, surface area, perimeter, and registered land use—along with its georeferenced boundary geometry (encoded as GeoJSON). Hereafter, this piece of context is regarded as Plot Data. (II) Context Retrieval: exploiting the extracted plot geometry, this module orchestrates two parallel multi-modal processing workflows: (II-a) Visual terrain analysis: high-resolution aerial imagery (orthophoto) covering the delineated plot is retrieved and processed by a multimodal LLM conditioned on the geometric and cadastral metadata, yielding a structured natural-language description of parcel-scale biophysical features and terrain topology (e.g., canopy density, tree cover distribution, micro-topography, and structural boundaries). (II-b) Biophysical state extraction: multi-spectral imagery from the Sentinel-2 constellation (Copernicus, European Space Agency; \citealp{drusch_sentinel2_2012}) is acquired. Following spatio-temporal filtering and band synthesis over the plot geometry, the pipeline computes a set of spectral vegetation and water indices (NDVI, EVI, and NDWI), thereby contextualizing the parcel within broader regional vegetative vigor, moisture dynamics, and environmental conditions. (III) Knowledge retrieval: In parallel with context generation, a RAG subsystem queries a document repository created by the user. (IV) Data fusion and context aggregation: The diverse data modalities—cadastral metadata, MLLM-derived terrain descriptions, remote sensing spectral indices, and retrieved textual context—are aligned and harmonized within an aggregator. (V) Answer generation: the synthesized prompt is fed to the central reasoning LLM, which integrates the holistic parcel profile to formulate the final recommendations delivered back to the user. For further details on the inference framework and technical hardware and software implementations, see \citet{juan_2025}. A showcase of the system functionality is included in Fig.~\ref{fig:query_response}, where the LLM is inquired about the parcel with ID 0:0:106:94:2 (Fruit trees) with the query ``If a plague were to hit my plot, how should I face it?''. First, the workflow detects the parcel ID, retrieves its orthophoto, and displays it. It then proceeds to generate a response by combining the data sources mentioned above. It can be noticed how it uses slope (PD) and vegetation indices (S) data, refers to the orientation of the tree rows—which demonstrates its visual recognition capabilities (O)—and adds insights obtained from a RAG document (R). 
+
+\subsection{Evaluation Framework}
+
+\begin{figure*}[t!]
+	\centering
+	\includegraphics[width=\textwidth]{Figure_2.pdf}
+	\caption{System response to the query ``If a plague were to hit my plot, how should I face it?'' regarding the plot with ID 0:0:106:94:2. The system successfully identifies and displays the parcel orthophoto (left), and provides a detailed answer (right). Interface built over OpenWebUI \citep{OpenWebUI2024}.}
+	\label{fig:query_response}
+\end{figure*}
+
+The architectural characteristics of the aforementioned system dictate the requirements for its evaluation methodology. Crucially, this framework is not conceived merely as an \textit{ad-hoc} assessment for this specific tool, but rather as a reproducible and adaptable evaluation standard for any modular conversational agent relying on augmented external context. The primary challenge distinguishing this methodology from standard LLM benchmarks is the necessity to evaluate the actual utilization of geospatial context during response generation, going beyond mere response quality. An output that is factually correct but generic, or generated solely from the model's pre-trained memory, cannot be considered equivalent to a personalized answer grounded in the specific biophysical aspects of a given terrain. Consequently, a comprehensive methodology combining multiple experimental phases, modular configurations, and tailored metrics has been designed. 
+
+\subsubsection{Parcel Selection}
+\label{sec:parcel_selection}
+
+\begin{figure}[h!]
+	\centering
+	\includegraphics[width=\columnwidth]{Figure_3.pdf}
+	\caption{The area of study in Gijón, Asturias. Location of the 15 selected parcels.}
+	\label{fig:map_qgis}
+\end{figure}
+
+\begin{figure*}[t]
+	\centering{\includegraphics[width=\textwidth]{Figure_4.png}}
+	\caption{Selection of parcels for tool evaluation, grouped by LU. The number of parcels per LU depends on their functional utility in agriculture. Dashed borders correspond to parcels used in ablation study.}
+	\label{fig:parcel_mosaic}
+\end{figure*}
+
+Since each query is associated with an area of interest (parcel), the first step in designing the evaluation experiment is to select the plots that will be inquired about. The study was carried out over a total of 15 target parcels, covering four distinct Land Use (LU) types: Fruit trees (FR), Pasture (PA), Unproductive (UN) and Forest (FO). The distribution of samples within land uses, as well as the volume of evaluation queries per parcel, is weighted according to the operational utility of the tool for each functional land use. 7 out of the 15 parcels belong to Fruit trees category, 4 are Pastures, and the remaining Unproductive and Forest land uses get 2 parcels each. Both the number of parcels per LU and the number of queries per parcel, are detailed in Table~\ref{tab:num_queries_parcels}, and the catalogue of queries is included in Table~\ref{tab:queries_catalogue} (\ref{app:queries}).
+
+As shown in Fig.~\ref{fig:map_qgis}, all 15 parcels are located in the municipality of Gijón (Asturias, northern Spain), and their plot-level attributes are retrieved from SIGPAC. This geographical concentration was a deliberate design choice. The aim of the study is to attribute differences in response quality to the architectural configuration of the system. Restricting the sample to a single area keeps the bioclimatic regime (temperate oceanic, Köppen Cfb; \citealp{aemet_atlas_2011, beck_koppen_2018}), the regional farming practices, and the acquisition conditions of the input imagery largely constant. This prevents these factors from confounding the ablation study. Instead, heterogeneity was introduced within the region through the four land-use categories, slopes ranging from 0.5\% to 21.6\%, a range of elevations, irregular parcel boundaries, and contrasting vegetation conditions, as illustrated in Fig.~\ref{fig:parcel_mosaic}.
+
+\subsubsection{Two-Stage Experimental Design}
+The evaluation pipeline is structured into two main sequential phases to optimize operational resources while maintaining statistical robustness: an overall performance assessment and an ablation study. The first phase, named \textit{Broad Performance Assessment}, evaluates the system's holistic capability across diverse scenarios, using the full architecture. This stage does not represent a novel contribution, as it is similar to existing evaluation methods; rather, it provides an overall view of the quality of the responses in general terms, which is necessary before moving on to a more specific evaluation of the architecture modules. Table~\ref{tab:num_queries_parcels} contains the number of evaluation queries, resulting in roughly 50$\%$ for each stage.
+
+The second phase consists of an \textit{Ablation Study} intended to quantify the marginal contribution of each architectural component (Orthophoto (O), Satellite (S), and RAG (R) modules, previously introduced in Fig.~\ref{fig:architecture}). The concept of ablation study, originally rooted in medicine and biology to describe the surgical removal of tissue to determine its physiological function, has been adapted to the field of AI and proved as a valid paradigm to uncover individual contributions by isolating components. \citet{meyes_ablation_2020} use the concept of ablation for finding redundancies in the representations of Artificial Neural Networks. In this work, we extend this analytical framework to evaluate our proposed modular methodology by progressively isolating and bypassing individual modules. For this purpose, a full factorial design of experiments was executed to set up the configurations, which are combinations of our three modules. By systematically enabling and disabling these three external context modules, $2^3 = 8$ configurations were generated, plus a Zero-Shot baseline, where the LLM reasons without any external parcel context, for a total of 9 configurations, as detailed in Table~\ref{tab:ablation_configs}. For this phase, a representative subset of one parcel per LU category was selected, and 2 specific queries were executed across all 9 configurations, yielding 72 additional evaluations (Table~\ref{tab:num_queries_parcels}).
+
+\begin{table*}[t]
+\centering
+\caption{Distribution of parcels, queries, and configurations across methodology stages for each land use category.}
+\label{tab:num_queries_parcels}
+\setlength{\tabcolsep}{2pt}
+
+\tabfont
+\begin{tabularx}{\textwidth}{l *{8}{Y}}
+\toprule
+\multirow{2}{*}{\textbf{Land Use}} 
+  & \multicolumn{3}{c}{\textbf{Broad}} 
+  & \multicolumn{4}{c}{\textbf{Ablation}} 
+  & \multirow{2}{*}{\textbf{Total}} \\
+\cmidrule(lr){2-4} \cmidrule(lr){5-8}
+  & \textbf{No. parcels} & \textbf{Queries/ parcel} & \textbf{No. queries} 
+  & \textbf{No. parcels} & \textbf{Queries/ parcel} & \textbf{No. configs} & \textbf{No. queries} 
+  & \\
+\midrule
+Fruit trees (FR)   & 7 & 5 & 35 & 1 & 2 & 9 & 18 & -- \\
+Pasture (PA)       & 4 & 5 & 20 & 1 & 2 & 9 & 18 & -- \\
+Forest (FO)        & 2 & 4 &  8 & 1 & 2 & 9 & 18 & -- \\
+Unproductive (UN)  & 2 & 4 &  8 & 1 & 2 & 9 & 18 & -- \\
+\midrule
+\textbf{Total}     &   &   & \textbf{71} &   &   &   & \textbf{72} & \textbf{143} \\
+\bottomrule
+\end{tabularx}
+\end{table*}
+
+\begin{table*}[t!]
+	\caption{Configurations construction using factorial design over architectural modules. PD means Plot Data. Active tool is always enabled because it is responsible for identifying parcel IDs as so.}
+	\label{tab:ablation_configs}
+	\tabfont
+	\setlength{\tabcolsep}{3pt}
+	\begin{tabular}{p{0.24\textwidth}
+			p{0.07\textwidth}
+			p{0.09\textwidth}
+			p{0.07\textwidth}
+			p{0.06\textwidth}
+			p{0.13\textwidth}
+			p{0.07\textwidth}
+		}
+		\hline
+		\textbf{Modules} & \textbf{RAG} & \textbf{ORTHO} & \textbf{SAT} & \textbf{PD} & \textbf{Active Tool} & \textbf{Code} \\
+		\hline
+		Baseline         & 0            & 0              & 0            & 1           & 1                    & 0             \\
+		B + SAT          & 0            & 0              & 1            & 1           & 1                    & 1             \\
+		B + ORTHO        & 0            & 1              & 0            & 1           & 1                    & 2             \\
+		B + ORTHO + SAT  & 0            & 1              & 1            & 1           & 1                    & 3             \\
+		B + RAG          & 1            & 0              & 0            & 1           & 1                    & 4             \\
+		B + RAG + SAT    & 1            & 0              & 1            & 1           & 1                    & 5             \\
+		B + RAG + ORTHO  & 1            & 1              & 0            & 1           & 1                    & 6             \\
+		Complete         & 1            & 1              & 1            & 1           & 1                    & 7             \\
+		ZERO SHOT        & 0            & 0              & 0            & 0           & 1                    & ZS            \\
+		\hline
+	\end{tabular}
+\end{table*}
+
+
+\subsubsection{Dataset description}
+
+The implementation of the proposed evaluation methodology for the system requires the construction of a dataset containing the queries that will be subject of evaluation by the judges. This dataset was constructed by following these steps: (1) selecting parcels, (2) creating queries according to each LU, (3) designing the number of experiments, and (4) using the system to generate responses for each query-parcel pair. Thus, the dataset comprises the following information: query, orthophoto of the target parcel, response generated by the system, and external context available to generate that response. This set of materials is provided to the judges for their evaluation process. As stated in Table~\ref{tab:num_queries_parcels}, the total number of samples is n=143. To ensure complete reproducibility and to provide a valuable asset for the research community, the data is publicly available. Please refer to \textit{Data availability} section. 
+
+\subsubsection{Panel of judges}
+
+A simplified approach to response evaluation, as utilized in \citet{juan_2025}, relies exclusively on the LLM-as-a-judge framework. This paradigm offers distinct advantages in terms of execution speed and scalability, allowing for the rapid assessment of large datasets without the bottlenecks associated with human review. Conversely, assembling a panel of human evaluators requires substantial planning, timeframes, and financial resources. However, human evaluation remains indispensable, as it fundamentally reduces the leniency bias frequently exhibited by LLM evaluators \citep{gu_survey_2026} and provides a significantly higher degree of reliability when assessing nuanced, domain-specific reasoning. To effectively navigate this trade-off between scalability and qualitative rigor, we designed a hybrid, human-in-the-loop evaluation strategy. By merging human and machine critical judgement, this methodology not only optimizes resource allocation but also systematically mitigates the mono-dimensional biases inherent to using either approach in isolation. Consequently, the definitive panel of judges comprises four distinct entities: two human evaluators and two LLM-based evaluators. To combine both technical depth and practical accessibility, the human contingent is divided into two distinct roles, a domain expert (holding a PhD in Biology), regarded hereafter as ``Human Expert'' (H$\_$E) that provides rigorous scientific scrutiny; and a control evaluator, regarded as ``Human Control'' (H$\_$C), representing the end-user perspective in terms of clarity and usability for non-academic audience. All human assessments were executed independently in a blind setting, ensuring that evaluators could not influence one another. For the LLM side, we integrated two diverse language models with comparable computational footprints into the panel: a proprietary model (LLM$\_$G), \textit{Gemini 3.1 Flash Lite}, and an open-source model (LLM$\_$Q), \textit{Qwen3.5-397B-A17B-Instruct}.
+
+\subsubsection{Multidimensional metrics}
+
+The quality of the generated responses is quantified using a multidimensional 5-point Likert scale encompassing five distinct criteria (see Table~\ref{tab:evaluation_metrics}). Four of these metrics—\textit{Correctness, Completeness, Relevance,} and \textit{Utility}—evaluate the intrinsic quality of the response and can be assessed without access to the retrieved context. Conversely, the \textit{Grounding} metric strictly requires contextual reference; it is specifically designed to measure the degree to which the formulated response is faithfully derived from the injected multi-domain data rather than the model's pre-existing generalized knowledge. In doing so, it serves as a critical diagnostic tool to identify and penalize \textit{internal knowledge over-reliance}, a phenomenon where an LLM disregards or underutilizes dynamically retrieved evidence, defaulting instead to its internalized knowledge. This distinction carries profound practical implications for model selection and hardware feasibility in precision agriculture. The computational overhead of an LLM is directly related to the depth and scope of its internal knowledge base. Consequently, executing large foundation models locally on edge devices remains computationally prohibitive. If empirical evaluation reveals that domain-specific accuracy is primarily governed by robust contextual grounding rather than massive internal knowledge, high-performance agricultural reasoning can be achieved using significantly smaller, quantized models. Table~\ref{tab:rubric} in \ref{app:rubric} contains the evaluation rubric given to the judges for all 5 metrics.
+
+\begin{table}[h!]
+	\caption{Multidimensional evaluation metrics framework. Note: The \textit{Grounding} metric measures the degree to which responses are derived from the obtained context, rather than generic knowledge, making it the only metric requiring context for evaluation.}
+	\label{tab:evaluation_metrics}
+	\tabfont
+	\begin{tabular}{
+			>{\raggedright\arraybackslash}p{0.6\columnwidth}
+			>{\raggedright\arraybackslash}p{0.3\columnwidth}
+		}
+		\hline
+		\textbf{Metric} & \textbf{Type}   \\
+		\hline
+		Correctness     & Without Context \\
+		Completeness    & Without Context \\
+		Relevance       & Without Context \\
+		Utility         & Without Context \\
+		\hline
+		Grounding       & With Context    \\
+		\hline
+	\end{tabular}
+\end{table}
+
+\subsubsection{Mathematical framework on marginal contributions}
+
+This section describes the mathematical quantification of the ablation study results. Evaluating queries across diverse architectural configurations yields empirical data on marginal contributions; however, there is yet a need to quantify the intrinsic value added by each of the three modules to the final response quality. To provide a rigorous quantification, we model the multi-modular architecture within the mathematical framework of cooperative game theory. In this paradigm, the system's structural modules act as players collaborating to produce a unified outcome, the system's response. By applying Shapley values \citep{shapley1953value}, a foundational concept from cooperative game theory that has been widely adapted for feature attribution in explainable AI with the SHAP values \citep{lundberg_unified_2017}, we can fairly and precisely distribute the total system performance among its constituent components based on their true marginal contributions across all possible combinations. Formally, let $N$ be the set of all players. In our architecture, the players correspond to the three primary modules: $N = \{M_{S}, M_{O}, M_{R}\}$. Let $S$ denote any subset, or \textit{coalition}, of these modules. The general Shapley value $\phi_i(v)$ for a module $i$ given a performance value function $v$ is computed as:
+
+\begin{equation}
+	\phi_i(v) = \sum_{S \subseteq N \setminus \{i\}} \frac{|S|!(|N| - |S| - 1)!}{|N|!} \big(v(S \cup \{i\}) - v(S)\big)
+\end{equation}
+
+By instantiating this general formula for our specific three-player game, we isolate the exact contribution of each module across all possible permutations:
+
+\begin{equation}
+    \begin{split}
+        \phi_S(v) = {} & \frac{1}{3} \big[ v(\{M_S\}) - v(\varnothing) \big]              \\
+                    & + \frac{1}{6} \big[ v(\{M_S, M_O\}) - v(\{M_O\}) \big]           \\
+                    & + \frac{1}{6} \big[ v(\{M_S, M_R\}) - v(\{M_R\}) \big]           \\
+                    & + \frac{1}{3} \big[ v(\{M_S, M_O, M_R\}) - v(\{M_O, M_R\}) \big]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_O(v) = {} & \frac{1}{3}[v(\{M_O\})-v(\varnothing)]           \\
+                    & +\frac{1}{6}[v(\{M_S, M_O\})-v(\{M_S\})]         \\
+                    & +\frac{1}{6}[v(\{M_O, M_R\})-v(\{M_R\})]         \\
+                    & +\frac{1}{3}[v(\{M_S, M_O,M_R\})-v(\{M_S,M_R\})]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_R(v) = {} & \frac{1}{3}[v(\{M_R\})-v(\varnothing)]           \\
+                    & +\frac{1}{6}[v(\{M_S, M_R\})-v(\{M_S\})]         \\
+                    & +\frac{1}{6}[v(\{M_O, M_R\})-v(\{M_O\})]         \\
+                    & +\frac{1}{3}[v(\{M_S, M_O,M_R\})-v(\{M_S,M_O\})]
+    \end{split}
+\end{equation}
+
+By substituting the conceptual coalitions with the empirical performance scores obtained from their corresponding configurations (Table~\ref{tab:ablation_configs}), we rewrite the equation in terms of configuration performances:
+
+\begin{equation}
+    \begin{split}
+        \phi_S(v) = {} & \frac{1}{3}[v(C_1)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_2)]  \\
+                    & +\frac{1}{6}[v(C_5)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_6)]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_O(v) = {} & \frac{1}{3}[v(C_2)-v(C_0)]+\frac{1}{6}[v(C_3)-v(C_1)]  \\
+                    & +\frac{1}{6}[v(C_6)-v(C_4)]+\frac{1}{3}[v(C_7)-v(C_5)]
+    \end{split}
+\end{equation}
+
+\begin{equation}
+    \begin{split}
+        \phi_R(v) = {} & \frac{1}{3}[v(C_4)-v(C_0)]+\frac{1}{6}[v(C_5)-v(C_1)]  \\
+                    & +\frac{1}{6}[v(C_6)-v(C_2)]+\frac{1}{3}[v(C_7)-v(C_3)]
+    \end{split}
+\end{equation}
+
+Through this formulation, the outputs of the ablation configurations are transformed into distinct, quantified metrics that represent the definitive analytical weight of each architectural module. Furthermore, we exploit the inherent mathematical property of additive efficiency of Shapley values by formally defining the \textit{Global Delta} as the sum of the three individual modular contributions. This metric encapsulates the total aggregate gain in the system's performance. In practical terms, it quantifies the exact quality uplift achieved strictly through the integration of the external data sources, serving as measure to compare against conventional language models.
+
+\section{Results and Discussion}
+\label{sec:Results}
+
+This section presents the results drawn from the evaluation of the 4 judges over the 143 queries along the 5 metrics, divided into the broad evaluation and the ablation study.
+
+\subsection{Overall performance}
+
+\begin{table*}[h]
+    \centering
+    \caption{Evaluation results across 71 broad evaluation queries. Values are reported as mean (standard deviation). Scores range from 1 to 5.}
+    \label{tab:results_broad}
+    \tabfont
+    \begin{tabular}{
+        >{\raggedright\arraybackslash}p{\dimexpr0.24\textwidth-2\tabcolsep\relax}
+        *{4}{>{\centering\arraybackslash}p{\dimexpr0.19\textwidth-2\tabcolsep\relax}}
+        }
+        \toprule
+        \textbf{Metric} & \textbf{H\_C} & \textbf{H\_E} & \textbf{LLM\_Q} & \textbf{LLM\_G} \\
+        \midrule
+        Correctness  & 4.690 (0.495) & 4.704 (0.684) & 4.817 (0.487) & 4.746 (0.579) \\
+        Completeness & 4.803 (0.401) & 4.817 (0.390) & 4.944 (0.287) & 4.958 (0.203) \\
+        Relevance    & 4.549 (0.580) & 4.817 (0.568) & 4.831 (0.414) & 4.930 (0.258) \\
+        Utility      & 4.704 (0.490) & 4.761 (0.726) & 4.859 (0.389) & 4.944 (0.287) \\
+        Grounding    & 4.606 (0.597) & 4.901 (0.300) & 4.296 (0.852) & 4.549 (0.923) \\
+        \bottomrule
+    \end{tabular}
+\end{table*}
+
+\begin{figure*}[t!]
+	\centering{\includegraphics[width=\textwidth]{Figure_5.pdf}}
+	\caption{Evaluation results from the \textit{Ablation Study} phase for the 4 evaluators and 5 metrics grouped by configuration. Differences can be observed based on active modules.}
+	\label{fig:results}
+\end{figure*}
+
+\begin{figure*}[t]
+	\centering{\includegraphics[width=\textwidth]{Figure_6.pdf}}
+	\caption{Marginal contributions of each module ${R,O,S}$ quantified with the Shapley values $\phi_{i}$ across the panel of 4 judges and the 5 metrics. Each box summarizes the eight ablation queries (n=8). Confidence Intervals reported in Table~\ref{tab:shapley_absolute} of \ref{app:shapley}.}
+	\label{fig:shapleys}
+\end{figure*}
+
+Firstly, Table~\ref{tab:results_broad} presents the average evaluation scores across the 71 broad queries for all four judges in the panel. The baseline results indicate a highly robust overall performance. Across all evaluated metrics—Correctness, Completeness, Relevance, Utility, and Grounding—both human and machine judges awarded average scores consistently above 4.2 out of 5. While these high averages confirm the general quality, usefulness, and accuracy of the generated responses, they also exhibit a characteristic ceiling effect typical of Likert-scale evaluations when testing a generally competent foundational model. Consequently, while the aggregated scores validate the system's baseline viability, they do not provide sufficient granularity to understand the internal mechanics of the context-amplified architecture. 
+
+\subsection{Marginal contributions}
+
+\begin{figure*}[t]
+	\centering{\includegraphics[width=\textwidth]{Figure_7.png}}
+	\caption{Shapley values by query aggregating across judges and metrics.}
+	\label{fig:shapleys_queries_2}
+\end{figure*}
+
+The true analytical depth of this methodology emerges when examining the ablation study. Fig.~\ref{fig:results} illustrates the performance variations across the different architectural configurations, grouped by the active status of the individual modules (Satellite, Orthophoto, and RAG). A preliminary visual inspection of these configurations immediately suggests that certain modules possess a more dominant influence on the final response quality than others. To rigorously quantify these visual trends and map the exact marginal contribution of each module, we analyze the calculated Shapley values, computed as presented in the previous section. As depicted in the boxplots of Fig.~\ref{fig:shapleys}, the distribution of these values reveals distinct behavioral profiles for the three modules. In this framework, values to the right of zero indicate a positive contribution to the response quality, zero implies a neutral impact, and negative values denote a detrimental effect, meaning the inclusion of the module degraded the output. The Orthophoto module ($M_O$) emerges as the most critical contributor to the system's success. As shown in the distributions, its inclusion can add up to 2 to 3 points (on a 5-point scale) to the Completeness and Utility metrics. This can be explained due to the fact that this module is responsible for giving ``eyes'' to the system; hence asking the LLM to resolve a query without it is akin to asking it to analyze a parcel blindfolded. Local-scale visual information grants the LLM the exact biophysical details—such as parcel-level tree distribution, crop patterns, and topography—necessary to land complete and realistic solutions for local land managers \citep{malek2019local}. The Satellite module ($M_S$) also consistently yields positive Shapley values, contributing reliably, although more moderately, to the outputs. Instead of local visual details, spectral indices combined with geographic coordinates provide a general picture of the regional climate setting, connecting macro-level environmental systems with practical land management \citep{cash2000linking}. In contrast, the RAG module ($M_R$) exhibits the most complex and nuanced behavior. While it provides positive contributions in specific scenarios, it frequently registers negative Shapley values, indicating that its activation penalized the response quality. This phenomenon is consistent with the fundamental mechanics of Retrieval-Augmented Generation, as RAG is heavily dependent on the availability of relevant external documentation and the semantic similarity between the user's query and the knowledge base. Therefore, when a query targets a topic with scarce or irrelevant documentation, the retrieval pipeline injects noise into the prompt context, confusing the LLM and degrading its output. Furthermore, unlike the visual modules (which are deterministically invoked whenever enabled), the RAG module's operation is non-deterministic; its actual utilization relies on the LLM's internal triage capabilities and the effectiveness of the semantic rerankers, making it more volatile. The numerical values of these insights is fully detailed in Table~\ref{tab:shapley_absolute} (\ref{app:shapley}), which catalogues the Shapley values and introduces the previously defined \textit{Global Delta} ($\Delta$). By analyzing this aggregate metric, we can definitively quantify the overarching value of the context-amplified architecture. For instance, the data demonstrates that, on average, the generated responses are 1.625 points out of 5 (a direct 32$\%$) more useful strictly as a result of integrating the external, multi-domain context compared to relying solely on the foundational model's knowledge.
+
+Having established the overarching performance trends and the aggregate marginal contributions of each module, we now discuss the ablation results within query-level analysis. A fundamental mathematical property of Shapley values is their linearity, which allows for the decomposition of the global game into individual experiments (queries), making it possible to identify which types of questions draw the most value from each architectural component. Fig.~\ref{fig:shapleys_queries_2} illustrates the computed Shapley values for the 8 distinct queries of the ablation study, aggregated averaging the scores across all four judges and the five evaluation metrics for the sake of clarity. The resulting heatmap provides empirical evidence of how the semantic nature of a query dictates module utilization. For instance, the Satellite module ($M_S$) registers its highest marginal contribution (0.725) in response to the query: ``Describe the density of this forest.'' By injecting satellite-derived vegetation indices, this module provides the system with the knowledge to provide a much more accurate response to this given question. Even more striking is the behavior of the Orthophoto module ($M_O$), which dominates the marginal contributions for spatial and descriptive tasks. This is most evident in the two bottom queries: ``Describe the parcel'' (yielding a Shapley value of 1.558) and ``What kind of activities does this terrain allow?'' (yielding 2.658). Both of these queries are heavily dependent on immediate visual context and structural terrain features. $M_O$ averages a 0.908 Shapley value across all queries, resulting in a 18$\%$ increase in overall response quality when this module is active. Conversely, the heatmap further reinforces the volatile nature of the RAG module ($M_R$) reiterating the strong dependence on the contribution of this module with the nature of the question and the provided documents. Ultimately, the observed volatility and lower average contribution of the RAG module should not be interpreted as an architectural flaw, but rather as an indicator of the system's operational flexibility. Because its efficacy is fundamentally related to the specific use case and the quality of the user's provided documentation, the module's true value is to be maximized by the practitioners themselves.  
+
+\subsection{Inter-Evaluator Reliability and Judge Consensus}
+
+\begin{figure*}[h!]
+	\centering
+	\includegraphics[width=\textwidth]{Figure_8.pdf}
+	\caption{Judges agreement computed using the Krippendorff's $\alpha$ (n=143).}
+	\label{fig:consensus}
+\end{figure*}
+
+Understanding the degree of alignment within our hybrid panel of judges is crucial for validating the robustness of the proposed methodology. To quantify this consensus, we employed Krippendorff's $\alpha$ coefficient \citep{krippendorff_computing_nodate}. Krippendorff's $\alpha$ was explicitly chosen over other reliability measures because it accommodates the ordinal nature of the 5-point Likert scale evaluations \citep{yamauchi_empirical_2026}. The pairwise Krippendorff's $\alpha$ heatmaps (Fig.~\ref{fig:consensus}) reveal significant structural variations in judges consensus. Utility emerges as the dimension with the most universally shared understanding, achieving the highest global agreement ($\alpha = 0.427$, $n=143$) among all four judges. Conversely, the Completeness metric heatmap displays $2\times2$ high-agreement clusters in the top-left and bottom-right corners, indicating the presence of strong intra-group agreement (human-human, and machine-machine) along with weaker inter-group agreement (human-machine): human judges exhibit substantial consensus with each other ($\alpha = 0.698$), as do the two LLMs ($\alpha = 0.488$). However, the cross-boundary agreement between humans and machines drops to near-random levels (e.g., $\alpha = 0.049$ between H$\_$C and LLM$\_$Q). These observable disparities support the methodological decision to employ a human-in-the-loop hybrid 4-judge evaluation panel, since relying only on either of them would yield a skewed assessment. Table~\ref{tab:evaluated_examples} in \ref{app:concordance} contains a set of 8 query examples with their evaluation scores in all 5 metrics for the 4 judges, divided into ``Concordance'' and ``Discordance''. The 2 top queries show the aforementioned ceiling effect, yielding the perfect score by all judges. Regarding discordance samples, the query ``AB-FO-02/C-0'' is an interesting case, where 3 out of the 4 judges assigned the highest score for Correctness, while the remaining (LLM$\_${Q}) assigned the lowest. The root of this divergence may lie in the subjective interpretation of the evaluation rubric (\ref{app:rubric}), which defines Correctness as ``the accuracy and truthfulness'' of the response. As documented in the published dataset, when no external context is available (Zero-Shot and 0 configurations), the system frequently outputs safety-aligned responses such as: “I cannot provide a specific status update [...] To give you an accurate response, I would need [...].” The judges do not agree whether to reward the refusal to hallucinate with high score or to otherwise penalize the failure to successfully answer the prompt. This same query also presents the intra-group agreement + inter-group disagreement in the Completeness metric, where the humans scored the lowest, and the machines scored the highest. The opposite happens in query ``PA4'' for both the Correctness and Grounding metrics.
+
+\subsection{Context length}
+
+\begin{figure*}[t!]
+	\centering{\includegraphics[width=\textwidth]{Figure_9.pdf}}
+	\caption{Evaluation scores against the available context length in tokens for all 4 judges plus the consensus (average).}
+	\label{fig:tokens_metrics}
+\end{figure*}
+
+Finally, we examine how the volume of injected information impacts the model's generation capabilities. Because the modules $M_S$ and $M_O$ operate deterministically, context length is directly correlated with the ablation configurations: adding more modules linearly increases the token count of the prompt. Fig.~\ref{fig:tokens_metrics} plots the scores assigned by the judges against the context length (in tokens) for all queries. This analysis is particularly critical for the Relevance and Grounding metrics. A common vulnerability in context-augmented LLMs is the ``lost in the middle'' phenomenon \citep{liu2023lostmiddlelanguagemodels}, where providing excessive information overwhelms the model's attention mechanism, causing it to generate irrelevant or poorly reasoned text. The positive upward trends across the consensus lines for both Relevance and Grounding suggest that our system overcomes this hurdle. Together, these two metrics validate the “sufficient and necessary” paradigm of any desirable output: the Grounding metric ensures the response possesses sufficient context-specific data to be individualized to the parcel, while the Relevance metric ensures the response contains only the necessary information, lacking of unnecessary noise. Fig.~\ref{fig:tokens_metrics} demonstrates that as the context expands, the model successfully discerns relevant information through the multi-domain data. It must be noted that the capabilities of the system regarding the context length is heavily reliant on the token-window capacities and attention mechanisms of each specific language model.
+
+\subsection{Transferability and limitations}
+
+Reliance on SIGPAC does not limit the system to Spain. SIGPAC is the Spanish implementation of the Land Parcel Identification System (LPIS), which every EU Member State must maintain under Article 68 of Regulation (EU) 2021/2116 on the Common Agricultural Policy \citep{eu_reg_2021_2116}. Therefore, the Plot Data module can be ported for use in other Member States by replacing the registry connector and mapping the national attribute schema, provided that the access conditions of each national LPIS are met. The Orthophoto ($M_O$) and Satellite ($M_S$) modules only require the georeferenced parcel boundary. Sentinel-2 imagery is openly available with global land coverage and can be combined with Landsat~8 and~9 imagery through NASA's Harmonized Landsat and Sentinel-2 (HLS) product \citep{claverie_hls_2018}. Aerial orthophotos are provided by national programs, such as PNOA in Spain \citep{ign_pnoa} and the National Agriculture Imagery Program (NAIP) in the United States \citep{usda_naip}. Outside the EU, parcel boundaries can be supplied by national cadastres, drawn by the user, or delineated automatically from satellite imagery \citep{kerner_ftw_2025}. However, the absolute scores and module contributions reported here were obtained in a single agroclimatic setting (Section~\ref{sec:parcel_selection}) and cannot be assumed to transfer unchanged. In drier regions, for instance, water-related spectral indices, such as the NDWI, may carry greater agronomic weight and could increase the contribution of the Satellite module. Validation across regions, climates, and cropping systems is left for future work. The evaluation methodology itself (the judge panel, the metrics, and the Shapley-based ablation), by contrast, does not depend on the study location.
+
+
+\section{Conclusions}
+\label{sec:Conclusions}
+
+This work builds upon the previously reported research that introduced a context-amplified multimodal Large Language Model designed to provide parcel-specific agricultural insights. Following its technical implementation, we faced the critical challenge of systematically evaluating its generative outputs. Because existing evaluation frameworks did not meet the requirements of our system, in this work we designed and proposed a novel reproducible evaluation framework that can be seamlessly adapted for any modular, context-amplified system. This methodology relies on a hybrid human-in-the-loop panel across five metrics. Through a process of parcel selection and query generation, we constructed a comprehensive dataset of 143 evaluation samples, each encapsulating the user query, parcel orthophoto, retrieved multi-domain context, and the model's generated response. This entire dataset has been released in a public repository under an open license, as detailed in the \textit{Data availability} statement.
+
+The proposed methodology evaluates the system across two distinct phases. While the initial Broad stage validated the model's overall performance, the true analytical power of our approach lies in the ablation stage. By framing the modular architecture as a collaborative game and applying Shapley values, we introduced a rigorous mathematical framework to quantify the exact marginal contributions of each architectural component. This analysis yielded critical insights: the Orthophoto module acts as the ``eyes'' of the system with a 18$\%$ increase in overall score on average, proving crucial for spatial and descriptive tasks where answering blindly degrades quality entirely; the Satellite module provides reliable agronomic value for vegetation-related queries; and the RAG module exhibits high volatility, demonstrating that its effectiveness is intimately tied to the availability of specific documentation and the semantic nature of the user's prompt. Furthermore, complementary studies on judge agreement and context length provided valuable secondary conclusions. The consensus analysis validated the hybrid judge panel while uncovering discrepancies in inter-judge criteria. Concurrently, the context length analysis proved that as the token count increases with the activation of multiple modules, the system maintains its Relevance and Grounding, successfully synthesizing large volumes of multi-domain data without succumbing to the ``lost in the middle'' phenomenon.
+
+Ultimately, this work successfully validates not only the architecture of the context-amplified agricultural assistant but also establishes a novel, highly valuable evaluation standard. By combining rigorous mathematical modeling with a hybrid assessment panel, this open-source methodology provides the research community with a methodical, scalable, and consistent tool for evaluating the next generation of modular, multimodal LLMs in precision agriculture and beyond.
+
+%% Acknowledgements and the CRediT statement are omitted from this
+%% anonymized manuscript and appear on the separate title page.
+
+\section*{Data availability} \label{sec:Data_av}
+
+%% ANONYMIZED VERSION. The permanent identifier (https://www.doi.org/10.57967/hf/10594)
+%% resolves to a Hugging Face account that names the authors, so for review the
+%% dataset is served through an anonymizing proxy that strips repository ownership.
+%% TODO on acceptance: restore the permanent DOI in place of the proxy link.
+The complete evaluation dataset supporting this study \citep{dataset_evaluation} is released under the Apache~2.0 license and is available to reviewers through the following anonymous access link: \url{https://anonymous-hf.com/a/0paqs66vdpic/}. The permanent repository identifier is omitted from this anonymized version because it discloses author identity, and will be stated in full in the published article. The dataset contains the 143 evaluation samples summarized in Table~\ref{tab:num_queries_parcels}, comprising the 71 samples of the \textit{Broad Performance Assessment} phase and the 72 samples of the \textit{Ablation Study} phase across the nine architectural configurations. Each sample provides a unique query identifier, the land use category of the target parcel, the natural-language query, the orthophoto of the parcel, the external multi-domain context retrieved by the system, and the response generated from that query and context. Parcel orthophotos are additionally distributed as individual PNG files. The release therefore contains the complete set of materials presented to the panel of judges, so that the evaluation reported in Section~\ref{sec:Results} can be independently reproduced, audited, or extended to additional judges, metrics, or conversational systems.
+
+%% If you have bibdatabase file and want bibtex to generate the
+%% bibitems, please use
+%%
+%% The reference list is set single-spaced; the review option's 1.5 spacing
+%% applies to the body text only.
+\begingroup
+\def\baselinestretch{1}\normalsize
+\bibliographystyle{elsarticle-harv}
+\bibliography{bibliography}
+\endgroup
+
+%% else use the following coding to input the bibitems directly in the
+%% TeX file.
+
+%%\begin{thebibliography}{00}
+
+%% \bibitem[Author(year)]{label}
+%% For example:
+
+%% \bibitem[Aladro et al.(2015)]{Aladro15} Aladro, R., Martín, S., Riquelme, D., et al. 2015, \aas, 579, A101
+
+
+%%\end{thebibliography}
+
+
+%% The Appendices part is started with the command \appendix;
+%% appendix sections are then done as normal sections
+\appendix
+
+\section{Query catalogue} \label{app:queries}
+
+Table~\ref{tab:queries_catalogue} provides the catalogue of queries by land use and stage.
+
+\begingroup
+\renewcommand{\arraystretch}{1.2}
+\setlength{\tabcolsep}{6pt}
+\tabfont
+\begin{xltabular}{\textwidth}{p{0.14\textwidth} p{0.10\textwidth} >{\raggedright\arraybackslash}X}
+\caption{Catalogue of evaluation queries categorized by land use and experimental stage.}
+\label{tab:queries_catalogue} \\
+\toprule
+\textbf{Land Use} & \textbf{Stage} & \textbf{Query} \\
+\midrule
+\endfirsthead
+\multicolumn{3}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+\toprule
+\textbf{Land Use} & \textbf{Stage} & \textbf{Query} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+    \multirow{7}{*}{Fruit trees} & \multirow{5}{*}{Broad}    & How can I improve the overall sustainability of this orchard? \\
+                                &                           & If a plague were to hit my plot, how should I face it? \\
+                                &                           & Assess the irrigation of parcel [plot\_ID] \\
+                                &                           & Describe the orientation of the tree rows in parcel [plot\_ID] and how it impacts solar radiation exposure \\
+                                &                           & I'm planning the collection route for the upcoming season. Looking at the internal layout of parcel [plot\_ID], is it suitable for large-scale industrial transport or does it require smaller machinery? \\
+    \cmidrule(lr){2-3}
+                                & \multirow{2}{*}{Ablation} & I have some money for upgrading my orchard, what should I spend it on? \\
+                                &                           & How would a week of very bad weather affect my terrain? \\
+    \midrule
+    \multirow{7}{*}{Pasture}     & \multirow{5}{*}{Broad}    & I want to buy terrain for planting apple trees. Is plot [plot\_ID] a good option? \\
+                                &                           & Can I build a swimming pool in parcel [plot\_ID]? \\
+                                &                           & How many cows do you think I could have in plot [plotID]? Take into account size but also grazing \\
+                                &                           & Can I use a tractor in parcel [plotID]? \\
+                                &                           & Do you think it is feasible to divide this field into two paddocks? \\
+    \cmidrule(lr){2-3}
+                                & \multirow{2}{*}{Ablation} & I'm considering buying this land. Do its characteristics justify a high price? \\
+                                &                           & I haven't visited this remote pasture in years. Can you give me a quick status update? \\
+    \midrule
+    \multirow{6}{*}{Forest}      & \multirow{4}{*}{Broad}    & I want to install a solar farm, is parcel [plotID] a good choice? \\
+                                &                           & What kind of activities or uses is this land suitable for? \\
+                                &                           & Is there a high risk of fire spreading quickly? \\
+                                &                           & Can I use this area as a temporary landing strip for small aircraft? \\
+    \cmidrule(lr){2-3}
+                                & \multirow{2}{*}{Ablation} & Are there any signs of recent human intervention or logging in this area? \\
+                                &                           & Describe the density of this forest \\
+    \midrule
+    \multirow{6}{*}{Unproductive}& \multirow{4}{*}{Broad}    & Should I buy this terrain to plant apple trees? \\
+                                &                           & What would you say are the pros and cons of this place? \\
+                                &                           & I'm thinking of bringing 100 sheep to graze, do you think it's a good idea? \\
+                                &                           & Is this site ready for immediate use or does it need work? \\
+    \cmidrule(lr){2-3}
+                                & \multirow{2}{*}{Ablation} & Describe the parcel \\
+                                &                           & What kind of activities does this terrain allow? \\
+\end{xltabular}
+\endgroup
+
+\section{Evaluation rubric} 
+\label{app:rubric}
+
+Table~\ref{tab:rubric} comprises the evaluation rubric given to the judges as instructions.
+
+\begingroup
+    \renewcommand{\arraystretch}{1}
+    \tabfont
+    \setlength{\tabcolsep}{4pt}
+    \begin{xltabular}{\textwidth}{c l >{\raggedright\arraybackslash}X}
+        \caption{Evaluation rubric.}
+        \label{tab:rubric} \\
+        \toprule
+        \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
+        \midrule
+        \endfirsthead
+        \multicolumn{3}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+        \toprule
+        \textbf{Score} & \textbf{Descriptor} & \textbf{Criteria} \\
+        \midrule
+        \endhead
+        \bottomrule
+        \endlastfoot
+		\multicolumn{3}{c}{Without context} \\
+        \midrule
+        % Correctness
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{1. Correctness} — Measures the accuracy and truthfulness of the biological, physical, and geospatial information provided in the response.} \\
+        5 & Excellent & All information is factually accurate, scientifically sound, and geospatially precise. No errors or misconceptions. \\
+        4 & Good & Most information is accurate with minor inaccuracies that do not affect the overall validity of the response. \\
+        3 & Acceptable & Contains some factual errors or imprecise geospatial information, but core claims are generally correct. \\
+        2 & Poor & Multiple significant errors in biological, physical, or geospatial claims. Misleading or questionable accuracy. \\
+        1 & Unacceptable & Information is largely incorrect, fabricated, or fundamentally flawed. Critical factual errors throughout. \\
+        \midrule
+        
+        % Completeness
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{2. Completeness} — Evaluates the extent to which the response fully addresses all components of the user's query and the specific task at hand.} \\
+        5 & Excellent & Response comprehensively addresses all aspects of the query with thorough coverage. No missing elements. \\
+        4 & Good & Covers most query components adequately. Minor aspects may lack detail but overall complete. \\
+        3 & Acceptable & Addresses main query components but omits some secondary aspects. Partial coverage of the task. \\
+        2 & Poor & Missing several key components of the query. Response feels incomplete or rushed. \\
+        1 & Unacceptable & Fails to address the majority of the query. Critical components are missing entirely. \\
+        \midrule
+        
+        % Relevance
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{3. Relevance} — Assesses the signal-to-noise ratio. Focuses on whether the system is concise and direct, penalizing unnecessary or irrelevant information.} \\
+        5 & Excellent & Highly focused and concise. Every statement directly contributes to answering the query. No filler. \\
+        4 & Good & Mostly relevant with minimal tangential information. Stays on topic throughout. \\
+        3 & Acceptable & Generally relevant but includes some unnecessary details or mild digressions. \\
+        2 & Poor & Contains significant irrelevant content. Noticeable amount of filler or off-topic information. \\
+        1 & Unacceptable & Largely irrelevant response. Excessive noise, repetition, or content unrelated to the query. \\
+        \midrule
+        
+        % Utility
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{4. Utility} — Measures the practical value of the response for a user's decision-making process.} \\
+        5 & Excellent & Highly actionable. Provides clear, practical insights that directly support decision-making. \\
+        4 & Good & Useful and applicable. Offers practical value with minor limitations in actionability. \\
+        3 & Acceptable & Somewhat useful but lacks specific actionable recommendations. General guidance only. \\
+        2 & Poor & Limited practical value. Information is too abstract or lacks applicability to real decisions. \\
+        1 & Unacceptable & No practical utility. Response does not support any decision-making or action. \\
+        \midrule
+		% \midrule
+
+		\multicolumn{3}{c}{With context} \\
+		\midrule
+		% Grounding
+        \multicolumn{3}{@{}p{\textwidth}@{}}{\textbf{5. Grounding} — Measures the degree to which assertions are strictly derived from and supported by the context. Evaluates Evidence-to-Claim ratio.} \\
+        5 & Excellent & All claims are explicitly supported by the context. Proper attribution. No unsupported assertions. High specificity. \\
+        4 & Good & Most assertions are grounded in context. Minor inferences are reasonable and context-aligned. \\
+        3 & Acceptable & Some claims are grounded while others are based on general knowledge. Mixed sourcing. \\
+        2 & Poor & Many assertions lack context support. Model frequently makes claims not supported by provided information. \\
+        1 & Unacceptable & Response is largely ungrounded. Contradicts context or fabricates information not present in source material. \\
+    \end{xltabular}
+\endgroup
+
+\section{Shapley values} \label{app:shapley}
+
+Table~\ref{tab:shapley_absolute} contains the extensive numerical catalogue of Shapley values for all 4 judges, 5 metrics, and 3 modules.
+
+\begingroup
+\renewcommand{\arraystretch}{1}
+\setlength{\tabcolsep}{3pt}
+\tabfont
+\begin{xltabular}{\textwidth}{>{\raggedright\arraybackslash}p{0.17\textwidth} >{\centering\arraybackslash}p{0.09\textwidth} >{\centering\arraybackslash}X >{\centering\arraybackslash}p{0.19\textwidth} >{\centering\arraybackslash}p{0.12\textwidth}}
+\caption{Extensive numerical catalogue of Shapley values ($\phi_i$) for all 4 judges, 5 metrics, and 3 modules. Values report the empirical mean with 95\% confidence intervals [$\text{CI}_{2.5\%}, \text{CI}_{97.5\%}$] derived from non-parametric percentile bootstrapping ($B = 10{,}000$ resamples with replacement) to avoid distributional assumptions given the sample size $n=8$ queries and discrete Likert ratings. Share of total influence (\%) represents $|\phi_i| / \sum_{j} |\phi_j| \times 100$, and Global Delta ($\Delta$) is computed as the sum of the three $\phi_{i}$ for each metric and judge.}
+\label{tab:shapley_absolute} \\
+\toprule
+\textbf{Metric} & \textbf{Module} & \textbf{Shapley Value [95\% CI]} & \textbf{Share of Total Influence (\%)} & \textbf{Global Delta} \\
+\midrule
+\endfirsthead
+\multicolumn{5}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+\toprule
+\textbf{Metric} & \textbf{Module} & \textbf{Shapley Value [95\% CI]} & \textbf{Share of Total Influence (\%)} & \textbf{Global Delta} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+\multicolumn{5}{@{}l}{\textbf{Judge: H\_C}} \\
+    \multirow{3}{*}{Correctness} & R & 0.167 [0.042, 0.271]           & 16.67\%    & \multirow{3}{*}{1.000} \\
+    & O & 0.729 [0.292, 1.229]           & 72.92\%    &  \\
+    & S & 0.104 [-0.229, 0.437]          & 10.42\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & 0.396 [0.188, 0.604]           & 12.18\%    & \multirow{3}{*}{3.250} \\
+    & O & 2.083 [1.479, 2.771]           & 64.10\%    &  \\
+    & S & 0.771 [0.417, 1.146]           & 23.72\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & 0.229 [0.021, 0.438]           & 9.65\%     & \multirow{3}{*}{2.375} \\
+    & O & 1.854 [1.125, 2.625]           & 78.07\%    &  \\
+    & S & 0.292 [-0.083, 0.708]          & 12.28\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & 0.271 [0.104, 0.438]           & 8.67\%     & \multirow{3}{*}{3.125} \\
+    & O & 2.208 [1.521, 2.958]           & 70.67\%    &  \\
+    & S & 0.646 [0.312, 0.979]           & 20.67\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & 0.208 [-0.062, 0.500]          & 12.82\%    & \multirow{3}{*}{1.625} \\
+    & O & 1.208 [0.354, 2.229]           & 74.36\%    &  \\
+    & S & 0.208 [-0.271, 0.667]          & 12.82\%    &  \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Judge: H\_E}} \\
+    \multirow{3}{*}{Correctness} & R & 0.021 [-0.146, 0.208]          & 3.33\%     & \multirow{3}{*}{0.625} \\
+    & O & 0.583 [-0.062, 1.333]          & 93.33\%    &  \\
+    & S & 0.021 [-0.292, 0.333]          & 3.33\%     &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & -0.021 [-0.229, 0.146]          & 0.96\%     & \multirow{3}{*}{2.125} \\
+    & O & 1.542 [0.938, 2.042]           & 71.15\%    &  \\
+    & S & 0.604 [0.167, 1.042]           & 27.88\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & -0.146 [-0.396, 0.125]          & 6.73\%     & \multirow{3}{*}{1.875} \\
+    & O & 1.479 [0.750, 2.271]           & 68.27\%    &  \\
+    & S & 0.542 [-0.042, 1.167]          & 25.00\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & -0.104 [-0.417, 0.188]          & 5.68\%     & \multirow{3}{*}{1.625} \\
+    & O & 1.333 [0.521, 2.083]           & 72.73\%    &  \\
+    & S & 0.396 [-0.083, 0.896]          & 21.59\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & 0.042 [0.000, 0.125]           & 33.33\%    & \multirow{3}{*}{0.125} \\
+    & O & 0.042 [0.000, 0.125]           & 33.33\%    &  \\
+    & S & 0.042 [0.000, 0.125]           & 33.33\%    &  \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Judge: LLM\_Q}} \\
+    \multirow{3}{*}{Correctness} & R & -0.146 [-0.625, 0.354]          & 11.29\%    & \multirow{3}{*}{1.000} \\
+    & O & 0.854 [0.042, 1.854]           & 66.13\%    &  \\
+    & S & 0.292 [-0.125, 0.708]          & 22.58\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & -0.062 [-0.250, 0.062]          & 50.00\%    & \multirow{3}{*}{0.000} \\
+    & O & 0.062 [0.000, 0.146]           & 50.00\%    &  \\
+    & S & 0.000 [-0.125, 0.125]          & 0.00\%     &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & -0.250 [-0.562, 0.021]          & 25.00\%    & \multirow{3}{*}{0.500} \\
+    & O & 0.625 [0.125, 1.354]           & 62.50\%    &  \\
+    & S & 0.125 [-0.042, 0.292]          & 12.50\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & -0.063 [-0.354, 0.208]          & 5.56\%     & \multirow{3}{*}{1.000} \\
+    & O & 0.812 [0.021, 1.729]           & 72.22\%    &  \\
+    & S & 0.250 [-0.229, 0.750]          & 22.22\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & -0.479 [-0.812, -0.188]         & 44.23\%    & \multirow{3}{*}{0.125} \\
+    & O & 0.458 [0.000, 1.125]           & 42.31\%    &  \\
+    & S & 0.146 [-0.083, 0.396]          & 13.46\%    &  \\
+\midrule
+\multicolumn{5}{@{}l}{\textbf{Judge: LLM\_G}} \\
+    \multirow{3}{*}{Correctness} & R & -0.083 [-0.208, 0.000]          & 8.00\%     & \multirow{3}{*}{0.875} \\
+    & O & 0.667 [0.062, 1.479]           & 64.00\%    &  \\
+    & S & 0.292 [0.000, 0.667]           & 28.00\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Completeness} & R & -0.021 [-0.188, 0.125]          & 3.85\%     & \multirow{3}{*}{0.500} \\
+    & O & 0.354 [0.000, 0.729]           & 65.38\%    &  \\
+    & S & 0.167 [0.000, 0.333]           & 30.77\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Relevance} & R & -0.083 [-0.208, 0.000]          & 15.38\%    & \multirow{3}{*}{0.375} \\
+    & O & 0.292 [0.042, 0.667]           & 53.85\%    &  \\
+    & S & 0.167 [0.042, 0.312]           & 30.77\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Utility} & R & 0.000 [-0.062, 0.062]          & 0.00\%     & \multirow{3}{*}{0.750} \\
+    & O & 0.500 [0.000, 1.167]           & 66.67\%    &  \\
+    & S & 0.250 [0.000, 0.542]           & 33.33\%    &  \\
+\cmidrule(lr){1-5}
+    \multirow{3}{*}{Grounding} & R & -0.208 [-0.458, -0.042]         & 22.73\%    & \multirow{3}{*}{0.500} \\
+    & O & 0.479 [-0.021, 1.250]          & 52.27\%    &  \\
+    & S & 0.229 [0.062, 0.417]           & 25.00\%    &  \\
+\end{xltabular}
+\endgroup
+
+\section{Examples of concordance and discordance} 
+\label{app:concordance}
+
+Table~\ref{tab:evaluated_examples} includes 8 query examples with their evaluation scores in all 5 metrics for the 4 judges, divided into ``Concordance'' and ``Discordance''.
+
+\begingroup
+\renewcommand{\arraystretch}{1.1}
+\tabfont
+\setlength{\tabcolsep}{3pt}
+\begin{xltabular}{\textwidth}{>{\raggedright\arraybackslash}p{2.6cm} X c c c c c c c}
+\caption{Set of evaluated query examples divided by ``Concordance'' and ``Discordance''. Standard Deviation (SD) is reported at the query level rather than Krippendorff's $\alpha$, as $\alpha$ is mathematically unstable for small samples with low score variance. The five evaluated metrics are \textbf{Corr}ectness, \textbf{Comp}leteness, \textbf{Rel}evance, \textbf{Util}ity and  \textbf{Grou}nding. AB- query codes indicate belonging to Ablation study, along with its C-x configuration code; the remaining queries are from Broad stage.}
+\label{tab:evaluated_examples} \\
+\toprule
+\textbf{Query Code} & \textbf{Query} & \textbf{Judge} & \textbf{Corr.} & \textbf{Comp.} & \textbf{Rel.} & \textbf{Util.} & \textbf{Grou.} & \textbf{SD} \\
+\midrule
+\endfirsthead
+\multicolumn{9}{l}{\tabfont\textit{Table~\thetable\ (continued)}} \\
+\toprule
+\textbf{Query Code} & \textbf{Query} & \textbf{Judge} & \textbf{Corr.} & \textbf{Comp.} & \textbf{Rel.} & \textbf{Util.} & \textbf{Grou.} & \textbf{SD} \\
+\midrule
+\endhead
+\bottomrule
+\endlastfoot
+        \multicolumn{9}{c}{\textbf{Concordance}} \\
+        \midrule
+        
+        % FR16
+        \multirow{4}{=}{\textbf{FR16}} 
+        & \multirow{4}{=}{Assess the irrigation of the parcel} 
+        & $H_C$ & 5 & 5 & 5 & 5 & 5 & \multirow{4}{*}{0.00} \\
+        & & $H_E$ & 5 & 5 & 5 & 5 & 5 & \\
+        & & $LLM_Q$ & 5 & 5 & 5 & 5 & 5 & \\
+        & & $LLM_G$ & 5 & 5 & 5 & 5 & 5 & \\
+        \midrule
+        
+        % AB-PA-01/C-08
+        \multirow{4}{=}{\textbf{AB-PA-01/C-3}} 
+        & \multirow{4}{=}{I'm considering buying this land. Do its characteristics justify a high price?} 
+        & $H_C$ & 5 & 5 & 5 & 5 & 5 & \multirow{4}{*}{0.00} \\
+        & & $H_E$ & 5 & 5 & 5 & 5 & 5 & \\
+        & & $LLM_Q$ & 5 & 5 & 5 & 5 & 5 & \\
+        & & $LLM_G$ & 5 & 5 & 5 & 5 & 5 & \\
+        \midrule
+        
+        % AB-FO-01/C-07
+        \multirow{4}{=}{\textbf{AB-FO-01/C-2}} 
+        & \multirow{4}{=}{Describe the density of this forest} 
+        & $H_C$ & 4 & 3 & 4 & 4 & 4 & \multirow{4}{*}{0.68} \\
+        & & $H_E$ & 4 & 4 & 4 & 4 & 5 & \\
+        & & $LLM_Q$ & 5 & 5 & 5 & 4 & 5 & \\
+        & & $LLM_G$ & 3 & 5 & 5 & 4 & 3 & \\
+        \midrule
+        
+        % AB-PA-02/C-06
+        \multirow{4}{=}{\textbf{AB-PA-02/C-6}} 
+        & \multirow{4}{=}{I haven't visited this remote pasture in years. Can you give me a quick status update?} 
+        & $H_C$ & 4 & 4 & 5 & 4 & 5 & \multirow{4}{*}{0.74} \\
+        & & $H_E$ & 5 & 3 & 3 & 3 & 5 & \\
+        & & $LLM_Q$ & 5 & 5 & 4 & 4 & 5 & \\
+        & & $LLM_G$ & 5 & 5 & 5 & 5 & 5 & \\
+        \midrule
+        
+        \multicolumn{9}{c}{\textbf{Discordance}} \\
+        \midrule
+        
+        % AB-FO-02/C-07
+        \multirow{4}{=}{\textbf{AB-FO-02/C-0}} 
+        & \multirow{4}{=}{Are there any signs of recent human intervention or logging in this area?} 
+        & $H_C$ & 5 & 1 & 3 & 1 & 4 & \multirow{4}{*}{1.77} \\
+        & & $H_E$ & 5 & 1 & 1 & 1 & 5 & \\
+        & & $LLM_Q$ & 1 & 5 & 4 & 2 & 5 & \\
+        & & $LLM_G$ & 5 & 5 & 5 & 5 & 5 & \\
+        \midrule
+        
+        % PA4
+        \multirow{4}{=}{\textbf{PA4}} 
+        & \multirow{4}{=}{I want to buy terrain for planting apple trees. Is this plot a good option?} 
+        & $H_C$ & 5 & 5 & 4 & 5 & 4 & \multirow{4}{*}{1.04} \\
+        & & $H_E$ & 5 & 5 & 5 & 4 & 5 & \\
+        & & $LLM_Q$ & 2 & 4 & 3 & 3 & 2 & \\
+        & & $LLM_G$ & 3 & 4 & 4 & 4 & 2 & \\
+        \midrule
+        
+        % FR12
+        \multirow{4}{=}{\textbf{FR12}} 
+        & \multirow{4}{=}{If a plague were to hit my plot, how should I face it?} 
+        & $H_C$ & 5 & 4 & 5 & 5 & 5 & \multirow{4}{*}{0.95} \\
+        & & $H_E$ & 5 & 5 & 5 & 5 & 4 & \\
+        & & $LLM_Q$ & 4 & 3 & 4 & 4 & 2 & \\
+        & & $LLM_G$ & 4 & 5 & 5 & 5 & 2 & \\
+        \midrule
+        
+        % AB-UN-01/C-01
+        \multirow{4}{=}{\textbf{AB-UN-01/C-1}} 
+        & \multirow{4}{=}{Describe the parcel} 
+        & $H_C$ & 2 & 1 & 1 & 2 & 1 & \multirow{4}{*}{1.56} \\
+        & & $H_E$ & 3 & 3 & 2 & 2 & 5 & \\
+        & & $LLM_Q$ & 5 & 4 & 5 & 3 & 5 & \\
+        & & $LLM_G$ & 5 & 5 & 5 & 5 & 5 & \\
+\end{xltabular}
+\endgroup
+
+\
+\end{document}
+
+\endinput
+%%
+%% End of file `elsarticle-template-harv.tex'.
